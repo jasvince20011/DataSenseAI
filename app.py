@@ -560,6 +560,14 @@ hr { border-color: rgba(255,255,255,.08); }
     border-color:rgba(79,70,229,.22) !important;
     color:#172033 !important;
 }
+.stApp:has(.ds-theme-daylight) [data-testid="stFileUploader"] * { color:#172033 !important; }
+.stApp:has(.ds-theme-daylight) [data-testid="stFileUploader"] button {
+    color:#172033 !important;
+    background:#ffffff !important;
+    border:1px solid #aab6c8 !important;
+}
+.stApp:has(.ds-theme-daylight) [data-testid="stFileUploader"] small,
+.stApp:has(.ds-theme-daylight) [data-testid="stFileUploader"] span { color:#334155 !important; }
 .stApp:has(.ds-theme-daylight) .ds-topbar,
 .stApp:has(.ds-theme-daylight) .ds-hero,
 .stApp:has(.ds-theme-daylight) .ds-brain {
@@ -661,20 +669,26 @@ hr { border-color: rgba(255,255,255,.08); }
 .ds-theme-futuristic ::-webkit-scrollbar-track {background:#061016 !important;}
 .ds-theme-futuristic ::-webkit-scrollbar-thumb {background:rgba(0,225,255,.32) !important;}
 
-/* PROFESSIONAL — inspired by the supplied Tableau-style reference */
+/* PROFESSIONAL — executive BI theme with requested mauve → teal gradient */
 .stApp:has(.ds-theme-professional) {
     background:
-        radial-gradient(circle at 12% 12%, rgba(222,224,254,.58), transparent 28%),
-        radial-gradient(circle at 92% 18%, rgba(207,238,226,.42), transparent 25%),
-        #f6f7f4 !important;
-    color:#1f2937 !important;
+        linear-gradient(135deg, #be93c5 0%, #7bc6cc 100%) !important;
+    color:#172033 !important;
+}
+.stApp:has(.ds-theme-professional)::before {
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,0) 48%, rgba(255,255,255,.08));
+    z-index:0;
 }
 .stApp:has(.ds-theme-professional) .ds-topbar,
 .stApp:has(.ds-theme-professional) .ds-hero,
 .stApp:has(.ds-theme-professional) .ds-brain {
-    background:rgba(255,255,255,.92) !important;
-    border:1px solid rgba(31,41,55,.09) !important;
-    box-shadow:0 12px 35px rgba(31,41,55,.07) !important;
+    background:rgba(255,255,255,.96) !important;
+    border:1px solid rgba(255,255,255,.70) !important;
+    box-shadow:0 12px 35px rgba(43,55,72,.14) !important;
     color:#1f2937 !important;
 }
 .stApp:has(.ds-theme-professional) .ds-logo {
@@ -701,6 +715,18 @@ hr { border-color: rgba(255,255,255,.08); }
 .ds-theme-professional [data-testid="stFileUploader"] {
     background:#ffffff !important;
     border-color:#bfc8d9 !important;
+}
+.stApp:has(.ds-theme-professional) [data-testid="stFileUploader"] * {
+    color:#172033 !important;
+}
+.stApp:has(.ds-theme-professional) [data-testid="stFileUploader"] button {
+    color:#172033 !important;
+    background:#ffffff !important;
+    border:1px solid #9aa8bd !important;
+}
+.stApp:has(.ds-theme-professional) [data-testid="stFileUploader"] small,
+.stApp:has(.ds-theme-professional) [data-testid="stFileUploader"] span {
+    color:#334155 !important;
 }
 .stApp:has(.ds-theme-professional) .stButton > button {
     background:linear-gradient(135deg,#dee0fe,#e7f0ec) !important;
@@ -2671,6 +2697,111 @@ def _buvijag_kpis(df):
     return kpis[:7]
 
 
+
+def _buvijag_find_column(df, keywords):
+    """Find a column by common inventory/business naming patterns."""
+    for c in df.columns:
+        name = str(c).strip().lower().replace("_", " ").replace("-", " ")
+        if any(k in name for k in keywords):
+            return c
+    return None
+
+
+def _buvijag_inventory(df):
+    """Detect inventory fields and produce deterministic stock/reorder alerts."""
+    product_col = _buvijag_find_column(df, ["product name", "product", "item name", "item", "sku", "stock item"])
+    stock_col = _buvijag_find_column(df, ["current stock", "stock on hand", "stock", "inventory", "balance stock", "available stock", "qty in stock", "quantity in stock"])
+    reorder_col = _buvijag_find_column(df, ["reorder level", "reorder point", "reorder threshold", "minimum stock", "min stock", "safety stock", "reorder qty level"])
+    initial_col = _buvijag_find_column(df, ["initial stock", "opening stock", "starting stock", "beginning stock"])
+    sold_col = _buvijag_find_column(df, ["quantity sold", "qty sold", "units sold", "sold quantity", "sales quantity"])
+    daily_col = _buvijag_find_column(df, ["daily sales", "avg daily sales", "average daily sales", "units per day", "daily units"])
+    supplier_col = _buvijag_find_column(df, ["supplier", "vendor", "supplier name"])
+
+    # A dataset is treated as inventory data when it has a stock field or enough
+    # fields to derive current stock.
+    if stock_col is None and not (initial_col is not None and sold_col is not None):
+        return None
+
+    work = pd.DataFrame(index=df.index)
+    if product_col is not None:
+        work["Product"] = df.iloc[:, df.columns.get_loc(product_col)].astype(str)
+    else:
+        work["Product"] = [f"Item {i+1}" for i in range(len(df))]
+
+    if stock_col is not None:
+        work["Current Stock"] = pd.to_numeric(df.iloc[:, df.columns.get_loc(stock_col)], errors="coerce")
+    else:
+        work["Current Stock"] = (
+            pd.to_numeric(df.iloc[:, df.columns.get_loc(initial_col)], errors="coerce") -
+            pd.to_numeric(df.iloc[:, df.columns.get_loc(sold_col)], errors="coerce")
+        )
+
+    if reorder_col is not None:
+        work["Reorder Level"] = pd.to_numeric(df.iloc[:, df.columns.get_loc(reorder_col)], errors="coerce")
+    else:
+        work["Reorder Level"] = pd.NA
+
+    if daily_col is not None:
+        work["Daily Sales"] = pd.to_numeric(df.iloc[:, df.columns.get_loc(daily_col)], errors="coerce")
+    else:
+        work["Daily Sales"] = pd.NA
+
+    if supplier_col is not None:
+        work["Supplier"] = df.iloc[:, df.columns.get_loc(supplier_col)].astype(str)
+    else:
+        work["Supplier"] = "—"
+
+    # If a reorder level is not supplied, use a transparent heuristic of 10% of
+    # the observed initial/current stock. The UI clearly labels this as inferred.
+    inferred = work["Reorder Level"].isna()
+    if inferred.any():
+        base = work["Current Stock"].abs()
+        work.loc[inferred, "Reorder Level"] = (base[inferred] * 0.10).clip(lower=1)
+
+    work = work.dropna(subset=["Current Stock"]).copy()
+    if work.empty:
+        return None
+
+    def status(row):
+        stock = float(row["Current Stock"])
+        reorder = float(row["Reorder Level"]) if pd.notna(row["Reorder Level"]) else 1.0
+        if stock <= 0:
+            return "🔴 OUT OF STOCK"
+        if stock <= reorder:
+            return "🔴 REORDER NOW"
+        if stock <= reorder * 1.5:
+            return "🟠 LOW STOCK"
+        return "🟢 STOCK OK"
+
+    work["Status"] = work.apply(status, axis=1)
+    work["Days Remaining"] = pd.NA
+    valid_daily = pd.to_numeric(work["Daily Sales"], errors="coerce") > 0
+    work.loc[valid_daily, "Days Remaining"] = work.loc[valid_daily, "Current Stock"] / work.loc[valid_daily, "Daily Sales"]
+
+    def suggested(row):
+        stock = float(row["Current Stock"])
+        reorder = float(row["Reorder Level"])
+        daily = pd.to_numeric(pd.Series([row["Daily Sales"]]), errors="coerce").iloc[0]
+        target = max(reorder * 2, daily * 7) if pd.notna(daily) and daily > 0 else reorder * 2
+        return max(0, int(round(target - stock)))
+
+    work["Suggested Reorder Qty"] = work.apply(suggested, axis=1)
+    work["Alert"] = work["Status"].map({
+        "🔴 OUT OF STOCK": "Immediate purchase required",
+        "🔴 REORDER NOW": "Stock is at/below reorder level",
+        "🟠 LOW STOCK": "Prepare the next purchase order",
+        "🟢 STOCK OK": "No reorder action needed",
+    })
+    return {
+        "data": work,
+        "product_col": product_col,
+        "stock_col": stock_col,
+        "reorder_col": reorder_col,
+        "inferred_reorder": reorder_col is None,
+        "daily_col": daily_col,
+        "supplier_col": supplier_col,
+    }
+
 def _buvijag_anomalies(df, max_items=8):
     """IQR-based numeric anomaly detection with evidence."""
     results = []
@@ -2931,7 +3062,48 @@ if buvijag_data_items:
             else:
                 st.metric(name, f"{value:,}")
 
-    # 3. Automatic chart selection
+    # 3. Smart Inventory Control
+    inventory = _buvijag_inventory(agent_df)
+    if inventory:
+        st.markdown("### 🛒 Smart Inventory Control")
+        st.caption("BUVIJAG detects stock levels, reorder thresholds, and sales velocity. Alerts are calculated from the uploaded data; inferred reorder levels are clearly labeled.")
+        inv = inventory["data"]
+        critical = int(inv["Status"].isin(["🔴 OUT OF STOCK", "🔴 REORDER NOW"]).sum())
+        low = int((inv["Status"] == "🟠 LOW STOCK").sum())
+        healthy = int((inv["Status"] == "🟢 STOCK OK").sum())
+        ic = st.columns(3)
+        ic[0].metric("🔴 Reorder / Critical", critical)
+        ic[1].metric("🟠 Low Stock", low)
+        ic[2].metric("🟢 Stock OK", healthy)
+
+        alerts = inv[inv["Status"] != "🟢 STOCK OK"].copy()
+        display_cols = ["Product", "Current Stock", "Reorder Level", "Status", "Suggested Reorder Qty", "Alert"]
+        if "Days Remaining" in alerts.columns and alerts["Days Remaining"].notna().any():
+            display_cols.insert(4, "Days Remaining")
+        if not alerts.empty:
+            st.markdown("#### 🚨 Inventory Alerts — Action Required")
+            st.dataframe(alerts[display_cols].reset_index(drop=True), use_container_width=True, hide_index=True)
+        else:
+            st.success("🟢 All detected inventory items are above their reorder thresholds.")
+
+        with st.expander("📦 View Full Inventory Status", expanded=False):
+            st.dataframe(inv[display_cols].reset_index(drop=True), use_container_width=True, hide_index=True)
+
+        if inventory["inferred_reorder"]:
+            st.info("ℹ️ No reorder-level column was found. BUVIJAG is using an inferred threshold of 10% of the observed stock as a starting rule. Add a Reorder Level column for your exact store policy.")
+        else:
+            st.success("✅ Reorder levels detected from your uploaded inventory data.")
+
+        # A concise natural-language alert for the strongest case.
+        urgent = inv[inv["Status"].isin(["🔴 OUT OF STOCK", "🔴 REORDER NOW"])].sort_values("Current Stock")
+        if not urgent.empty:
+            u = urgent.iloc[0]
+            extra = ""
+            if pd.notna(u.get("Days Remaining")):
+                extra = f" Estimated stock remaining: {float(u['Days Remaining']):.1f} day(s)."
+            st.error(f"🚨 **{u['Product']} — REORDER NOW.** Current stock: {float(u['Current Stock']):,.0f} • Reorder level: {float(u['Reorder Level']):,.0f}. Suggested reorder quantity: {int(u['Suggested Reorder Qty']):,}.{extra}")
+
+    # 4. Automatic chart selection
     st.markdown("### 📊 BUVIJAG's Recommended Visualizations")
     selected_chart_meta = _buvijag_selected_charts(agent_df)
     if selected_chart_meta:
