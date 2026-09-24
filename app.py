@@ -991,6 +991,153 @@ hr { border-color: rgba(255,255,255,.08); }
     overflow:visible !important;
 }
 
+
+/* =========================================================
+   BUVIJAG ROBOTIC FUTURE — MACHINE / CYBERNETIC THEME
+   High-tech industrial palette: electric cyan + violet + amber
+   with HUD grids, machine panels, scanlines and circuit accents.
+   ========================================================= */
+.stApp:has(.ds-theme-futuristic) {
+    background:
+        radial-gradient(circle at 50% 34%, rgba(0,229,255,.18), transparent 20%),
+        radial-gradient(circle at 8% 8%, rgba(125,92,255,.20), transparent 24%),
+        radial-gradient(circle at 92% 14%, rgba(255,166,0,.14), transparent 22%),
+        radial-gradient(circle at 50% 100%, rgba(255,0,153,.10), transparent 28%),
+        repeating-linear-gradient(0deg, rgba(0,229,255,.035) 0 1px, transparent 1px 5px),
+        linear-gradient(135deg,#02050a 0%,#06131b 38%,#09051a 72%,#020409 100%) !important;
+    color:#e9fbff !important;
+}
+.stApp:has(.ds-theme-futuristic)::before {
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    opacity:.34;
+    background-image:
+        linear-gradient(rgba(0,229,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,.055) 1px, transparent 1px);
+    background-size:32px 32px;
+    mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 92%);
+}
+.stApp:has(.ds-theme-futuristic) .ds-topbar,
+.stApp:has(.ds-theme-futuristic) .ds-hero,
+.stApp:has(.ds-theme-futuristic) .ds-brain {
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(145deg,rgba(8,22,32,.94),rgba(9,7,24,.90)) !important;
+    border:1px solid rgba(0,229,255,.30) !important;
+    box-shadow:
+        0 0 0 1px rgba(139,92,246,.08),
+        0 0 38px rgba(0,210,255,.10),
+        inset 0 0 45px rgba(0,210,255,.035) !important;
+}
+/* machine-panel corner brackets */
+.stApp:has(.ds-theme-futuristic) .ds-topbar::before,
+.stApp:has(.ds-theme-futuristic) .ds-hero::before,
+.stApp:has(.ds-theme-futuristic) .ds-brain::before {
+    content:"";
+    position:absolute;
+    inset:8px;
+    pointer-events:none;
+    border:1px solid rgba(0,229,255,.08);
+    clip-path:polygon(0 0,18% 0,18% 2px,2px 2px,2px 18%,0 18%,0 0,100% 0,100% 18%,calc(100% - 2px) 18%,calc(100% - 2px) 2px,82% 2px,82% 0,100% 0,100% 100%,82% 100%,82% calc(100% - 2px),calc(100% - 2px) calc(100% - 2px),calc(100% - 2px) 82%,100% 82%,100% 100%,0 100%,0 82%,2px 82%,2px calc(100% - 2px),18% calc(100% - 2px),18% 100%,0 100%);
+}
+/* animated machine scan bar */
+.stApp:has(.ds-theme-futuristic) .ds-hero::after {
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    height:1px;
+    top:18%;
+    background:linear-gradient(90deg,transparent,#00e5ff,#a855f7,transparent);
+    box-shadow:0 0 14px rgba(0,229,255,.75);
+    opacity:.45;
+    animation:buviScan 5s linear infinite;
+    pointer-events:none;
+}
+@keyframes buviScan { 0%{transform:translateY(0);opacity:.12} 50%{opacity:.55} 100%{transform:translateY(380px);opacity:.08} }
+/* robotic core / reactor */
+.stApp:has(.ds-theme-futuristic) .ds-logo,
+.stApp:has(.ds-theme-futuristic) .ds-core {
+    background:
+        radial-gradient(circle at 50% 45%,rgba(0,229,255,.45),rgba(124,58,237,.22) 42%,rgba(2,10,18,.90) 70%) !important;
+    border:1px solid rgba(0,229,255,.65) !important;
+    box-shadow:
+        0 0 14px rgba(0,229,255,.55),
+        0 0 38px rgba(124,58,237,.24),
+        inset 0 0 22px rgba(0,229,255,.20) !important;
+}
+.stApp:has(.ds-theme-futuristic) .ds-core {
+    border-radius:22% !important;
+    transform:rotate(45deg);
+    width:82px !important;
+    height:82px !important;
+}
+.stApp:has(.ds-theme-futuristic) .ds-core > * { transform:rotate(-45deg); }
+.stApp:has(.ds-theme-futuristic) .ds-kicker,
+.stApp:has(.ds-theme-futuristic) .ds-section { color:#00e5ff !important; text-shadow:0 0 9px rgba(0,229,255,.35); }
+.stApp:has(.ds-theme-futuristic) .ds-title { color:#ffffff !important; letter-spacing:1px; text-shadow:0 0 16px rgba(0,229,255,.22); }
+.stApp:has(.ds-theme-futuristic) .ds-hero-title { color:#f2fbff !important; text-shadow:0 0 22px rgba(0,229,255,.14); }
+.stApp:has(.ds-theme-futuristic) .ds-subtitle,
+.stApp:has(.ds-theme-futuristic) .ds-hero-text,
+.stApp:has(.ds-theme-futuristic) .ds-core-status { color:#9fc8d4 !important; }
+/* industrial status */
+.stApp:has(.ds-theme-futuristic) .ds-status {
+    background:rgba(0,229,255,.055) !important;
+    border:1px solid rgba(0,229,255,.22) !important;
+    color:#b9f7ff !important;
+    box-shadow:inset 0 0 16px rgba(0,229,255,.04);
+}
+.stApp:has(.ds-theme-futuristic) .ds-dot {
+    background:#00e5ff !important;
+    box-shadow:0 0 9px #00e5ff !important;
+}
+/* KPI machine modules */
+.stApp:has(.ds-theme-futuristic) [data-testid="stMetric"] {
+    background:
+        linear-gradient(145deg,rgba(8,26,39,.92),rgba(16,8,32,.88)) !important;
+    border:1px solid rgba(0,229,255,.26) !important;
+    border-left:3px solid #00e5ff !important;
+    box-shadow:0 0 24px rgba(0,210,255,.07), inset 0 0 20px rgba(124,58,237,.035) !important;
+}
+.stApp:has(.ds-theme-futuristic) [data-testid="stMetricLabel"] { color:#7ed9e5 !important; letter-spacing:.5px; }
+.stApp:has(.ds-theme-futuristic) [data-testid="stMetricValue"] { color:#f3feff !important; text-shadow:0 0 11px rgba(0,229,255,.15); }
+/* uploader / controls as machine bays */
+.stApp:has(.ds-theme-futuristic) [data-testid="stFileUploader"] {
+    background:rgba(4,16,25,.84) !important;
+    border:1px dashed rgba(0,229,255,.48) !important;
+    box-shadow:inset 0 0 28px rgba(0,229,255,.035) !important;
+}
+.stApp:has(.ds-theme-futuristic) .stButton > button {
+    background:linear-gradient(135deg,rgba(0,229,255,.16),rgba(124,58,237,.16),rgba(255,166,0,.08)) !important;
+    border:1px solid rgba(0,229,255,.38) !important;
+    color:#eaffff !important;
+    box-shadow:0 0 16px rgba(0,229,255,.06), inset 0 0 14px rgba(124,58,237,.04) !important;
+}
+.stApp:has(.ds-theme-futuristic) .stButton > button:hover {
+    border-color:#00e5ff !important;
+    box-shadow:0 0 24px rgba(0,229,255,.18),0 0 10px rgba(168,85,247,.12) !important;
+    transform:translateY(-1px);
+}
+/* tables, expanders, alerts and inputs */
+.stApp:has(.ds-theme-futuristic) [data-testid="stExpander"],
+.stApp:has(.ds-theme-futuristic) [data-testid="stDataFrame"],
+.stApp:has(.ds-theme-futuristic) .stAlert,
+.stApp:has(.ds-theme-futuristic) [data-baseweb="input"],
+.stApp:has(.ds-theme-futuristic) [data-baseweb="select"] > div {
+    background:rgba(5,15,24,.78) !important;
+    border-color:rgba(0,229,255,.18) !important;
+}
+.stApp:has(.ds-theme-futuristic) hr { border-color:rgba(0,229,255,.16) !important; }
+.stApp:has(.ds-theme-futuristic) ::-webkit-scrollbar-track { background:#030811 !important; }
+.stApp:has(.ds-theme-futuristic) ::-webkit-scrollbar-thumb { background:linear-gradient(#00e5ff,#7c3aed) !important; border-radius:10px; }
+/* neon accent for links / markdown */
+.stApp:has(.ds-theme-futuristic) a { color:#67e8f9 !important; }
+.stApp:has(.ds-theme-futuristic) code { background:rgba(0,229,255,.07) !important; color:#b9f7ff !important; border:1px solid rgba(0,229,255,.10); }
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -2240,3 +2387,519 @@ Only use information supported by the dataset.
                 mime="application/pdf",
                 key=f"download_{report_key}"
             )
+
+
+# ============================================================
+# 🚀 BUVIJAG AI — AGENT INTELLIGENCE CENTER
+# ============================================================
+# These features make the product visibly agentic while keeping
+# all calculations grounded in the uploaded dataset.
+
+def _buvijag_dataframe_items():
+    return [x for x in analysis_items if x.get("kind") == "dataframe" and isinstance(x.get("df"), pd.DataFrame)]
+
+def _buvijag_health(df):
+    rows = max(len(df), 1)
+    cols = max(len(df.columns), 1)
+    missing = int(df.isna().sum().sum())
+    duplicates = int(df.duplicated().sum())
+    missing_rate = missing / (rows * cols)
+    duplicate_rate = duplicates / rows
+
+    score = 100
+    score -= min(35, missing_rate * 100 * 1.5)
+    score -= min(25, duplicate_rate * 100)
+    score -= min(15, sum(str(c).strip() == "" for c in df.columns) * 5)
+    score = max(0, min(100, round(score)))
+
+    return {
+        "score": score,
+        "missing": missing,
+        "duplicates": duplicates,
+        "missing_rate": missing_rate,
+        "duplicate_rate": duplicate_rate,
+        "rows": len(df),
+        "columns": len(df.columns),
+    }
+
+
+def _buvijag_kpis(df):
+    """Detect useful business KPIs from column names and numeric structure."""
+    numeric = df.select_dtypes(include="number").columns.tolist()
+    lower_map = {str(c).lower(): c for c in df.columns}
+    kpis = []
+
+    def find_col(words):
+        for c in df.columns:
+            name = str(c).lower()
+            if any(w in name for w in words):
+                return c
+        return None
+
+    revenue_col = find_col(["revenue", "sales", "sale_amount", "sales_amount", "turnover", "amount", "gmv"])
+    profit_col = find_col(["profit", "net_profit", "gross_profit", "margin"])
+    quantity_col = find_col(["quantity", "qty", "units", "volume"])
+    order_col = find_col(["order_id", "orders", "order"])
+
+    if revenue_col is not None and pd.api.types.is_numeric_dtype(df[revenue_col]):
+        kpis.append(("💰 Total Revenue / Sales", float(pd.to_numeric(df[revenue_col], errors="coerce").sum()), revenue_col))
+        kpis.append(("🧾 Average Order / Sale", float(pd.to_numeric(df[revenue_col], errors="coerce").mean()), revenue_col))
+    elif numeric:
+        c = numeric[0]
+        kpis.append((f"Σ Total {c}", float(pd.to_numeric(df[c], errors="coerce").sum()), c))
+        kpis.append((f"Ø Average {c}", float(pd.to_numeric(df[c], errors="coerce").mean()), c))
+
+    if profit_col is not None and pd.api.types.is_numeric_dtype(df[profit_col]):
+        kpis.append(("📈 Total Profit", float(pd.to_numeric(df[profit_col], errors="coerce").sum()), profit_col))
+
+    if quantity_col is not None and pd.api.types.is_numeric_dtype(df[quantity_col]):
+        kpis.append(("📦 Total Quantity / Units", float(pd.to_numeric(df[quantity_col], errors="coerce").sum()), quantity_col))
+
+    if order_col is not None:
+        kpis.append(("🛒 Unique Orders", int(df[order_col].nunique(dropna=True)), order_col))
+    else:
+        kpis.append(("📊 Total Records", int(len(df)), None))
+
+    # Profit margin when both revenue and profit exist.
+    if revenue_col is not None and profit_col is not None:
+        revenue = pd.to_numeric(df[revenue_col], errors="coerce").sum()
+        profit = pd.to_numeric(df[profit_col], errors="coerce").sum()
+        if revenue:
+            kpis.append(("🎯 Profit Margin", float(profit / revenue * 100), "derived"))
+
+    return kpis[:7]
+
+
+def _buvijag_anomalies(df, max_items=8):
+    """IQR-based numeric anomaly detection with evidence."""
+    results = []
+    numeric = df.select_dtypes(include="number").columns.tolist()
+    for col in numeric[:12]:
+        s = pd.to_numeric(df[col], errors="coerce").dropna()
+        if len(s) < 8 or s.nunique() < 4:
+            continue
+        q1, q3 = s.quantile([0.25, 0.75])
+        iqr = q3 - q1
+        if iqr == 0:
+            continue
+        low, high = q1 - 1.5 * iqr, q3 + 1.5 * iqr
+        mask = (s < low) | (s > high)
+        count = int(mask.sum())
+        if count:
+            results.append({
+                "column": col,
+                "count": count,
+                "rate": count / len(s) * 100,
+                "low": float(low),
+                "high": float(high),
+                "max": float(s.max()),
+                "min": float(s.min()),
+            })
+    results.sort(key=lambda x: x["count"], reverse=True)
+    return results[:max_items]
+
+
+def _buvijag_dates(df):
+    date_cols = []
+    for c in df.columns:
+        converted = pd.to_datetime(df[c], errors="coerce")
+        if len(df) and converted.notna().mean() >= 0.65:
+            date_cols.append(c)
+    return date_cols[:3]
+
+
+def _buvijag_selected_charts(df):
+    """Choose a small set of charts using the dataset structure."""
+    charts = []
+    dates = _buvijag_dates(df)
+    numeric = df.select_dtypes(include="number").columns.tolist()
+    categorical = df.select_dtypes(include=["object", "category"]).columns.tolist()
+
+    if dates and numeric:
+        charts.append(("📈 Time Trend", "line", dates[0], numeric[0]))
+    if categorical and numeric:
+        charts.append(("🏆 Category Performance", "bar", categorical[0], numeric[0]))
+    if len(numeric) >= 2:
+        charts.append(("🔎 Relationship", "scatter", numeric[0], numeric[1]))
+    if len(numeric) >= 2:
+        charts.append(("🧩 Numeric Correlation", "heatmap", None, None))
+    return charts[:4]
+
+
+def _buvijag_evidence(df):
+    """Generate concise, deterministic findings with numeric evidence."""
+    findings = []
+    numeric = df.select_dtypes(include="number").columns.tolist()
+    categorical = df.select_dtypes(include=["object", "category"]).columns.tolist()
+    dates = _buvijag_dates(df)
+
+    for col in numeric[:4]:
+        s = pd.to_numeric(df[col], errors="coerce").dropna()
+        if len(s) >= 2 and s.mean() != 0:
+            findings.append({
+                "text": f"{col}: average {s.mean():,.2f}; range {s.min():,.2f} to {s.max():,.2f}.",
+                "evidence": "High",
+                "source": f"{col} numeric statistics"
+            })
+
+    if categorical and numeric:
+        cat = categorical[0]
+        val = numeric[0]
+        grouped = df.groupby(cat, dropna=True)[val].sum().sort_values(ascending=False)
+        if not grouped.empty:
+            top = grouped.index[0]
+            top_val = grouped.iloc[0]
+            findings.append({
+                "text": f"Top {cat} by total {val}: {top} ({top_val:,.2f}).",
+                "evidence": "High",
+                "source": f"{cat} × {val} aggregation"
+            })
+
+    if dates and numeric:
+        temp = df[[dates[0], numeric[0]]].copy()
+        temp[dates[0]] = pd.to_datetime(temp[dates[0]], errors="coerce")
+        temp = temp.dropna().sort_values(dates[0])
+        if len(temp) >= 4:
+            monthly = temp.set_index(dates[0])[numeric[0]].resample("ME").sum()
+            if len(monthly) >= 2 and monthly.iloc[0] != 0:
+                change = (monthly.iloc[-1] - monthly.iloc[0]) / abs(monthly.iloc[0]) * 100
+                direction = "increased" if change >= 0 else "decreased"
+                findings.append({
+                    "text": f"{numeric[0]} {direction} {abs(change):.1f}% from the first to the latest observed month.",
+                    "evidence": "High",
+                    "source": f"{dates[0]} + {numeric[0]} monthly aggregation"
+                })
+    return findings[:6]
+
+
+def _buvijag_executive_fallback(df):
+    health = _buvijag_health(df)
+    kpis = _buvijag_kpis(df)
+    anomalies = _buvijag_anomalies(df)
+    evidence = _buvijag_evidence(df)
+    lines = [
+        f"Dataset contains {len(df):,} records across {len(df.columns):,} columns.",
+        f"Data health score is {health['score']}/100 with {health['missing']:,} missing values and {health['duplicates']:,} duplicate rows.",
+    ]
+    if kpis:
+        name, value, col = kpis[0]
+        lines.append(f"{name}: {value:,.2f}" if isinstance(value, float) else f"{name}: {value:,}")
+    if anomalies:
+        lines.append(f"Anomaly scan found {sum(a['count'] for a in anomalies):,} IQR-based outlier records across {len(anomalies)} numeric fields.")
+    if evidence:
+        lines.append(evidence[0]["text"])
+    return "\n".join(lines)
+
+
+def _buvijag_agent_plan(df):
+    numeric = df.select_dtypes(include="number").columns.tolist()
+    categorical = df.select_dtypes(include=["object", "category"]).columns.tolist()
+    dates = _buvijag_dates(df)
+    return [
+        ("✓", "Dataset received", f"{len(df):,} records × {len(df.columns):,} columns"),
+        ("✓", "Schema understood", f"{len(numeric)} numeric • {len(categorical)} categorical • {len(dates)} date-like"),
+        ("✓", "Data quality checked", f"{int(df.isna().sum().sum()):,} missing • {int(df.duplicated().sum()):,} duplicates"),
+        ("✓", "Business KPIs detected", f"{len(_buvijag_kpis(df))} candidate KPIs"),
+        ("✓", "Anomaly scan completed", f"{sum(x['count'] for x in _buvijag_anomalies(df)):,} potential outlier records"),
+        ("✓", "Visualization plan selected", f"{len(_buvijag_selected_charts(df))} useful chart types"),
+        ("✓", "Evidence layer prepared", f"{len(_buvijag_evidence(df))} evidence-backed observations"),
+        ("✓", "Executive report ready", "Insights + actions + data health"),
+    ]
+
+
+def _buvijag_render_selected_charts(df):
+    import plotly.express as px
+    import plotly.graph_objects as go
+
+    for title, kind, x, y in _buvijag_selected_charts(df):
+        st.markdown(f"#### {title}")
+        try:
+            if kind == "line":
+                temp = df[[x, y]].copy()
+                temp[x] = pd.to_datetime(temp[x], errors="coerce")
+                temp[y] = pd.to_numeric(temp[y], errors="coerce")
+                temp = temp.dropna().sort_values(x)
+                if not temp.empty:
+                    monthly = temp.set_index(x)[y].resample("ME").sum().reset_index()
+                    st.plotly_chart(px.line(monthly, x=x, y=y, markers=True, title=f"{y} over time"), use_container_width=True)
+            elif kind == "bar":
+                temp = df[[x, y]].copy()
+                temp[y] = pd.to_numeric(temp[y], errors="coerce")
+                grouped = temp.dropna().groupby(x)[y].sum().sort_values(ascending=False).head(10).reset_index()
+                st.plotly_chart(px.bar(grouped, x=x, y=y, title=f"Top {x} by {y}"), use_container_width=True)
+            elif kind == "scatter":
+                temp = df[[x, y]].copy().dropna()
+                st.plotly_chart(px.scatter(temp, x=x, y=y, trendline="ols" if len(temp) >= 10 else None, title=f"{x} vs {y}"), use_container_width=True)
+            elif kind == "heatmap":
+                corr = df.select_dtypes(include="number").corr()
+                if not corr.empty:
+                    fig = go.Figure(data=go.Heatmap(z=corr.values, x=corr.columns, y=corr.columns, zmin=-1, zmax=1))
+                    fig.update_layout(title="Numeric Correlation Matrix")
+                    st.plotly_chart(fig, use_container_width=True)
+        except Exception as exc:
+            st.info(f"Chart skipped: {exc}")
+
+
+def _buvijag_enhanced_pdf(title, df, executive, actions, anomalies, evidence, health):
+    buffer = BytesIO()
+    doc = SimpleDocTemplate(buffer, pagesize=A4, rightMargin=36, leftMargin=36, topMargin=36, bottomMargin=36)
+    styles = getSampleStyleSheet()
+    story = [Paragraph(title, styles["Title"]), Spacer(1, 12)]
+    story.append(Paragraph(f"<b>Data Health Score:</b> {health['score']}/100", styles["Heading2"]))
+    story.append(Paragraph(f"Records: {health['rows']:,} | Columns: {health['columns']:,} | Missing: {health['missing']:,} | Duplicates: {health['duplicates']:,}", styles["Normal"]))
+    story.append(Spacer(1, 12))
+    story.append(Paragraph("Executive Summary", styles["Heading2"]))
+    for line in executive.splitlines():
+        if line.strip():
+            story.append(Paragraph(line.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;"), styles["Normal"]))
+            story.append(Spacer(1, 5))
+    story.append(Paragraph("Recommended Actions", styles["Heading2"]))
+    for line in actions:
+        story.append(Paragraph(line.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;"), styles["Normal"]))
+        story.append(Spacer(1, 5))
+    story.append(Paragraph("Anomaly Scan", styles["Heading2"]))
+    if anomalies:
+        for a in anomalies:
+            story.append(Paragraph(f"{a['column']}: {a['count']:,} outliers ({a['rate']:.1f}%)", styles["Normal"]))
+    else:
+        story.append(Paragraph("No IQR-based anomalies detected in the scanned numeric columns.", styles["Normal"]))
+    story.append(Paragraph("Evidence", styles["Heading2"]))
+    for e in evidence:
+        story.append(Paragraph(f"{e['text']} Evidence: {e['evidence']}. Source: {e['source']}.", styles["Normal"]))
+        story.append(Spacer(1, 5))
+    doc.build(story)
+    buffer.seek(0)
+    return buffer.getvalue()
+
+
+# ============================================================
+# FEATURE CENTER UI
+# ============================================================
+
+buvijag_data_items = _buvijag_dataframe_items()
+
+if buvijag_data_items:
+    st.markdown("---")
+    st.markdown('<div class="ds-section">AGENT INTELLIGENCE CENTER</div>', unsafe_allow_html=True)
+    st.subheader("🧠 BUVIJAG Autonomous Analysis")
+
+    selected_agent_name = st.selectbox(
+        "📁 Select dataset for advanced intelligence",
+        [x["name"] for x in buvijag_data_items],
+        key="buvijag_agent_dataset"
+    )
+    selected_agent_item = next(x for x in buvijag_data_items if x["name"] == selected_agent_name)
+    agent_df = selected_agent_item["df"].copy()
+
+    # 1. Agent Activity
+    with st.expander("🤖 Agent Activity — How BUVIJAG analyzed your data", expanded=True):
+        st.caption("A transparent workflow showing the analysis steps executed on your dataset.")
+        for icon, step, detail in _buvijag_agent_plan(agent_df):
+            st.markdown(f"**{icon} {step}** — {detail}")
+
+    # 2. Data Health + KPI Detection
+    health = _buvijag_health(agent_df)
+    kpis = _buvijag_kpis(agent_df)
+    hcols = st.columns(4)
+    hcols[0].metric("🩺 Data Health", f"{health['score']}/100")
+    hcols[1].metric("🧾 Records", f"{health['rows']:,}")
+    hcols[2].metric("⚠️ Missing", f"{health['missing']:,}")
+    hcols[3].metric("♻️ Duplicates", f"{health['duplicates']:,}")
+
+    st.markdown("### 🎯 Automatically Detected KPIs")
+    kcols = st.columns(min(max(len(kpis), 1), 4))
+    for i, (name, value, source) in enumerate(kpis):
+        with kcols[i % len(kcols)]:
+            if name == "🎯 Profit Margin":
+                st.metric(name, f"{value:.1f}%")
+            elif isinstance(value, float):
+                st.metric(name, f"{value:,.2f}")
+            else:
+                st.metric(name, f"{value:,}")
+
+    # 3. Automatic chart selection
+    st.markdown("### 📊 BUVIJAG's Recommended Visualizations")
+    selected_chart_meta = _buvijag_selected_charts(agent_df)
+    if selected_chart_meta:
+        st.write("BUVIJAG selected these charts from the detected data structure:")
+        st.write(" • ".join([x[0] for x in selected_chart_meta]))
+        if st.button("📈 Generate Recommended Charts", key="buvijag_charts", use_container_width=True):
+            _buvijag_render_selected_charts(agent_df)
+    else:
+        st.info("Not enough structured numeric/date/category fields for automatic chart selection.")
+
+    # 4. Anomaly detection
+    st.markdown("### 🚨 Automatic Anomaly Detection")
+    anomalies = _buvijag_anomalies(agent_df)
+    if anomalies:
+        anomaly_df = pd.DataFrame([{
+            "Field": a["column"],
+            "Outliers": a["count"],
+            "Rate": f"{a['rate']:.1f}%",
+            "Expected Low": round(a["low"], 2),
+            "Expected High": round(a["high"], 2),
+            "Observed Min": round(a["min"], 2),
+            "Observed Max": round(a["max"], 2),
+        } for a in anomalies])
+        st.dataframe(anomaly_df, use_container_width=True, hide_index=True)
+        st.caption("Detection method: 1.5× IQR rule. Outliers are signals for investigation, not proof of errors.")
+    else:
+        st.success("No IQR-based anomalies detected in the scanned numeric fields.")
+
+    # 5. Evidence-backed insights
+    st.markdown("### 🔎 Evidence Behind Insights")
+    evidence = _buvijag_evidence(agent_df)
+    if evidence:
+        for e in evidence:
+            st.markdown(f"**📌 {e['text']}**")
+            st.caption(f"Evidence strength: {e['evidence']} • Source: {e['source']}")
+    else:
+        st.info("Not enough structured data for evidence-backed observations.")
+
+    # 6. Executive summary + action recommendations
+    st.markdown("### 🧑‍💼 Executive Summary")
+    if st.button("✨ Generate Executive Summary", key="buvijag_exec", use_container_width=True):
+        dataset_context = {
+            "rows": len(agent_df),
+            "columns": agent_df.columns.tolist(),
+            "health": health,
+            "kpis": [(a, round(b, 3) if isinstance(b, float) else b, c) for a,b,c in kpis],
+            "anomalies": anomalies,
+            "evidence": evidence,
+        }
+        prompt = f"""You are BUVIJAG AI, an autonomous business intelligence agent.
+Create an executive summary using ONLY the supplied dataset evidence.
+Dataset context:
+{dataset_context}
+Return:
+1. Executive Summary — 3 concise bullets.
+2. What Management Should Know — 3 bullets.
+3. Recommended Actions — 3 practical actions.
+4. Risks / Questions to Investigate — 2 bullets.
+Do not invent facts. If evidence is insufficient, say so."""
+        answer, err = _gemini_text(prompt, max_attempts=2)
+        if answer:
+            st.session_state["buvijag_exec_text"] = answer
+        else:
+            st.session_state["buvijag_exec_text"] = _buvijag_executive_fallback(agent_df)
+            st.caption(f"Gemini unavailable; showing deterministic dataset analysis. ({err})")
+
+    executive_text = st.session_state.get("buvijag_exec_text")
+    if executive_text:
+        st.markdown(executive_text)
+
+    st.markdown("### 💡 What Should I Do Next?")
+    if st.button("🎯 Generate Data-Driven Action Plan", key="buvijag_actions", use_container_width=True):
+        prompt = f"""You are BUVIJAG AI.
+Give 3 prioritized business actions based ONLY on this dataset evidence.
+Health: {health}
+KPIs: {kpis}
+Anomalies: {anomalies}
+Evidence: {evidence}
+For each action provide: Action, Evidence, Why it matters.
+Do not invent facts or claim causality that the data cannot establish."""
+        answer, err = _gemini_text(prompt, max_attempts=2)
+        if answer:
+            st.session_state["buvijag_actions_text"] = answer
+        else:
+            st.session_state["buvijag_actions_text"] = "\n".join([
+                f"1. Investigate the highest-impact KPI shown above. Evidence: {evidence[0]['text'] if evidence else 'More data is needed.'}",
+                f"2. Review the largest anomaly cluster. Evidence: {anomalies[0]['column']} has {anomalies[0]['count']} detected outliers." if anomalies else "2. Validate data quality before making operational decisions.",
+                "3. Segment the strongest-performing category or time period and investigate what differentiates it."
+            ])
+    if st.session_state.get("buvijag_actions_text"):
+        st.markdown(st.session_state["buvijag_actions_text"])
+
+    # 7. What-if simulator
+    st.markdown("### 🔮 What-If Business Simulator")
+    sim_numeric = agent_df.select_dtypes(include="number").columns.tolist()
+    if sim_numeric:
+        scol1, scol2, scol3 = st.columns(3)
+        sim_col = scol1.selectbox("Metric", sim_numeric, key="buvijag_sim_metric")
+        sim_pct = scol2.number_input("Scenario change (%)", min_value=-100.0, max_value=500.0, value=10.0, step=1.0, key="buvijag_sim_pct")
+        sim_mode = scol3.selectbox("Scenario basis", ["Total", "Average"], key="buvijag_sim_mode")
+        s = pd.to_numeric(agent_df[sim_col], errors="coerce").dropna()
+        if not s.empty:
+            baseline = float(s.sum() if sim_mode == "Total" else s.mean())
+            projected = baseline * (1 + sim_pct / 100)
+            delta = projected - baseline
+            simc = st.columns(3)
+            simc[0].metric("Current", f"{baseline:,.2f}")
+            simc[1].metric("Scenario", f"{projected:,.2f}", f"{delta:+,.2f}")
+            simc[2].metric("Change", f"{sim_pct:+.1f}%")
+            st.caption("Scenario math only — this is a what-if calculation, not a forecast or prediction.")
+    else:
+        st.info("No numeric fields available for scenario simulation.")
+
+    # 8. Evidence-strength explanation
+    st.markdown("### 🛡️ Insight Reliability")
+    st.write("BUVIJAG separates measured evidence from AI interpretation. High evidence means the statement is directly calculated from the uploaded data; AI recommendations remain recommendations, not facts.")
+
+    # 9. Enhanced report
+    st.markdown("### 📄 Executive Intelligence Report")
+    if st.button("📥 Build Enhanced Executive PDF", key="buvijag_enhanced_pdf", use_container_width=True):
+        executive_for_pdf = st.session_state.get("buvijag_exec_text") or _buvijag_executive_fallback(agent_df)
+        actions_for_pdf = [x.strip() for x in (st.session_state.get("buvijag_actions_text") or "Validate the strongest KPI and investigate anomalies before acting.").splitlines() if x.strip()]
+        pdf = _buvijag_enhanced_pdf(
+            f"BUVIJAG AI — Executive Intelligence Report — {selected_agent_name}",
+            agent_df, executive_for_pdf, actions_for_pdf, anomalies, evidence, health
+        )
+        st.download_button(
+            "⬇️ Download Enhanced Executive PDF",
+            data=pdf,
+            file_name=f"BUVIJAG_AI_Executive_Report_{Path(selected_agent_name).stem}.pdf",
+            mime="application/pdf",
+            key="buvijag_enhanced_pdf_download",
+            use_container_width=True
+        )
+
+
+# ============================================================
+# 🎬 DEMO MODE
+# ============================================================
+
+st.markdown("---")
+st.markdown('<div class="ds-section">HACKATHON DEMO MODE</div>', unsafe_allow_html=True)
+st.subheader("🎬 BUVIJAG AI Demo Mode")
+st.write("Generate a safe synthetic retail dataset to demonstrate the full intelligence workflow without uploading a file.")
+
+if st.button("🚀 Launch BUVIJAG Demo Dataset", key="buvijag_demo", use_container_width=True):
+    import numpy as np
+    rng = np.random.default_rng(42)
+    dates = pd.date_range("2026-01-01", periods=180, freq="D")
+    regions = np.array(["North", "South", "East", "West"])
+    categories = np.array(["Electronics", "Home", "Beauty", "Sports"])
+    demo = pd.DataFrame({
+        "Date": dates,
+        "Region": rng.choice(regions, len(dates)),
+        "Category": rng.choice(categories, len(dates)),
+        "Orders": rng.integers(20, 140, len(dates)),
+        "Revenue": rng.normal(65000, 12000, len(dates)).clip(10000),
+        "Profit": rng.normal(13000, 4500, len(dates)).clip(1000),
+        "Quantity": rng.integers(40, 260, len(dates)),
+    })
+    # Add a few intentional outliers so anomaly detection is visible in a demo.
+    demo.loc[[25, 88, 150], "Revenue"] *= [3.2, 0.25, 3.8]
+    st.session_state["buvijag_demo_df"] = demo
+
+if "buvijag_demo_df" in st.session_state:
+    demo_df = st.session_state["buvijag_demo_df"]
+    st.success("Demo dataset loaded. This dataset is synthetic and contains intentionally planted outliers for demonstration.")
+    dhealth = _buvijag_health(demo_df)
+    dcols = st.columns(4)
+    dcols[0].metric("🩺 Health", f"{dhealth['score']}/100")
+    dcols[1].metric("💰 Revenue", f"{demo_df['Revenue'].sum():,.0f}")
+    dcols[2].metric("📦 Orders", f"{demo_df['Orders'].sum():,.0f}")
+    dcols[3].metric("🚨 Outlier Fields", len(_buvijag_anomalies(demo_df)))
+    with st.expander("🧠 Demo Agent Workflow", expanded=True):
+        for icon, step, detail in _buvijag_agent_plan(demo_df):
+            st.markdown(f"**{icon} {step}** — {detail}")
+    if st.button("📊 Show Demo Intelligence", key="buvijag_demo_show", use_container_width=True):
+        _buvijag_render_selected_charts(demo_df)
+        st.markdown("### 🚨 Demo Anomalies")
+        da = _buvijag_anomalies(demo_df)
+        if da:
+            st.dataframe(pd.DataFrame(da), use_container_width=True, hide_index=True)
+        st.markdown("### 🔎 Demo Evidence")
+        for e in _buvijag_evidence(demo_df):
+            st.write(f"• {e['text']} — Evidence: {e['evidence']}")
