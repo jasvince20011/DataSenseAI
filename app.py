@@ -1138,6 +1138,207 @@ hr { border-color: rgba(255,255,255,.08); }
 .stApp:has(.ds-theme-futuristic) a { color:#67e8f9 !important; }
 .stApp:has(.ds-theme-futuristic) code { background:rgba(0,229,255,.07) !important; color:#b9f7ff !important; border:1px solid rgba(0,229,255,.10); }
 
+
+
+/* =========================================================
+   FINAL THEME SEPARATION — BUVIJAG AI
+   Daylight = airy / bright / friendly analytics
+   Professional = corporate / structured / executive dashboard
+   Dark = matte / flat / no glass
+   Futuristic = robotic neon / HUD (defined above)
+   ========================================================= */
+
+/* DAYLIGHT — airy sky / white / soft rounded analytics */
+.stApp:has(.ds-theme-daylight) {
+    background:
+        linear-gradient(180deg,#eaf6ff 0%,#f7fbff 48%,#ffffff 100%) !important;
+    color:#17324d !important;
+}
+.stApp:has(.ds-theme-daylight) .ds-topbar {
+    background:#ffffff !important;
+    border:1px solid #cfe6f7 !important;
+    border-radius:28px !important;
+    box-shadow:0 10px 30px rgba(38,132,190,.10) !important;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+}
+.stApp:has(.ds-theme-daylight) .ds-hero,
+.stApp:has(.ds-theme-daylight) .ds-brain {
+    background:#ffffff !important;
+    border:1px solid #d6e9f7 !important;
+    border-radius:24px !important;
+    box-shadow:0 8px 26px rgba(42,126,180,.08) !important;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+}
+.stApp:has(.ds-theme-daylight) .ds-logo {
+    background:#f0f9ff !important;
+    border:1px solid #c8e7fa !important;
+    box-shadow:none !important;
+}
+.stApp:has(.ds-theme-daylight) .ds-kicker,
+.stApp:has(.ds-theme-daylight) .ds-section { color:#1686c8 !important; }
+.stApp:has(.ds-theme-daylight) .ds-title,
+.stApp:has(.ds-theme-daylight) .ds-hero-title { color:#123452 !important; }
+.stApp:has(.ds-theme-daylight) .ds-subtitle,
+.stApp:has(.ds-theme-daylight) .ds-hero-text,
+.stApp:has(.ds-theme-daylight) .ds-core-status { color:#5c7890 !important; }
+.stApp:has(.ds-theme-daylight) .ds-status {
+    background:#edfaff !important;
+    border:1px solid #bfe8f7 !important;
+    color:#137aa9 !important;
+    box-shadow:none !important;
+}
+.stApp:has(.ds-theme-daylight) .ds-dot { background:#18b7e8 !important; box-shadow:none !important; }
+.stApp:has(.ds-theme-daylight) [data-testid="stMetric"] {
+    background:#ffffff !important;
+    border:1px solid #d3e7f4 !important;
+    border-radius:18px !important;
+    box-shadow:0 7px 20px rgba(35,116,165,.07) !important;
+}
+.stApp:has(.ds-theme-daylight) [data-testid="stMetricLabel"] { color:#55728a !important; }
+.stApp:has(.ds-theme-daylight) [data-testid="stMetricValue"] { color:#103b5c !important; }
+.stApp:has(.ds-theme-daylight) [data-testid="stFileUploader"] {
+    background:#ffffff !important;
+    border:2px dashed #9fd5ef !important;
+    border-radius:18px !important;
+    color:#17324d !important;
+}
+.stApp:has(.ds-theme-daylight) [data-testid="stFileUploader"] * { color:#17324d !important; }
+.stApp:has(.ds-theme-daylight) [data-testid="stFileUploader"] button {
+    background:#e8f7ff !important;
+    color:#0e6795 !important;
+    border:1px solid #a9d9ef !important;
+}
+.stApp:has(.ds-theme-daylight) .stButton > button {
+    background:#e7f6ff !important;
+    border:1px solid #a9d8ef !important;
+    border-radius:12px !important;
+    color:#11567b !important;
+    box-shadow:none !important;
+}
+.stApp:has(.ds-theme-daylight) .stButton > button:hover { background:#d8f0fc !important; border-color:#75c4e7 !important; }
+
+/* PROFESSIONAL — executive BI / navy / teal / structured cards */
+.stApp:has(.ds-theme-professional) {
+    background:#eef1f5 !important;
+    color:#17253a !important;
+}
+.stApp:has(.ds-theme-professional) .ds-topbar {
+    background:#10243d !important;
+    border:1px solid #1d3b5e !important;
+    border-radius:12px !important;
+    box-shadow:0 8px 24px rgba(16,36,61,.16) !important;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+}
+.stApp:has(.ds-theme-professional) .ds-hero {
+    background:#ffffff !important;
+    border:1px solid #d5dbe3 !important;
+    border-left:5px solid #159a88 !important;
+    border-radius:10px !important;
+    box-shadow:0 4px 14px rgba(31,45,61,.07) !important;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+}
+.stApp:has(.ds-theme-professional) .ds-brain {
+    background:#f8fafc !important;
+    border:1px solid #d1d9e2 !important;
+    border-radius:10px !important;
+    box-shadow:0 4px 14px rgba(31,45,61,.06) !important;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+}
+.stApp:has(.ds-theme-professional) .ds-logo {
+    background:#f3f7f6 !important;
+    border:1px solid #c9ddd8 !important;
+    border-radius:10px !important;
+    box-shadow:none !important;
+}
+.stApp:has(.ds-theme-professional) .ds-kicker,
+.stApp:has(.ds-theme-professional) .ds-section { color:#0f766e !important; letter-spacing:1.4px !important; }
+.stApp:has(.ds-theme-professional) .ds-title { color:#ffffff !important; }
+.stApp:has(.ds-theme-professional) .ds-subtitle { color:#b9c9d9 !important; }
+.stApp:has(.ds-theme-professional) .ds-hero-title { color:#17253a !important; }
+.stApp:has(.ds-theme-professional) .ds-hero-text,
+.stApp:has(.ds-theme-professional) .ds-core-status { color:#617083 !important; }
+.stApp:has(.ds-theme-professional) .ds-status {
+    background:#16334f !important;
+    border:1px solid #2c5679 !important;
+    color:#7ee0c6 !important;
+    box-shadow:none !important;
+}
+.stApp:has(.ds-theme-professional) .ds-dot { background:#27c6a2 !important; box-shadow:none !important; }
+.stApp:has(.ds-theme-professional) [data-testid="stMetric"] {
+    background:#ffffff !important;
+    border:1px solid #d4dbe3 !important;
+    border-radius:8px !important;
+    border-top:3px solid #159a88 !important;
+    box-shadow:0 3px 12px rgba(31,45,61,.06) !important;
+}
+.stApp:has(.ds-theme-professional) [data-testid="stMetricLabel"] { color:#627184 !important; }
+.stApp:has(.ds-theme-professional) [data-testid="stMetricValue"] { color:#17253a !important; }
+.stApp:has(.ds-theme-professional) [data-testid="stFileUploader"] {
+    background:#ffffff !important;
+    border:1px solid #b9c5d2 !important;
+    border-radius:8px !important;
+    color:#17253a !important;
+}
+.stApp:has(.ds-theme-professional) [data-testid="stFileUploader"] * { color:#17253a !important; }
+.stApp:has(.ds-theme-professional) [data-testid="stFileUploader"] button {
+    background:#e7f5f1 !important;
+    color:#0d665e !important;
+    border:1px solid #a8d4ca !important;
+}
+.stApp:has(.ds-theme-professional) .stButton > button {
+    background:#ffffff !important;
+    border:1px solid #aeb9c6 !important;
+    border-radius:7px !important;
+    color:#1b3148 !important;
+    box-shadow:0 2px 5px rgba(31,45,61,.05) !important;
+}
+.stApp:has(.ds-theme-professional) .stButton > button:hover { background:#eaf6f3 !important; border-color:#6fb8aa !important; color:#0f6259 !important; }
+
+/* DARK — matte command console, deliberately NOT glass */
+.stApp:has(.ds-theme-dark) {
+    background:#0a0c10 !important;
+    color:#e7ebf0 !important;
+}
+.stApp:has(.ds-theme-dark) .ds-topbar,
+.stApp:has(.ds-theme-dark) .ds-hero,
+.stApp:has(.ds-theme-dark) .ds-brain {
+    background:#15181e !important;
+    border:1px solid #2a3039 !important;
+    border-radius:10px !important;
+    box-shadow:none !important;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+}
+.stApp:has(.ds-theme-dark) .ds-logo { background:#111419 !important; border-color:#2b323c !important; box-shadow:none !important; }
+.stApp:has(.ds-theme-dark) .ds-kicker,
+.stApp:has(.ds-theme-dark) .ds-section { color:#8fa7ff !important; }
+.stApp:has(.ds-theme-dark) .ds-title,
+.stApp:has(.ds-theme-dark) .ds-hero-title { color:#f1f3f5 !important; }
+.stApp:has(.ds-theme-dark) .ds-subtitle,
+.stApp:has(.ds-theme-dark) .ds-hero-text,
+.stApp:has(.ds-theme-dark) .ds-core-status { color:#9aa5b4 !important; }
+.stApp:has(.ds-theme-dark) .ds-status { background:#1b2028 !important; border-color:#343c47 !important; color:#9de8d2 !important; box-shadow:none !important; }
+.stApp:has(.ds-theme-dark) .ds-dot { background:#35d0ad !important; box-shadow:none !important; }
+.stApp:has(.ds-theme-dark) [data-testid="stMetric"] { background:#171b21 !important; border:1px solid #2c333d !important; border-radius:8px !important; box-shadow:none !important; }
+.stApp:has(.ds-theme-dark) [data-testid="stFileUploader"] { background:#15191f !important; border:1px dashed #414b58 !important; border-radius:8px !important; color:#e7ebf0 !important; }
+.stApp:has(.ds-theme-dark) [data-testid="stFileUploader"] * { color:#e7ebf0 !important; }
+.stApp:has(.ds-theme-dark) [data-testid="stFileUploader"] button { background:#202631 !important; color:#dfe6ef !important; border-color:#46515e !important; }
+.stApp:has(.ds-theme-dark) .stButton > button { background:#1a1f27 !important; border:1px solid #3b4551 !important; color:#e7ebf0 !important; box-shadow:none !important; }
+
+/* Theme selector itself is distinct in each light mode */
+.stApp:has(.ds-theme-daylight) .ds-theme-trigger { background:#e8f7ff !important; color:#145777 !important; border-color:#b9dff1 !important; box-shadow:none !important; }
+.stApp:has(.ds-theme-daylight) .ds-theme-dropdown { background:#ffffff !important; border-color:#cde4f2 !important; box-shadow:0 18px 35px rgba(38,132,190,.14) !important; backdrop-filter:none !important; }
+.stApp:has(.ds-theme-professional) .ds-theme-trigger { background:#193552 !important; color:#e7f0f7 !important; border-color:#315675 !important; box-shadow:none !important; }
+.stApp:has(.ds-theme-professional) .ds-theme-dropdown { background:#10243d !important; border-color:#315675 !important; box-shadow:0 18px 35px rgba(16,36,61,.22) !important; backdrop-filter:none !important; }
+.stApp:has(.ds-theme-professional) .ds-theme-dropdown a { color:#dbe7f0 !important; }
+.stApp:has(.ds-theme-professional) .ds-theme-dropdown a:hover,
+.stApp:has(.ds-theme-professional) .ds-theme-dropdown a.active { background:#1d4b67 !important; color:#ffffff !important; }
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -2500,9 +2701,12 @@ def _buvijag_anomalies(df, max_items=8):
 
 
 def _buvijag_dates(df):
+    """Detect date-like columns safely, including datasets with duplicate labels."""
     date_cols = []
-    for c in df.columns:
-        converted = pd.to_datetime(df[c], errors="coerce")
+    for idx, c in enumerate(df.columns):
+        # Use positional access so duplicate column names never turn a Series into a DataFrame.
+        series = df.iloc[:, idx]
+        converted = pd.to_datetime(series, errors="coerce")
         if len(df) and converted.notna().mean() >= 0.65:
             date_cols.append(c)
     return date_cols[:3]
@@ -2556,19 +2760,29 @@ def _buvijag_evidence(df):
             })
 
     if dates and numeric:
-        temp = df[[dates[0], numeric[0]]].copy()
-        temp[dates[0]] = pd.to_datetime(temp[dates[0]], errors="coerce")
-        temp = temp.dropna().sort_values(dates[0])
-        if len(temp) >= 4:
-            monthly = temp.set_index(dates[0])[numeric[0]].resample("ME").sum()
-            if len(monthly) >= 2 and monthly.iloc[0] != 0:
-                change = (monthly.iloc[-1] - monthly.iloc[0]) / abs(monthly.iloc[0]) * 100
-                direction = "increased" if change >= 0 else "decreased"
-                findings.append({
-                    "text": f"{numeric[0]} {direction} {abs(change):.1f}% from the first to the latest observed month.",
-                    "evidence": "High",
-                    "source": f"{dates[0]} + {numeric[0]} monthly aggregation"
-                })
+        # Build the temporary frame from positional Series and unique internal names.
+        # This prevents pandas' duplicate-key ValueError when a dataset has duplicate
+        # column labels or when a date-like column is also selected as a numeric field.
+        date_label = dates[0]
+        value_label = numeric[0]
+        date_idx = next((i for i, c in enumerate(df.columns) if c == date_label), None)
+        value_idx = next((i for i, c in enumerate(df.columns) if c == value_label), None)
+        if date_idx is not None and value_idx is not None:
+            temp = pd.DataFrame({
+                "_buvijag_date": pd.to_datetime(df.iloc[:, date_idx], errors="coerce"),
+                "_buvijag_value": pd.to_numeric(df.iloc[:, value_idx], errors="coerce"),
+            }).dropna()
+            temp = temp.sort_values("_buvijag_date")
+            if len(temp) >= 4:
+                monthly = temp.set_index("_buvijag_date")["_buvijag_value"].resample("ME").sum()
+                if len(monthly) >= 2 and monthly.iloc[0] != 0:
+                    change = (monthly.iloc[-1] - monthly.iloc[0]) / abs(monthly.iloc[0]) * 100
+                    direction = "increased" if change >= 0 else "decreased"
+                    findings.append({
+                        "text": f"{value_label} {direction} {abs(change):.1f}% from the first to the latest observed month.",
+                        "evidence": "High",
+                        "source": f"{date_label} + {value_label} monthly aggregation"
+                    })
     return findings[:6]
 
 
