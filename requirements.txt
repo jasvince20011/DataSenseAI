@@ -4,6 +4,8 @@ numpy
 matplotlib
 plotly
 openpyxl
+xlrd>=2.0.1
 reportlab
-google-genai
 pypdf
+Pillow
+google-genai
