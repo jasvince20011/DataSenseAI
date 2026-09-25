@@ -424,98 +424,6 @@ if not st.session_state.entered_buvijag:
     </style>
     """, unsafe_allow_html=True)
 
-    st.markdown("""
-    <style>
-    /* ===== BUVIJAG WELCOME THEME SYSTEM ===== */
-    .welcome-theme-switch{
-        position:absolute;right:22px;top:20px;z-index:20;
-        display:flex;align-items:center;gap:6px;padding:6px 8px;
-        border-radius:999px;border:1px solid rgba(255,255,255,.12);
-        background:rgba(7,7,20,.58);backdrop-filter:blur(12px);
-        color:#b8b5ca;font-size:11px;font-weight:800;
-    }
-    .welcome-theme-switch a{
-        width:27px;height:27px;display:flex;align-items:center;justify-content:center;
-        border-radius:50%;text-decoration:none!important;color:#dfe3ff!important;
-        border:1px solid rgba(255,255,255,.08);transition:.2s ease;
-    }
-    .welcome-theme-switch a:hover{transform:translateY(-2px);background:rgba(255,255,255,.12);}
-    
-
-    /* Daylight */
-    .welcome-theme-daylight .welcome-shell{}
-    .stApp:has(.welcome-theme-daylight){
-        background:linear-gradient(135deg,#f7fbff 0%,#e8f3ff 52%,#f8f6ff 100%) !important;
-        color:#172033 !important;
-    }
-    .welcome-theme-daylight .welcome-grid{
-        opacity:.32;
-        background-image:linear-gradient(rgba(71,111,180,.09) 1px,transparent 1px),
-                         linear-gradient(90deg,rgba(71,111,180,.09) 1px,transparent 1px);
-    }
-    .welcome-theme-daylight .welcome-card{
-        background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(247,250,255,.92));
-        border-color:rgba(60,83,120,.14);
-        box-shadow:0 30px 80px rgba(58,78,110,.16);
-        backdrop-filter:none;
-    }
-    .welcome-theme-daylight .welcome-card:after{background:linear-gradient(145deg,#ffffff,#f6f9ff);}
-    .welcome-theme-daylight .welcome-title{background:linear-gradient(100deg,#18233d,#5a4fcf 45%,#178da8 75%,#18233d 92%);-webkit-background-clip:text;background-clip:text;color:transparent;}
-    .welcome-theme-daylight .welcome-sub{color:#5b6880;}
-    .welcome-theme-daylight .welcome-kicker{color:#5d52c8;}
-    .welcome-theme-daylight .welcome-badge{background:#f1efff;color:#554bb5;border-color:#d9d4ff;}
-    .welcome-theme-daylight .idea{background:#f8fbff;border-color:#dbe4ef;}
-    .welcome-theme-daylight .idea-title{color:#1d2a40;}
-    .welcome-theme-daylight .idea-text{color:#66758c;}
-    .welcome-theme-daylight .welcome-theme-switch{background:rgba(255,255,255,.88);color:#526078;border-color:#dbe3ed;backdrop-filter:none;}
-    .welcome-theme-daylight .welcome-theme-switch a{color:#3d4b63!important;border-color:#dbe3ed;}
-
-    /* Dark — matte, no glass */
-    .welcome-theme-dark .welcome-card{background:#11131a;border-color:#2a2e39;box-shadow:0 30px 90px rgba(0,0,0,.48);backdrop-filter:none;}
-    .welcome-theme-dark .welcome-card:after{background:#11131a;}
-    .welcome-theme-dark .welcome-grid{opacity:.16;}
-    .welcome-theme-dark .idea{background:#171a22;border-color:#2a2e39;}
-    .welcome-theme-dark .welcome-theme-switch{backdrop-filter:none;background:#151820;border-color:#2b303c;}
-
-    /* Professional — mauve → teal, executive and flat */
-    .stApp:has(.welcome-theme-professional){
-        background:linear-gradient(135deg,#be93c5 0%,#7bc6cc 100%) !important;
-        color:#172033 !important;
-    }
-    .welcome-theme-professional .welcome-grid{opacity:.16;}
-    .welcome-theme-professional .welcome-card{
-        background:rgba(255,255,255,.92);border-color:rgba(255,255,255,.55);
-        box-shadow:0 30px 80px rgba(48,65,83,.18);backdrop-filter:none;
-    }
-    .welcome-theme-professional .welcome-card:after{background:rgba(255,255,255,.96);}
-    .welcome-theme-professional .welcome-title{background:linear-gradient(100deg,#26334a,#6d3d76 45%,#237e85 75%,#26334a 92%);-webkit-background-clip:text;background-clip:text;color:transparent;}
-    .welcome-theme-professional .welcome-sub{color:#526174;}
-    .welcome-theme-professional .welcome-kicker{color:#624a68;}
-    .welcome-theme-professional .welcome-badge{background:rgba(255,255,255,.60);color:#4d5669;border-color:rgba(57,80,98,.18);}
-    .welcome-theme-professional .idea{background:rgba(255,255,255,.68);border-color:rgba(57,80,98,.13);}
-    .welcome-theme-professional .idea-title{color:#243247;}
-    .welcome-theme-professional .idea-text{color:#627084;}
-    .welcome-theme-professional .welcome-theme-switch{background:rgba(255,255,255,.78);color:#46566b;border-color:rgba(57,80,98,.16);backdrop-filter:none;}
-    .welcome-theme-professional .welcome-theme-switch a{color:#43546a!important;border-color:rgba(57,80,98,.14);}
-
-    /* Futuristic */
-    .welcome-theme-futuristic .welcome-card{
-        background:linear-gradient(145deg,rgba(5,30,38,.92),rgba(4,12,20,.94));
-        border-color:rgba(54,235,255,.22);
-        box-shadow:0 0 80px rgba(0,216,255,.08),0 35px 100px rgba(0,0,0,.55);
-    }
-    .welcome-theme-futuristic .welcome-card:after{background:linear-gradient(145deg,#071f28,#030b11);}
-    .welcome-theme-futuristic .welcome-grid{
-        background-image:linear-gradient(rgba(0,226,255,.12) 1px,transparent 1px),
-                         linear-gradient(90deg,rgba(0,226,255,.12) 1px,transparent 1px);
-    }
-    .welcome-theme-futuristic .welcome-kicker{color:#55eaff;}
-    .welcome-theme-futuristic .welcome-title{background:linear-gradient(100deg,#efffff 10%,#5deaff 48%,#ff9c62 78%,#efffff 92%);-webkit-background-clip:text;background-clip:text;color:transparent;}
-    .welcome-theme-futuristic .idea{background:rgba(0,225,255,.035);border-color:rgba(60,225,245,.18);}
-    .welcome-theme-futuristic .welcome-theme-switch{background:#06151c;border-color:rgba(60,225,245,.22);}
-
-    </style>
-    """, unsafe_allow_html=True)
 
     welcome_html = """
     <div class="welcome-shell welcome-theme-__THEME__">
@@ -3948,5 +3856,309 @@ st.markdown("""
 .stApp:has(.ds-theme-professional) .bj-theme-dropdown a.active {background:#edf5f6 !important;color:#243247 !important;}
 .stApp:has(.ds-theme-professional) .stButton > button,
 .stApp:has(.ds-theme-professional) .stDownloadButton > button {background:#fff !important;color:#2c3b50 !important;border:1px solid #c9d6e2 !important;box-shadow:none !important;}
+</style>
+""", unsafe_allow_html=True)
+
+
+# ==========================================
+# FINAL VORTEX-INSPIRED FUTURISTIC POLISH
+# ==========================================
+st.markdown(r"""
+<style>
+/* --------------------------------------------------
+   1) NEVER expose CSS as visible page text
+   -------------------------------------------------- */
+
+/* --------------------------------------------------
+   2) THEME MENU — always above hero/content
+   -------------------------------------------------- */
+.block-container { overflow: visible !important; }
+.bj-nav {
+    position: relative !important;
+    z-index: 1000000 !important;
+    overflow: visible !important;
+}
+.bj-nav-left, .bj-nav-actions, .bj-theme-wrap, .bj-theme-menu {
+    position: relative !important;
+    z-index: 1000001 !important;
+    overflow: visible !important;
+}
+.bj-theme-dropdown {
+    z-index: 2147483000 !important;
+}
+.bj-hero, .bj-workspace, .bj-feature-card { position: relative; z-index: 1; }
+
+/* Make the dropdown readable and give it enough room to sit over the hero. */
+.stApp:has(.ds-theme-futuristic) .bj-theme-dropdown {
+    background: rgba(16, 9, 39, .985) !important;
+    border: 1px solid rgba(168, 85, 247, .42) !important;
+    box-shadow: 0 24px 70px rgba(0,0,0,.58), 0 0 28px rgba(124,92,255,.16) !important;
+}
+.stApp:has(.ds-theme-futuristic) .bj-theme-dropdown a {
+    color: #ddd8ff !important;
+}
+.stApp:has(.ds-theme-futuristic) .bj-theme-dropdown a:hover,
+.stApp:has(.ds-theme-futuristic) .bj-theme-dropdown a.active {
+    background: linear-gradient(90deg, rgba(124,92,255,.25), rgba(168,85,247,.14)) !important;
+    color: #fff !important;
+}
+
+/* --------------------------------------------------
+   3) FUTURISTIC — VORTEX-INSPIRED AI WORKSPACE
+   Dark purple / violet / indigo with cyan highlights,
+   floating light, particles, grid and premium panels.
+   -------------------------------------------------- */
+.stApp:has(.ds-theme-futuristic) {
+    background:
+        radial-gradient(900px 520px at 50% -8%, rgba(124,92,255,.34), transparent 62%),
+        radial-gradient(620px 480px at 7% 22%, rgba(88,61,190,.24), transparent 66%),
+        radial-gradient(700px 520px at 94% 34%, rgba(168,85,247,.20), transparent 68%),
+        radial-gradient(700px 520px at 50% 105%, rgba(45,24,110,.30), transparent 70%),
+        linear-gradient(135deg, #05030d 0%, #0b0720 38%, #12082b 68%, #05030d 100%) !important;
+    color: #f5f1ff !important;
+}
+
+/* animated technical grid */
+.stApp:has(.ds-theme-futuristic)::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: .26;
+    background-image:
+        linear-gradient(rgba(137,92,246,.075) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(137,92,246,.075) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,.42) 62%, transparent 100%);
+    animation: buviGridDrift 24s linear infinite;
+}
+@keyframes buviGridDrift {
+    from { transform: translate3d(0,0,0); }
+    to { transform: translate3d(0,64px,0); }
+}
+
+/* floating particle field */
+.stApp:has(.ds-theme-futuristic)::after {
+    content: "";
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    left: 8%;
+    top: 18%;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    background: #b8a7ff;
+    box-shadow:
+        130px 70px 0 1px rgba(168,85,247,.72),
+        290px 190px 0 0 rgba(108,92,255,.68),
+        470px 80px 0 1px rgba(94,231,255,.60),
+        640px 260px 0 0 rgba(168,85,247,.58),
+        810px 120px 0 1px rgba(124,92,255,.72),
+        980px 330px 0 0 rgba(94,231,255,.48),
+        1140px 170px 0 1px rgba(168,85,247,.62),
+        1260px 420px 0 0 rgba(124,92,255,.62),
+        180px 500px 0 0 rgba(94,231,255,.42),
+        520px 560px 0 1px rgba(168,85,247,.55),
+        880px 520px 0 0 rgba(124,92,255,.56),
+        1180px 620px 0 1px rgba(94,231,255,.44),
+        320px 740px 0 0 rgba(168,85,247,.45),
+        760px 700px 0 1px rgba(124,92,255,.48);
+    filter: blur(.2px);
+    opacity: .75;
+    animation: buviParticles 11s ease-in-out infinite alternate;
+}
+@keyframes buviParticles {
+    0% { transform: translate3d(0,0,0); opacity:.42; }
+    50% { transform: translate3d(22px,-18px,0); opacity:.82; }
+    100% { transform: translate3d(-16px,24px,0); opacity:.55; }
+}
+
+/* subtle floating glow behind the main workspace */
+.stApp:has(.ds-theme-futuristic) .bj-hero::before {
+    content: "";
+    position: absolute;
+    width: 720px;
+    height: 300px;
+    left: 50%;
+    top: 42%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(124,92,255,.14), transparent 68%);
+    filter: blur(10px);
+    pointer-events: none;
+    animation: buviHeroGlow 6s ease-in-out infinite alternate;
+}
+@keyframes buviHeroGlow {
+    from { opacity:.45; transform:translate(-50%,-50%) scale(.96); }
+    to { opacity:.9; transform:translate(-50%,-50%) scale(1.05); }
+}
+
+/* premium nav */
+.stApp:has(.ds-theme-futuristic) .bj-nav {
+    background: linear-gradient(135deg, rgba(13,8,34,.88), rgba(25,11,50,.72)) !important;
+    border: 1px solid rgba(139,92,246,.26) !important;
+    box-shadow: 0 16px 60px rgba(0,0,0,.36), 0 0 32px rgba(124,92,255,.08) !important;
+    backdrop-filter: blur(18px);
+}
+.stApp:has(.ds-theme-futuristic) .bj-brand-mark {
+    box-shadow: 0 0 28px rgba(124,92,255,.38), 0 0 8px rgba(94,231,255,.18) !important;
+}
+.stApp:has(.ds-theme-futuristic) .bj-brand-name { color:#f8f4ff !important; }
+.stApp:has(.ds-theme-futuristic) .bj-brand-ai { color:#b8a8ff !important; }
+.stApp:has(.ds-theme-futuristic) .bj-nav-links a { color:#aaa4c5 !important; }
+.stApp:has(.ds-theme-futuristic) .bj-nav-links a:hover { color:#ffffff !important; }
+.stApp:has(.ds-theme-futuristic) .bj-theme-btn {
+    background: rgba(124,92,255,.08) !important;
+    border-color: rgba(139,92,246,.28) !important;
+    color:#e5dfff !important;
+}
+.stApp:has(.ds-theme-futuristic) .bj-online {
+    background:rgba(66,220,160,.07) !important;
+    border-color:rgba(66,220,160,.18) !important;
+}
+
+/* hero */
+.stApp:has(.ds-theme-futuristic) .bj-hero {
+    padding-top: 34px;
+}
+.stApp:has(.ds-theme-futuristic) .bj-eyebrow {
+    background:rgba(124,92,255,.11) !important;
+    border-color:rgba(168,85,247,.30) !important;
+    color:#c2b7ff !important;
+    box-shadow:0 0 25px rgba(124,92,255,.08);
+}
+.stApp:has(.ds-theme-futuristic) .bj-eyebrow span {
+    background:#9b7cff !important;
+    box-shadow:0 0 14px #9b7cff !important;
+}
+.stApp:has(.ds-theme-futuristic) .bj-hero h1 {
+    color:#faf8ff !important;
+    text-shadow:0 0 35px rgba(124,92,255,.15);
+}
+.stApp:has(.ds-theme-futuristic) .bj-gradient-word {
+    background:linear-gradient(90deg,#ffffff 8%,#c8b9ff 38%,#8e7cff 65%,#63e9ff 92%) !important;
+    -webkit-background-clip:text !important;
+    background-clip:text !important;
+    color:transparent !important;
+}
+.stApp:has(.ds-theme-futuristic) .bj-hero-copy { color:#aaa5bd !important; }
+.stApp:has(.ds-theme-futuristic) .bj-cta {
+    background:linear-gradient(135deg,#7658ff,#9a5cf5) !important;
+    box-shadow:0 14px 36px rgba(124,92,255,.30), 0 0 22px rgba(124,92,255,.12) !important;
+}
+.stApp:has(.ds-theme-futuristic) .bj-cta.secondary {
+    background:rgba(255,255,255,.035) !important;
+    border-color:rgba(139,92,246,.26) !important;
+    color:#d9d4ec !important;
+}
+
+/* orbit becomes purple/cyan */
+.stApp:has(.ds-theme-futuristic) .bj-orbit {
+    border-color:rgba(139,92,246,.22) !important;
+    box-shadow:0 0 35px rgba(124,92,255,.05);
+}
+.stApp:has(.ds-theme-futuristic) .bj-orbit::after {
+    border-color:rgba(94,231,255,.14) !important;
+}
+
+/* sections/cards */
+.stApp:has(.ds-theme-futuristic) .bj-section-label { color:#857ba4 !important; }
+.stApp:has(.ds-theme-futuristic) .bj-section-title,
+.stApp:has(.ds-theme-futuristic) .bj-workspace-title { color:#f7f3ff !important; }
+.stApp:has(.ds-theme-futuristic) .bj-section-copy,
+.stApp:has(.ds-theme-futuristic) .bj-workspace-copy,
+.stApp:has(.ds-theme-futuristic) .bj-feature-copy { color:#8f8aa5 !important; }
+.stApp:has(.ds-theme-futuristic) .bj-feature-card,
+.stApp:has(.ds-theme-futuristic) .bj-workspace {
+    background:linear-gradient(145deg, rgba(25,15,56,.72), rgba(10,7,27,.88)) !important;
+    border-color:rgba(139,92,246,.18) !important;
+    box-shadow:0 18px 55px rgba(0,0,0,.25), inset 0 0 28px rgba(124,92,255,.025) !important;
+    backdrop-filter:blur(12px);
+}
+.stApp:has(.ds-theme-futuristic) .bj-feature-card:hover {
+    border-color:rgba(168,85,247,.38) !important;
+    box-shadow:0 22px 55px rgba(0,0,0,.34), 0 0 24px rgba(124,92,255,.08) !important;
+}
+.stApp:has(.ds-theme-futuristic) .bj-feature-icon {
+    background:rgba(124,92,255,.12) !important;
+    border-color:rgba(139,92,246,.22) !important;
+}
+
+/* Streamlit widgets */
+.stApp:has(.ds-theme-futuristic) [data-testid="stMetric"] {
+    background:linear-gradient(145deg,rgba(27,15,59,.82),rgba(10,7,27,.92)) !important;
+    border:1px solid rgba(139,92,246,.22) !important;
+    box-shadow:0 14px 38px rgba(0,0,0,.24), 0 0 20px rgba(124,92,255,.05) !important;
+}
+.stApp:has(.ds-theme-futuristic) [data-testid="stMetricLabel"] { color:#9990b5 !important; }
+.stApp:has(.ds-theme-futuristic) [data-testid="stMetricValue"] { color:#f8f5ff !important; }
+.stApp:has(.ds-theme-futuristic) [data-testid="stFileUploader"] {
+    background:rgba(15,9,35,.76) !important;
+    border-color:rgba(139,92,246,.40) !important;
+}
+.stApp:has(.ds-theme-futuristic) .stButton > button,
+.stApp:has(.ds-theme-futuristic) .stDownloadButton > button {
+    background:linear-gradient(135deg,rgba(124,92,255,.18),rgba(168,85,247,.12)) !important;
+    border:1px solid rgba(139,92,246,.30) !important;
+    color:#f4efff !important;
+}
+.stApp:has(.ds-theme-futuristic) .stButton > button:hover,
+.stApp:has(.ds-theme-futuristic) .stDownloadButton > button:hover {
+    border-color:rgba(168,85,247,.62) !important;
+    box-shadow:0 0 24px rgba(124,92,255,.16) !important;
+}
+
+/* Welcome page canvas per theme */
+.stApp:has(.welcome-theme-daylight) { background:linear-gradient(135deg,#f7fbff 0%,#e8f3ff 52%,#f8f6ff 100%) !important; color:#172033 !important; }
+.stApp:has(.welcome-theme-dark) { background:linear-gradient(135deg,#05070b 0%,#0b0f17 52%,#06070b 100%) !important; color:#f5f7fb !important; }
+.stApp:has(.welcome-theme-futuristic) { background:radial-gradient(circle at 50% 8%,rgba(124,92,255,.30),transparent 28%),radial-gradient(circle at 8% 55%,rgba(94,231,255,.12),transparent 28%),radial-gradient(circle at 92% 62%,rgba(168,85,247,.18),transparent 30%),linear-gradient(135deg,#05030d 0%,#0b0720 46%,#12082b 100%) !important; }
+.stApp:has(.welcome-theme-professional) { background:linear-gradient(135deg,#eef2f5 0%,#e7eef1 48%,#f7f3f7 100%) !important; color:#172033 !important; }
+
+/* --------------------------------------------------
+   4) CLEAN WELCOME THEME RULES — no visible CSS text
+   -------------------------------------------------- */
+.welcome-theme-switch {
+    position:absolute; right:22px; top:20px; z-index:1000000;
+    display:flex; align-items:center; gap:6px; padding:6px 8px;
+    border-radius:999px; border:1px solid rgba(255,255,255,.12);
+    background:rgba(7,7,20,.68); color:#d9d5eb; font-size:11px; font-weight:800;
+    backdrop-filter:blur(12px);
+}
+.welcome-theme-switch a {
+    width:27px; height:27px; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; text-decoration:none !important; color:#e6e1ff !important;
+    border:1px solid rgba(255,255,255,.09); transition:.2s ease;
+}
+.welcome-theme-switch a:hover { transform:translateY(-2px); background:rgba(255,255,255,.12); }
+.welcome-theme-daylight .welcome-card { background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(247,250,255,.94)); border-color:rgba(60,83,120,.14); box-shadow:0 30px 80px rgba(58,78,110,.16); }
+.welcome-theme-daylight .welcome-title { background:linear-gradient(100deg,#18233d,#5a4fcf 45%,#178da8 75%,#18233d 92%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.welcome-theme-daylight .welcome-sub,.welcome-theme-daylight .idea-text { color:#5f6f83; }
+.welcome-theme-daylight .idea { background:#f8fbff; border-color:#dbe4ef; }
+.welcome-theme-daylight .idea-title { color:#1d2a40; }
+.welcome-theme-professional .welcome-card { background:rgba(255,255,255,.94); border-color:rgba(57,80,98,.15); box-shadow:0 30px 80px rgba(48,65,83,.15); }
+.welcome-theme-professional .welcome-title { background:linear-gradient(100deg,#26334a,#6d3d76 45%,#237e85 75%,#26334a 92%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.welcome-theme-professional .welcome-sub,.welcome-theme-professional .idea-text { color:#627084; }
+.welcome-theme-professional .idea { background:rgba(255,255,255,.72); border-color:rgba(57,80,98,.13); }
+.welcome-theme-professional .idea-title { color:#243247; }
+.welcome-theme-futuristic .welcome-card {
+    background:linear-gradient(145deg,rgba(18,8,43,.94),rgba(5,3,17,.97));
+    border-color:rgba(139,92,246,.36);
+    box-shadow:0 0 90px rgba(124,92,255,.14),0 35px 100px rgba(0,0,0,.60);
+}
+.welcome-theme-futuristic .welcome-grid {
+    background-image:linear-gradient(rgba(139,92,246,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.12) 1px,transparent 1px) !important;
+}
+.welcome-theme-futuristic .welcome-kicker { color:#b7a8ff; }
+.welcome-theme-futuristic .welcome-title { background:linear-gradient(100deg,#ffffff 10%,#c5b8ff 44%,#8d7cff 68%,#62eaff 92%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.welcome-theme-futuristic .idea { background:rgba(124,92,255,.045); border-color:rgba(139,92,246,.20); }
+.welcome-theme-futuristic .welcome-theme-switch { background:rgba(15,8,38,.86); border-color:rgba(139,92,246,.30); }
+
+/* mobile */
+@media(max-width:900px){
+    .bj-nav { z-index:1000000 !important; }
+    .bj-theme-dropdown { right:-8px !important; }
+}
 </style>
 """, unsafe_allow_html=True)
