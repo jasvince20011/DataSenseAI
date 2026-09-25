@@ -378,7 +378,7 @@ THEME_OPTIONS = {
 }
 selected_theme = st.query_params.get("theme", "futuristic")
 if selected_theme not in THEME_OPTIONS:
-    selected_theme = "daylight"
+    selected_theme = "futuristic"
 
 # ==========================================
 # BUVIJAG PREMIUM WELCOME EXPERIENCE
@@ -424,12 +424,111 @@ if not st.session_state.entered_buvijag:
     </style>
     """, unsafe_allow_html=True)
 
+    st.markdown("""
+    /* ===== BUVIJAG WELCOME THEME SYSTEM ===== */
+    .welcome-theme-switch{
+        position:absolute;right:22px;top:20px;z-index:20;
+        display:flex;align-items:center;gap:6px;padding:6px 8px;
+        border-radius:999px;border:1px solid rgba(255,255,255,.12);
+        background:rgba(7,7,20,.58);backdrop-filter:blur(12px);
+        color:#b8b5ca;font-size:11px;font-weight:800;
+    }
+    .welcome-theme-switch a{
+        width:27px;height:27px;display:flex;align-items:center;justify-content:center;
+        border-radius:50%;text-decoration:none!important;color:#dfe3ff!important;
+        border:1px solid rgba(255,255,255,.08);transition:.2s ease;
+    }
+    .welcome-theme-switch a:hover{transform:translateY(-2px);background:rgba(255,255,255,.12);}
+    
+
+    /* Daylight */
+    .welcome-theme-daylight .welcome-shell{}
+    .stApp:has(.welcome-theme-daylight){
+        background:linear-gradient(135deg,#f7fbff 0%,#e8f3ff 52%,#f8f6ff 100%) !important;
+        color:#172033 !important;
+    }
+    .welcome-theme-daylight .welcome-grid{
+        opacity:.32;
+        background-image:linear-gradient(rgba(71,111,180,.09) 1px,transparent 1px),
+                         linear-gradient(90deg,rgba(71,111,180,.09) 1px,transparent 1px);
+    }
+    .welcome-theme-daylight .welcome-card{
+        background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(247,250,255,.92));
+        border-color:rgba(60,83,120,.14);
+        box-shadow:0 30px 80px rgba(58,78,110,.16);
+        backdrop-filter:none;
+    }
+    .welcome-theme-daylight .welcome-card:after{background:linear-gradient(145deg,#ffffff,#f6f9ff);}
+    .welcome-theme-daylight .welcome-title{background:linear-gradient(100deg,#18233d,#5a4fcf 45%,#178da8 75%,#18233d 92%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+    .welcome-theme-daylight .welcome-sub{color:#5b6880;}
+    .welcome-theme-daylight .welcome-kicker{color:#5d52c8;}
+    .welcome-theme-daylight .welcome-badge{background:#f1efff;color:#554bb5;border-color:#d9d4ff;}
+    .welcome-theme-daylight .idea{background:#f8fbff;border-color:#dbe4ef;}
+    .welcome-theme-daylight .idea-title{color:#1d2a40;}
+    .welcome-theme-daylight .idea-text{color:#66758c;}
+    .welcome-theme-daylight .welcome-theme-switch{background:rgba(255,255,255,.88);color:#526078;border-color:#dbe3ed;backdrop-filter:none;}
+    .welcome-theme-daylight .welcome-theme-switch a{color:#3d4b63!important;border-color:#dbe3ed;}
+
+    /* Dark — matte, no glass */
+    .welcome-theme-dark .welcome-card{background:#11131a;border-color:#2a2e39;box-shadow:0 30px 90px rgba(0,0,0,.48);backdrop-filter:none;}
+    .welcome-theme-dark .welcome-card:after{background:#11131a;}
+    .welcome-theme-dark .welcome-grid{opacity:.16;}
+    .welcome-theme-dark .idea{background:#171a22;border-color:#2a2e39;}
+    .welcome-theme-dark .welcome-theme-switch{backdrop-filter:none;background:#151820;border-color:#2b303c;}
+
+    /* Professional — mauve → teal, executive and flat */
+    .stApp:has(.welcome-theme-professional){
+        background:linear-gradient(135deg,#be93c5 0%,#7bc6cc 100%) !important;
+        color:#172033 !important;
+    }
+    .welcome-theme-professional .welcome-grid{opacity:.16;}
+    .welcome-theme-professional .welcome-card{
+        background:rgba(255,255,255,.92);border-color:rgba(255,255,255,.55);
+        box-shadow:0 30px 80px rgba(48,65,83,.18);backdrop-filter:none;
+    }
+    .welcome-theme-professional .welcome-card:after{background:rgba(255,255,255,.96);}
+    .welcome-theme-professional .welcome-title{background:linear-gradient(100deg,#26334a,#6d3d76 45%,#237e85 75%,#26334a 92%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+    .welcome-theme-professional .welcome-sub{color:#526174;}
+    .welcome-theme-professional .welcome-kicker{color:#624a68;}
+    .welcome-theme-professional .welcome-badge{background:rgba(255,255,255,.60);color:#4d5669;border-color:rgba(57,80,98,.18);}
+    .welcome-theme-professional .idea{background:rgba(255,255,255,.68);border-color:rgba(57,80,98,.13);}
+    .welcome-theme-professional .idea-title{color:#243247;}
+    .welcome-theme-professional .idea-text{color:#627084;}
+    .welcome-theme-professional .welcome-theme-switch{background:rgba(255,255,255,.78);color:#46566b;border-color:rgba(57,80,98,.16);backdrop-filter:none;}
+    .welcome-theme-professional .welcome-theme-switch a{color:#43546a!important;border-color:rgba(57,80,98,.14);}
+
+    /* Futuristic */
+    .welcome-theme-futuristic .welcome-card{
+        background:linear-gradient(145deg,rgba(5,30,38,.92),rgba(4,12,20,.94));
+        border-color:rgba(54,235,255,.22);
+        box-shadow:0 0 80px rgba(0,216,255,.08),0 35px 100px rgba(0,0,0,.55);
+    }
+    .welcome-theme-futuristic .welcome-card:after{background:linear-gradient(145deg,#071f28,#030b11);}
+    .welcome-theme-futuristic .welcome-grid{
+        background-image:linear-gradient(rgba(0,226,255,.12) 1px,transparent 1px),
+                         linear-gradient(90deg,rgba(0,226,255,.12) 1px,transparent 1px);
+    }
+    .welcome-theme-futuristic .welcome-kicker{color:#55eaff;}
+    .welcome-theme-futuristic .welcome-title{background:linear-gradient(100deg,#efffff 10%,#5deaff 48%,#ff9c62 78%,#efffff 92%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+    .welcome-theme-futuristic .idea{background:rgba(0,225,255,.035);border-color:rgba(60,225,245,.18);}
+    .welcome-theme-futuristic .welcome-theme-switch{background:#06151c;border-color:rgba(60,225,245,.22);}
+
+    </style>
+    """, unsafe_allow_html=True)
+
     welcome_html = """
-    <div class="welcome-shell">
+    <div class="welcome-shell welcome-theme-__THEME__">
       <div class="welcome-grid"></div>
       <div class="welcome-orb orb1"></div><div class="welcome-orb orb2"></div><div class="welcome-orb orb3"></div>
       <span class="welcome-particle p1"></span><span class="welcome-particle p2"></span><span class="welcome-particle p3"></span><span class="welcome-particle p4"></span><span class="welcome-particle p5"></span><span class="welcome-particle p6"></span>
       <div class="welcome-card">
+        <div class="welcome-theme-switch">
+          <span>Theme</span>
+          <a href="?theme=daylight" class="wt-daylight">☀️</a>
+          <a href="?theme=dark" class="wt-dark">🌙</a>
+          <a href="?theme=futuristic" class="wt-futuristic">⚡</a>
+          <a href="?theme=professional" class="wt-professional">💼</a>
+        </div>
         <div class="scan"></div>
         <div class="welcome-badge"><span class="badge-dot"></span> AI BUSINESS INTELLIGENCE</div>
         <img class="welcome-logo" src="__LOGO__" alt="BUVIJAG AI">
@@ -443,7 +542,7 @@ if not st.session_state.entered_buvijag:
         </div>
       </div>
     </div>
-    """.replace("__LOGO__", BUVIJAG_LOGO_DATA_URI)
+    """.replace("__LOGO__", BUVIJAG_LOGO_DATA_URI).replace("__THEME__", selected_theme)
     st.markdown(welcome_html, unsafe_allow_html=True)
 
     c1, c2, c3 = st.columns([1.15, 1, 1.15])
@@ -3565,3 +3664,218 @@ if "buvijag_demo_df" in st.session_state:
         st.markdown("### 🔎 Demo Evidence")
         for e in _buvijag_evidence(demo_df):
             st.write(f"• {e['text']} — Evidence: {e['evidence']}")
+
+
+
+# ==========================================
+# BUVIJAG FINAL 4-THEME OVERRIDES
+# These rules intentionally come LAST so they override
+# the original shared shell styling.
+# ==========================================
+st.markdown("""
+<style>
+/* ---------- DAYLIGHT ---------- */
+.stApp:has(.ds-theme-daylight) {
+    background:linear-gradient(135deg,#f8fbff 0%,#edf6ff 52%,#f8f5ff 100%) !important;
+    color:#172033 !important;
+}
+.stApp:has(.ds-theme-daylight) .bj-nav,
+.stApp:has(.ds-theme-daylight) .bj-hero,
+.stApp:has(.ds-theme-daylight) .bj-workspace,
+.stApp:has(.ds-theme-daylight) .bj-feature-card,
+.stApp:has(.ds-theme-daylight) .ds-topbar,
+.stApp:has(.ds-theme-daylight) .ds-hero,
+.stApp:has(.ds-theme-daylight) .ds-brain,
+.stApp:has(.ds-theme-daylight) [data-testid="stMetric"],
+.stApp:has(.ds-theme-daylight) [data-testid="stFileUploader"] {
+    background:#ffffff !important;
+    color:#172033 !important;
+    border-color:#d9e2ec !important;
+    box-shadow:0 12px 35px rgba(48,65,85,.08) !important;
+    backdrop-filter:none !important;
+}
+.stApp:has(.ds-theme-daylight) .bj-brand-name,
+.stApp:has(.ds-theme-daylight) .bj-section-title,
+.stApp:has(.ds-theme-daylight) .bj-workspace-title,
+.stApp:has(.ds-theme-daylight) .ds-title,
+.stApp:has(.ds-theme-daylight) .ds-hero-title,
+.stApp:has(.ds-theme-daylight) h1,
+.stApp:has(.ds-theme-daylight) h2,
+.stApp:has(.ds-theme-daylight) h3,
+.stApp:has(.ds-theme-daylight) [data-testid="stMetricValue"] {
+    color:#182235 !important;
+}
+.stApp:has(.ds-theme-daylight) .bj-brand-ai,
+.stApp:has(.ds-theme-daylight) .bj-hero-copy,
+.stApp:has(.ds-theme-daylight) .bj-section-copy,
+.stApp:has(.ds-theme-daylight) .bj-feature-copy,
+.stApp:has(.ds-theme-daylight) .bj-workspace-copy,
+.stApp:has(.ds-theme-daylight) .ds-subtitle,
+.stApp:has(.ds-theme-daylight) .ds-hero-text,
+.stApp:has(.ds-theme-daylight) [data-testid="stMetricLabel"] {
+    color:#64748b !important;
+}
+.stApp:has(.ds-theme-daylight) .bj-nav-links a {color:#475569 !important;}
+.stApp:has(.ds-theme-daylight) .bj-cta {background:linear-gradient(135deg,#6657d9,#3b9eb4) !important;}
+.stApp:has(.ds-theme-daylight) .bj-cta.secondary {background:#f4f7fb !important;color:#334155 !important;border-color:#d7e0ea !important;}
+.stApp:has(.ds-theme-daylight) .bj-gradient-word {background:linear-gradient(90deg,#4e43b5,#168fa8) !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important;}
+.stApp:has(.ds-theme-daylight) .bj-theme-btn,
+.stApp:has(.ds-theme-daylight) .bj-theme-dropdown {background:#fff !important;color:#334155 !important;border-color:#d8e0ea !important;}
+.stApp:has(.ds-theme-daylight) .bj-theme-dropdown a {color:#334155 !important;}
+.stApp:has(.ds-theme-daylight) .bj-theme-dropdown a:hover,
+.stApp:has(.ds-theme-daylight) .bj-theme-dropdown a.active {background:#eef2ff !important;color:#1f2937 !important;}
+.stApp:has(.ds-theme-daylight) .stButton > button,
+.stApp:has(.ds-theme-daylight) .stDownloadButton > button {
+    background:#ffffff !important;color:#26364d !important;border:1px solid #cbd7e4 !important;
+    box-shadow:none !important;
+}
+.stApp:has(.ds-theme-daylight) hr {border-color:#dbe3ec !important;}
+
+/* ---------- DARK / MATTE — NO GLASS ---------- */
+.stApp:has(.ds-theme-dark) {
+    background:#0d0f14 !important;color:#eef2f7 !important;
+}
+.stApp:has(.ds-theme-dark) .bj-nav,
+.stApp:has(.ds-theme-dark) .bj-hero,
+.stApp:has(.ds-theme-dark) .bj-workspace,
+.stApp:has(.ds-theme-dark) .bj-feature-card,
+.stApp:has(.ds-theme-dark) .ds-topbar,
+.stApp:has(.ds-theme-dark) .ds-hero,
+.stApp:has(.ds-theme-dark) .ds-brain,
+.stApp:has(.ds-theme-dark) [data-testid="stMetric"],
+.stApp:has(.ds-theme-dark) [data-testid="stFileUploader"] {
+    background:#15181e !important;
+    border-color:#2a2f38 !important;
+    box-shadow:none !important;
+    backdrop-filter:none !important;
+}
+.stApp:has(.ds-theme-dark) .bj-nav,
+.stApp:has(.ds-theme-dark) .ds-topbar {border-radius:14px !important;}
+.stApp:has(.ds-theme-dark) .bj-brand-name,
+.stApp:has(.ds-theme-dark) .bj-section-title,
+.stApp:has(.ds-theme-dark) .bj-workspace-title,
+.stApp:has(.ds-theme-dark) .ds-title,
+.stApp:has(.ds-theme-dark) .ds-hero-title,
+.stApp:has(.ds-theme-dark) h1,
+.stApp:has(.ds-theme-dark) h2,
+.stApp:has(.ds-theme-dark) h3,
+.stApp:has(.ds-theme-dark) [data-testid="stMetricValue"] {color:#f4f6f9 !important;}
+.stApp:has(.ds-theme-dark) .bj-brand-ai,
+.stApp:has(.ds-theme-dark) .bj-hero-copy,
+.stApp:has(.ds-theme-dark) .bj-section-copy,
+.stApp:has(.ds-theme-dark) .bj-feature-copy,
+.stApp:has(.ds-theme-dark) .bj-workspace-copy,
+.stApp:has(.ds-theme-dark) .ds-subtitle,
+.stApp:has(.ds-theme-dark) .ds-hero-text,
+.stApp:has(.ds-theme-dark) [data-testid="stMetricLabel"] {color:#9aa3b1 !important;}
+.stApp:has(.ds-theme-dark) .bj-nav-links a {color:#b7bfcb !important;}
+.stApp:has(.ds-theme-dark) .bj-cta {background:#6c5ce7 !important;}
+.stApp:has(.ds-theme-dark) .bj-cta.secondary {background:#1c2027 !important;color:#e1e6ee !important;border-color:#333944 !important;}
+.stApp:has(.ds-theme-dark) .bj-theme-btn,
+.stApp:has(.ds-theme-dark) .bj-theme-dropdown {background:#15181e !important;color:#e4e8ee !important;border-color:#303640 !important;}
+.stApp:has(.ds-theme-dark) .bj-theme-dropdown a {color:#cbd2dc !important;}
+.stApp:has(.ds-theme-dark) .bj-theme-dropdown a:hover,
+.stApp:has(.ds-theme-dark) .bj-theme-dropdown a.active {background:#252a32 !important;color:#fff !important;}
+.stApp:has(.ds-theme-dark) .stButton > button,
+.stApp:has(.ds-theme-dark) .stDownloadButton > button {background:#1b1f26 !important;color:#eef2f7 !important;border:1px solid #343a45 !important;box-shadow:none !important;}
+
+/* ---------- FUTURISTIC / ROBOTIC ---------- */
+.stApp:has(.ds-theme-futuristic) {
+    background:
+      radial-gradient(circle at 50% 20%,rgba(0,224,255,.14),transparent 26%),
+      radial-gradient(circle at 8% 70%,rgba(255,103,48,.12),transparent 25%),
+      linear-gradient(135deg,#03080d 0%,#071c25 50%,#02070b 100%) !important;
+    color:#e8fbff !important;
+}
+.stApp:has(.ds-theme-futuristic) .bj-nav,
+.stApp:has(.ds-theme-futuristic) .bj-hero,
+.stApp:has(.ds-theme-futuristic) .bj-workspace,
+.stApp:has(.ds-theme-futuristic) .bj-feature-card,
+.stApp:has(.ds-theme-futuristic) .ds-topbar,
+.stApp:has(.ds-theme-futuristic) .ds-hero,
+.stApp:has(.ds-theme-futuristic) .ds-brain,
+.stApp:has(.ds-theme-futuristic) [data-testid="stMetric"],
+.stApp:has(.ds-theme-futuristic) [data-testid="stFileUploader"] {
+    background:linear-gradient(145deg,rgba(7,34,44,.92),rgba(3,13,20,.94)) !important;
+    border-color:rgba(56,230,255,.25) !important;
+    box-shadow:0 0 34px rgba(0,218,255,.07),inset 0 0 20px rgba(0,180,220,.03) !important;
+}
+.stApp:has(.ds-theme-futuristic) .bj-brand-name,
+.stApp:has(.ds-theme-futuristic) .bj-section-title,
+.stApp:has(.ds-theme-futuristic) .bj-workspace-title,
+.stApp:has(.ds-theme-futuristic) .ds-title,
+.stApp:has(.ds-theme-futuristic) .ds-hero-title,
+.stApp:has(.ds-theme-futuristic) h1,
+.stApp:has(.ds-theme-futuristic) h2,
+.stApp:has(.ds-theme-futuristic) h3,
+.stApp:has(.ds-theme-futuristic) [data-testid="stMetricValue"] {color:#efffff !important;}
+.stApp:has(.ds-theme-futuristic) .bj-brand-ai,
+.stApp:has(.ds-theme-futuristic) .bj-hero-copy,
+.stApp:has(.ds-theme-futuristic) .bj-section-copy,
+.stApp:has(.ds-theme-futuristic) .bj-feature-copy,
+.stApp:has(.ds-theme-futuristic) .bj-workspace-copy,
+.stApp:has(.ds-theme-futuristic) .ds-subtitle,
+.stApp:has(.ds-theme-futuristic) .ds-hero-text,
+.stApp:has(.ds-theme-futuristic) [data-testid="stMetricLabel"] {color:#8fbcc5 !important;}
+.stApp:has(.ds-theme-futuristic) .bj-nav-links a {color:#a8d6df !important;}
+.stApp:has(.ds-theme-futuristic) .bj-gradient-word {background:linear-gradient(90deg,#59efff,#ffffff,#ff9b63) !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important;}
+.stApp:has(.ds-theme-futuristic) .bj-cta {background:linear-gradient(135deg,#00cfff,#19e3c0) !important;color:#021015 !important;}
+.stApp:has(.ds-theme-futuristic) .bj-cta.secondary {background:rgba(0,220,255,.06) !important;color:#bff8ff !important;border-color:rgba(52,235,255,.28) !important;}
+.stApp:has(.ds-theme-futuristic) .bj-theme-btn,
+.stApp:has(.ds-theme-futuristic) .bj-theme-dropdown {background:#06161d !important;color:#d8fbff !important;border-color:rgba(52,235,255,.28) !important;}
+.stApp:has(.ds-theme-futuristic) .bj-theme-dropdown a {color:#bcecf3 !important;}
+.stApp:has(.ds-theme-futuristic) .bj-theme-dropdown a:hover,
+.stApp:has(.ds-theme-futuristic) .bj-theme-dropdown a.active {background:rgba(0,220,255,.12) !important;color:#fff !important;}
+.stApp:has(.ds-theme-futuristic) .stButton > button,
+.stApp:has(.ds-theme-futuristic) .stDownloadButton > button {background:rgba(0,210,255,.08) !important;color:#dffcff !important;border:1px solid rgba(52,235,255,.32) !important;}
+
+/* ---------- PROFESSIONAL — MAUVE → TEAL ---------- */
+.stApp:has(.ds-theme-professional) {
+    background:linear-gradient(135deg,#be93c5 0%,#7bc6cc 100%) !important;
+    color:#172033 !important;
+}
+.stApp:has(.ds-theme-professional) .bj-nav,
+.stApp:has(.ds-theme-professional) .bj-hero,
+.stApp:has(.ds-theme-professional) .bj-workspace,
+.stApp:has(.ds-theme-professional) .bj-feature-card,
+.stApp:has(.ds-theme-professional) .ds-topbar,
+.stApp:has(.ds-theme-professional) .ds-hero,
+.stApp:has(.ds-theme-professional) .ds-brain,
+.stApp:has(.ds-theme-professional) [data-testid="stMetric"],
+.stApp:has(.ds-theme-professional) [data-testid="stFileUploader"] {
+    background:rgba(255,255,255,.93) !important;
+    color:#172033 !important;
+    border-color:rgba(45,64,83,.14) !important;
+    box-shadow:0 14px 38px rgba(39,61,78,.10) !important;
+    backdrop-filter:none !important;
+}
+.stApp:has(.ds-theme-professional) .bj-brand-name,
+.stApp:has(.ds-theme-professional) .bj-section-title,
+.stApp:has(.ds-theme-professional) .bj-workspace-title,
+.stApp:has(.ds-theme-professional) .ds-title,
+.stApp:has(.ds-theme-professional) .ds-hero-title,
+.stApp:has(.ds-theme-professional) h1,
+.stApp:has(.ds-theme-professional) h2,
+.stApp:has(.ds-theme-professional) h3,
+.stApp:has(.ds-theme-professional) [data-testid="stMetricValue"] {color:#243247 !important;}
+.stApp:has(.ds-theme-professional) .bj-brand-ai,
+.stApp:has(.ds-theme-professional) .bj-hero-copy,
+.stApp:has(.ds-theme-professional) .bj-section-copy,
+.stApp:has(.ds-theme-professional) .bj-feature-copy,
+.stApp:has(.ds-theme-professional) .bj-workspace-copy,
+.stApp:has(.ds-theme-professional) .ds-subtitle,
+.stApp:has(.ds-theme-professional) .ds-hero-text,
+.stApp:has(.ds-theme-professional) [data-testid="stMetricLabel"] {color:#637084 !important;}
+.stApp:has(.ds-theme-professional) .bj-nav-links a {color:#47586b !important;}
+.stApp:has(.ds-theme-professional) .bj-gradient-word {background:linear-gradient(90deg,#6f3e78,#227f85) !important;-webkit-background-clip:text !important;background-clip:text !important;color:transparent !important;}
+.stApp:has(.ds-theme-professional) .bj-cta {background:linear-gradient(135deg,#81538a,#318f96) !important;color:#fff !important;}
+.stApp:has(.ds-theme-professional) .bj-cta.secondary {background:#f7f9fb !important;color:#34455a !important;border-color:#d3dde7 !important;}
+.stApp:has(.ds-theme-professional) .bj-theme-btn,
+.stApp:has(.ds-theme-professional) .bj-theme-dropdown {background:#fff !important;color:#334155 !important;border-color:#d5dfe8 !important;}
+.stApp:has(.ds-theme-professional) .bj-theme-dropdown a {color:#334155 !important;}
+.stApp:has(.ds-theme-professional) .bj-theme-dropdown a:hover,
+.stApp:has(.ds-theme-professional) .bj-theme-dropdown a.active {background:#edf5f6 !important;color:#243247 !important;}
+.stApp:has(.ds-theme-professional) .stButton > button,
+.stApp:has(.ds-theme-professional) .stDownloadButton > button {background:#fff !important;color:#2c3b50 !important;border:1px solid #c9d6e2 !important;box-shadow:none !important;}
+</style>
+""", unsafe_allow_html=True)

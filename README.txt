@@ -23,3 +23,10 @@ Run:
 conda activate datasense
 cd C:\Users\vincen\Documents\DataSenseAI
 python -m streamlit run app.py
+
+
+FINAL THEME BUILD
+- Four working themes: Daylight, Dark, Futuristic, Professional.
+- Welcome screen adapts to the selected theme.
+- Theme selection is available from the Welcome screen and main app.
+- Dark is matte/no-glass; Professional uses mauve-to-teal; Daylight is bright/airy; Futuristic is robotic/cybernetic.
