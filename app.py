@@ -362,7 +362,7 @@ def date_columns_for_dashboard(df):
 # ==========================================
 
 st.set_page_config(
-    page_title="BUVIJAG AI",
+    page_title="BUVIJAG — AI Business Intelligence",
     page_icon="🤖",
     layout="wide"
 )
@@ -376,9 +376,83 @@ THEME_OPTIONS = {
     "futuristic": "🚀 Futuristic",
     "professional": "💼 Professional",
 }
-selected_theme = st.query_params.get("theme", "daylight")
+selected_theme = st.query_params.get("theme", "futuristic")
 if selected_theme not in THEME_OPTIONS:
     selected_theme = "daylight"
+
+# ==========================================
+# BUVIJAG PREMIUM WELCOME EXPERIENCE
+# ==========================================
+if "entered_buvijag" not in st.session_state:
+    st.session_state.entered_buvijag = False
+
+if not st.session_state.entered_buvijag:
+    st.markdown("""
+    <style>
+    .stApp {background:radial-gradient(circle at 50% 8%,rgba(110,76,255,.28),transparent 26%),radial-gradient(circle at 8% 55%,rgba(0,220,255,.16),transparent 28%),radial-gradient(circle at 92% 62%,rgba(175,70,255,.16),transparent 30%),linear-gradient(135deg,#05030d 0%,#0b0820 45%,#080511 100%);overflow-x:hidden;}
+    .block-container {max-width:1450px;padding-top:.5rem;padding-bottom:1rem;}
+    .welcome-shell {position:relative;min-height:calc(100vh - 30px);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:30px 20px;}
+    .welcome-grid {position:absolute;inset:0;opacity:.22;background-image:linear-gradient(rgba(125,93,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(125,93,255,.14) 1px,transparent 1px);background-size:58px 58px;mask-image:linear-gradient(to bottom,transparent,black 20%,black 75%,transparent);animation:gridMove 18s linear infinite;}
+    @keyframes gridMove {from{transform:translateY(0)}to{transform:translateY(58px)}}
+    .welcome-orb {position:absolute;border-radius:50%;filter:blur(2px);animation:orbFloat 7s ease-in-out infinite;pointer-events:none;}
+    .orb1 {width:260px;height:260px;left:-90px;top:12%;background:radial-gradient(circle,rgba(0,220,255,.22),transparent 68%);}.orb2 {width:340px;height:340px;right:-120px;bottom:8%;background:radial-gradient(circle,rgba(150,70,255,.24),transparent 68%);animation-delay:-2.2s;}.orb3 {width:170px;height:170px;right:20%;top:4%;background:radial-gradient(circle,rgba(92,76,255,.22),transparent 68%);animation-delay:-4s;}
+    @keyframes orbFloat {0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(0,-22px,0) scale(1.06)}}
+    .welcome-particle {position:absolute;width:4px;height:4px;border-radius:50%;background:#b8c7ff;box-shadow:0 0 16px #7c6cff;animation:particleFloat linear infinite;opacity:.75;}
+    .p1{left:14%;top:26%;animation-duration:8s}.p2{left:25%;top:72%;animation-duration:11s}.p3{left:78%;top:22%;animation-duration:9s}.p4{left:88%;top:70%;animation-duration:12s}.p5{left:55%;top:13%;animation-duration:10s}.p6{left:67%;top:82%;animation-duration:7s}
+    @keyframes particleFloat {0%{transform:translateY(20px);opacity:0}25%{opacity:.8}75%{opacity:.8}100%{transform:translateY(-90px);opacity:0}}
+    .welcome-card {position:relative;z-index:5;width:min(1120px,96vw);padding:58px 54px 42px;border:1px solid rgba(255,255,255,.13);border-radius:34px;background:linear-gradient(145deg,rgba(18,13,48,.82),rgba(8,7,22,.72));box-shadow:0 35px 100px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(22px);text-align:center;overflow:hidden;}
+    .welcome-card:before {content:"";position:absolute;inset:-2px;background:conic-gradient(from 180deg,transparent 0 25%,rgba(106,86,255,.5),transparent 38% 62%,rgba(0,221,255,.4),transparent 75%);animation:borderSpin 9s linear infinite;z-index:-2;}
+    .welcome-card:after {content:"";position:absolute;inset:1px;border-radius:33px;background:linear-gradient(145deg,rgba(16,11,43,.96),rgba(7,6,20,.96));z-index:-1;}
+    @keyframes borderSpin {to{transform:rotate(360deg)}}
+    .welcome-badge {display:inline-flex;align-items:center;gap:9px;padding:8px 15px;border:1px solid rgba(125,105,255,.35);border-radius:999px;background:rgba(109,86,255,.10);color:#c9c3ff;font-size:12px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;animation:badgePulse 2.8s ease-in-out infinite;}
+    .badge-dot {width:7px;height:7px;border-radius:50%;background:#52e5ff;box-shadow:0 0 14px #52e5ff;}
+    @keyframes badgePulse {50%{box-shadow:0 0 30px rgba(89,76,255,.18)}}
+    .welcome-logo {width:min(430px,76vw);max-height:135px;object-fit:contain;margin:24px auto 5px;filter:drop-shadow(0 0 30px rgba(102,83,255,.28));animation:logoFloat 4.5s ease-in-out infinite;}
+    @keyframes logoFloat {50%{transform:translateY(-7px) scale(1.01)}}
+    .welcome-kicker {color:#8e83ff;font-size:13px;font-weight:800;letter-spacing:4px;text-transform:uppercase;margin-top:8px;}
+    .welcome-title {margin:12px auto 0;max-width:850px;font-size:clamp(38px,6vw,76px);line-height:.98;font-weight:900;letter-spacing:-3.5px;background:linear-gradient(100deg,#fff 10%,#c9c2ff 43%,#6eeaff 72%,#fff 92%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:titleShimmer 5s linear infinite;}
+    @keyframes titleShimmer {to{background-position:-220% center}}
+    .welcome-sub {max-width:690px;margin:20px auto 28px;color:#a9a7bd;font-size:16px;line-height:1.7;}
+    .welcome-ideas {display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px auto 30px;max-width:850px;}
+    .idea {padding:17px 16px;border:1px solid rgba(255,255,255,.09);border-radius:18px;background:rgba(255,255,255,.035);text-align:left;transition:.3s ease;}
+    .idea:hover {transform:translateY(-6px);border-color:rgba(111,222,255,.42);background:rgba(104,91,255,.08);box-shadow:0 15px 35px rgba(0,0,0,.25);}
+    .idea-icon {font-size:21px;margin-bottom:8px}.idea-title{font-weight:800;color:#f6f5ff;font-size:14px}.idea-text{color:#8e8ca1;font-size:12px;line-height:1.5;margin-top:4px;}
+    .welcome-foot {display:flex;justify-content:center;gap:12px;align-items:center;color:#77748b;font-size:11px;margin-top:20px;}
+    .scan {height:1px;width:100%;background:linear-gradient(90deg,transparent,rgba(85,220,255,.5),transparent);position:absolute;top:0;left:0;animation:scanDown 5s linear infinite;opacity:.55;}
+    @keyframes scanDown {0%{transform:translateY(0);opacity:0}10%{opacity:.7}90%{opacity:.7}100%{transform:translateY(620px);opacity:0}}
+    @media(max-width:760px){.welcome-card{padding:42px 20px 30px;border-radius:25px}.welcome-card:after{border-radius:24px}.welcome-title{letter-spacing:-2px}.welcome-sub{font-size:14px}.welcome-ideas{grid-template-columns:1fr}.idea{text-align:center}.welcome-logo{max-height:100px}.welcome-shell{padding:10px}.welcome-foot{flex-wrap:wrap;}}
+    </style>
+    """, unsafe_allow_html=True)
+
+    welcome_html = """
+    <div class="welcome-shell">
+      <div class="welcome-grid"></div>
+      <div class="welcome-orb orb1"></div><div class="welcome-orb orb2"></div><div class="welcome-orb orb3"></div>
+      <span class="welcome-particle p1"></span><span class="welcome-particle p2"></span><span class="welcome-particle p3"></span><span class="welcome-particle p4"></span><span class="welcome-particle p5"></span><span class="welcome-particle p6"></span>
+      <div class="welcome-card">
+        <div class="scan"></div>
+        <div class="welcome-badge"><span class="badge-dot"></span> AI BUSINESS INTELLIGENCE</div>
+        <img class="welcome-logo" src="__LOGO__" alt="BUVIJAG AI">
+        <div class="welcome-kicker">Sharp Intelligence for a Data-Driven World</div>
+        <div class="welcome-title">Your data has<br>more to say.</div>
+        <div class="welcome-sub">Meet BUVIJAG — an intelligent business analysis workspace that turns raw data into clear insights, visual stories, inventory signals and decisions you can act on.</div>
+        <div class="welcome-ideas">
+          <div class="idea"><div class="idea-icon">◈</div><div class="idea-title">Ask your data</div><div class="idea-text">Upload business files and let AI discover what matters.</div></div>
+          <div class="idea"><div class="idea-icon">✦</div><div class="idea-title">See the hidden signals</div><div class="idea-text">Find trends, anomalies, KPIs and opportunities automatically.</div></div>
+          <div class="idea"><div class="idea-icon">↗</div><div class="idea-title">Move from insight to action</div><div class="idea-text">Turn findings into practical recommendations and reports.</div></div>
+        </div>
+      </div>
+    </div>
+    """.replace("__LOGO__", BUVIJAG_LOGO_DATA_URI)
+    st.markdown(welcome_html, unsafe_allow_html=True)
+
+    c1, c2, c3 = st.columns([1.15, 1, 1.15])
+    with c2:
+        if st.button("🚀  Enter BUVIJAG", use_container_width=True, key="enter_buvijag"):
+            st.session_state.entered_buvijag = True
+            st.rerun()
+    st.markdown("<div class='welcome-foot'><span>Private workspace</span><span>•</span><span>AI-powered analysis</span><span>•</span><span>Business-ready reports</span></div>", unsafe_allow_html=True)
+    st.stop()
 
 # ==========================================
 # GLASSMORPHISM AI COMMAND CENTER STYLE
@@ -1369,7 +1443,7 @@ hr { border-color: rgba(255,255,255,.08); }
 """, unsafe_allow_html=True)
 
 # ==========================================
-# AI COMMAND CENTER HEADER
+# BUVIJAG MODERN PRODUCT EXPERIENCE
 # ==========================================
 
 theme_links = []
@@ -1380,41 +1454,235 @@ for key, label in THEME_OPTIONS.items():
     )
 theme_menu_html = "".join(theme_links)
 
+# Modern product shell inspired by premium AI SaaS interfaces.
+st.markdown("""
+<style>
+/* ===== BUVIJAG PRODUCT SHELL ===== */
+:root {
+    --buvijag-ink:#f7f8ff;
+    --buvijag-muted:#a7a6bd;
+    --buvijag-purple:#7c5cff;
+    --buvijag-violet:#a855f7;
+    --buvijag-cyan:#5ee7ff;
+    --buvijag-panel:rgba(20,14,50,.72);
+    --buvijag-border:rgba(255,255,255,.10);
+}
+
+/* Premium default canvas */
+.stApp {
+    background:
+        radial-gradient(900px 500px at 50% -10%, rgba(111,76,255,.28), transparent 65%),
+        radial-gradient(650px 420px at 92% 28%, rgba(71,209,255,.10), transparent 65%),
+        radial-gradient(650px 420px at 5% 58%, rgba(168,85,247,.12), transparent 65%),
+        linear-gradient(180deg,#09051d 0%,#0d0825 46%,#080616 100%) !important;
+}
+.stApp:before {
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.20;
+    background-image:
+      linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-size:72px 72px;
+    mask-image:linear-gradient(to bottom,black,transparent 75%);
+    z-index:0;
+}
+.block-container { max-width:1400px !important; padding-top:1rem !important; padding-bottom:5rem !important; position:relative; z-index:1; }
+
+/* Top navigation */
+.bj-nav {
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+    padding:12px 14px; margin:0 0 42px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    background:rgba(10,7,27,.76);
+    box-shadow:0 14px 50px rgba(0,0,0,.24);
+}
+.bj-nav-left { display:flex; align-items:center; gap:34px; min-width:0; }
+.bj-brand { display:flex; align-items:center; gap:11px; text-decoration:none !important; }
+.bj-brand-mark { width:42px; height:42px; border-radius:12px; overflow:hidden; background:#fff; padding:2px; box-shadow:0 0 24px rgba(124,92,255,.25); flex:0 0 auto; }
+.bj-brand-mark img { width:100%; height:100%; object-fit:contain; border-radius:9px; }
+.bj-brand-name { color:#fff; font-size:18px; font-weight:850; letter-spacing:.3px; }
+.bj-brand-ai { color:#9c8cff; font-size:10px; font-weight:800; letter-spacing:1.5px; margin-top:-2px; }
+.bj-nav-links { display:flex; align-items:center; gap:22px; }
+.bj-nav-links a { color:#a7a6bd !important; text-decoration:none !important; font-size:12px; font-weight:650; transition:.2s ease; }
+.bj-nav-links a:hover { color:#fff !important; }
+.bj-nav-actions { display:flex; align-items:center; gap:9px; }
+.bj-theme-wrap { position:relative; }
+.bj-theme-btn { display:flex; align-items:center; gap:7px; padding:9px 12px; border:1px solid rgba(255,255,255,.10); border-radius:10px; background:rgba(255,255,255,.04); color:#dddaf0; font-size:11px; font-weight:750; }
+.bj-theme-menu { position:relative; }
+.bj-theme-menu .bj-theme-dropdown { position:absolute; right:0; top:calc(100% + 8px); min-width:150px; padding:7px; background:#14102c; border:1px solid rgba(255,255,255,.10); border-radius:12px; box-shadow:0 18px 50px rgba(0,0,0,.38); opacity:0; visibility:hidden; transform:translateY(-5px); transition:.18s ease; z-index:20; }
+.bj-theme-menu:hover .bj-theme-dropdown, .bj-theme-dropdown:hover { opacity:1; visibility:visible; transform:translateY(0); }
+.bj-theme-dropdown a { display:block; padding:9px 10px; border-radius:8px; color:#cbc7df !important; text-decoration:none !important; font-size:11px; font-weight:700; }
+.bj-theme-dropdown a:hover, .bj-theme-dropdown a.active { background:#251c50; color:#fff !important; }
+.bj-online { display:flex; align-items:center; gap:7px; padding:9px 12px; border:1px solid rgba(77,238,177,.18); border-radius:999px; background:rgba(35,180,120,.07); color:#9bf3cf; font-size:10px; font-weight:800; letter-spacing:.3px; }
+.bj-online-dot { width:6px; height:6px; border-radius:50%; background:#45e5aa; box-shadow:0 0 12px rgba(69,229,170,.8); }
+
+/* Hero */
+.bj-hero { position:relative; overflow:hidden; padding:28px 0 30px; text-align:center; }
+.bj-orbit { position:absolute; width:720px; height:280px; border:1px solid rgba(140,102,255,.13); border-radius:50%; left:50%; top:48%; transform:translate(-50%,-50%) rotate(-8deg); pointer-events:none; }
+.bj-orbit:after { content:""; position:absolute; inset:26px 80px; border:1px solid rgba(94,231,255,.08); border-radius:50%; }
+.bj-eyebrow { display:inline-flex; align-items:center; gap:8px; padding:7px 11px; border:1px solid rgba(167,139,250,.20); border-radius:999px; background:rgba(124,92,255,.08); color:#b9adff; font-size:10px; font-weight:850; letter-spacing:1.5px; text-transform:uppercase; }
+.bj-eyebrow span { width:6px; height:6px; border-radius:50%; background:#7c5cff; box-shadow:0 0 12px #7c5cff; }
+.bj-hero h1 { margin:22px auto 0 !important; max-width:900px; color:#fff !important; font-size:clamp(42px,6vw,76px) !important; line-height:.98 !important; letter-spacing:-3.8px !important; font-weight:900 !important; }
+.bj-gradient-word { background:linear-gradient(90deg,#fff 12%,#b8aaff 48%,#69e7ff 90%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.bj-hero-copy { max-width:720px; margin:20px auto 0; color:#aaa7bf; font-size:15px; line-height:1.65; }
+.bj-cta-row { display:flex; justify-content:center; gap:10px; margin-top:25px; }
+.bj-cta { display:inline-flex; align-items:center; justify-content:center; padding:12px 19px; border-radius:10px; background:linear-gradient(135deg,#7557ff,#8b5cf6); color:#fff !important; text-decoration:none !important; font-size:12px; font-weight:800; box-shadow:0 12px 30px rgba(124,92,255,.25); }
+.bj-cta.secondary { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10); box-shadow:none; color:#dddaf0 !important; }
+.bj-proof { margin-top:38px; color:#77738e; font-size:10px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; }
+
+/* Product cards */
+.bj-section-label { margin:54px 0 12px; color:#817b9a; font-size:10px; font-weight:850; letter-spacing:1.8px; text-transform:uppercase; }
+.bj-section-title { color:#fff; font-size:28px; font-weight:850; letter-spacing:-1px; margin-bottom:7px; }
+.bj-section-copy { color:#89859d; font-size:13px; margin-bottom:20px; }
+.bj-feature-card { min-height:155px; padding:20px; border:1px solid rgba(255,255,255,.075); border-radius:16px; background:linear-gradient(180deg,rgba(28,20,61,.70),rgba(15,11,34,.82)); transition:.2s ease; }
+.bj-feature-card:hover { transform:translateY(-3px); border-color:rgba(139,92,246,.30); box-shadow:0 18px 40px rgba(0,0,0,.22); }
+.bj-feature-icon { width:34px; height:34px; display:flex; align-items:center; justify-content:center; border-radius:10px; background:rgba(124,92,255,.12); border:1px solid rgba(124,92,255,.18); font-size:17px; }
+.bj-feature-title { margin-top:14px; color:#f5f3ff; font-size:14px; font-weight:800; }
+.bj-feature-copy { margin-top:5px; color:#8e8aa4; font-size:11px; line-height:1.55; }
+
+/* Upload workspace */
+.bj-workspace { padding:22px; border-radius:20px; border:1px solid rgba(255,255,255,.09); background:rgba(15,10,35,.72); box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.bj-workspace-head { display:flex; align-items:flex-start; justify-content:space-between; gap:20px; margin-bottom:15px; }
+.bj-workspace-title { color:#fff; font-size:20px; font-weight:850; }
+.bj-workspace-copy { color:#8e8aa4; font-size:11px; margin-top:4px; }
+.bj-mini-status { padding:7px 10px; border-radius:8px; background:rgba(94,231,255,.06); border:1px solid rgba(94,231,255,.12); color:#86e8fa; font-size:9px; font-weight:800; white-space:nowrap; }
+
+/* Streamlit controls */
+[data-testid="stFileUploader"] { background:rgba(255,255,255,.025) !important; border:1px dashed rgba(145,122,255,.42) !important; border-radius:15px !important; padding:10px !important; }
+.stButton > button, .stDownloadButton > button { border-radius:10px !important; font-weight:750 !important; transition:.18s ease !important; }
+.stButton > button:hover, .stDownloadButton > button:hover { transform:translateY(-2px) !important; }
+[data-testid="stMetric"] { border-radius:14px !important; }
+
+/* Section anchors keep nav links clean */
+.bj-anchor { scroll-margin-top:90px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .bj-nav-links { display:none; }
+  .bj-nav-left { gap:10px; }
+  .bj-nav { margin-bottom:25px; }
+  .bj-hero h1 { letter-spacing:-2.2px !important; }
+  .bj-hero-copy { padding:0 10px; }
+  .bj-online { display:none; }
+}
+
+/* ===== THEME-SPECIFIC POLISH ===== */
+.stApp:has(.ds-theme-daylight) {
+    background:linear-gradient(180deg,#f6fbff 0%,#eef6fb 48%,#f8fbfd 100%) !important;
+}
+.stApp:has(.ds-theme-daylight) .bj-nav,
+.stApp:has(.ds-theme-daylight) .bj-workspace,
+.stApp:has(.ds-theme-daylight) .bj-feature-card { background:rgba(255,255,255,.92) !important; border-color:#dbe7ef !important; box-shadow:0 14px 38px rgba(42,92,120,.08); }
+.stApp:has(.ds-theme-daylight) .bj-brand-name,
+.stApp:has(.ds-theme-daylight) .bj-hero h1,
+.stApp:has(.ds-theme-daylight) .bj-section-title,
+.stApp:has(.ds-theme-daylight) .bj-workspace-title,
+.stApp:has(.ds-theme-daylight) .bj-feature-title { color:#14253a !important; }
+.stApp:has(.ds-theme-daylight) .bj-hero-copy,
+.stApp:has(.ds-theme-daylight) .bj-section-copy,
+.stApp:has(.ds-theme-daylight) .bj-feature-copy,
+.stApp:has(.ds-theme-daylight) .bj-workspace-copy { color:#62768a !important; }
+.stApp:has(.ds-theme-daylight) .bj-nav-links a { color:#63778a !important; }
+.stApp:has(.ds-theme-daylight) .bj-theme-btn { background:#fff; color:#26455f; border-color:#d7e3ec; }
+
+.stApp:has(.ds-theme-professional) {
+    background:linear-gradient(135deg,#be93c5 0%,#7bc6cc 100%) !important;
+}
+.stApp:has(.ds-theme-professional) .bj-nav,
+.stApp:has(.ds-theme-professional) .bj-workspace,
+.stApp:has(.ds-theme-professional) .bj-feature-card { background:rgba(255,255,255,.93) !important; border-color:rgba(255,255,255,.72) !important; box-shadow:0 16px 42px rgba(37,61,78,.12); }
+.stApp:has(.ds-theme-professional) .bj-brand-name,
+.stApp:has(.ds-theme-professional) .bj-hero h1,
+.stApp:has(.ds-theme-professional) .bj-section-title,
+.stApp:has(.ds-theme-professional) .bj-workspace-title,
+.stApp:has(.ds-theme-professional) .bj-feature-title { color:#172b3f !important; }
+.stApp:has(.ds-theme-professional) .bj-hero-copy,
+.stApp:has(.ds-theme-professional) .bj-section-copy,
+.stApp:has(.ds-theme-professional) .bj-feature-copy,
+.stApp:has(.ds-theme-professional) .bj-workspace-copy { color:#526a79 !important; }
+.stApp:has(.ds-theme-professional) .bj-nav-links a { color:#466173 !important; }
+
+.stApp:has(.ds-theme-dark) {
+    background:#080a0f !important;
+}
+.stApp:has(.ds-theme-dark) .bj-nav,
+.stApp:has(.ds-theme-dark) .bj-workspace,
+.stApp:has(.ds-theme-dark) .bj-feature-card { background:#11151c !important; border-color:#252c35 !important; box-shadow:none !important; }
+.stApp:has(.ds-theme-dark) .bj-hero h1,
+.stApp:has(.ds-theme-dark) .bj-section-title,
+.stApp:has(.ds-theme-dark) .bj-workspace-title,
+.stApp:has(.ds-theme-dark) .bj-feature-title { color:#f3f5f7 !important; }
+
+/* Futuristic stays closest to the premium dark purple reference */
+.stApp:has(.ds-theme-futuristic) .bj-nav { background:rgba(10,6,31,.82) !important; border-color:rgba(143,111,255,.16) !important; }
+.stApp:has(.ds-theme-futuristic) .bj-cta { background:linear-gradient(135deg,#6d4cff,#a855f7) !important; }
+.stApp:has(.ds-theme-futuristic) .bj-feature-card:hover { border-color:rgba(94,231,255,.28) !important; }
+</style>
+""", unsafe_allow_html=True)
+
+# Premium navigation + hero
 st.markdown(f"""
 <div class="ds-theme-{selected_theme}">
-<div class="ds-topbar">
-    <div class="ds-brand">
-        <div class="ds-logo">
-            <img src="{BUVIJAG_LOGO_DATA_URI}" alt="BUVIJAG AI — Sharp Intelligence for a Data-Driven World.">
-        </div>
-        <div>
-            <div class="ds-title">BUVIJAG AI</div>
-            <div class="ds-subtitle">{BUVIJAG_TAGLINE}</div>
-        </div>
+  <div class="bj-nav">
+    <div class="bj-nav-left">
+      <a class="bj-brand" href="#home">
+        <div class="bj-brand-mark"><img src="{BUVIJAG_LOGO_DATA_URI}" alt="BUVIJAG"></div>
+        <div><div class="bj-brand-name">BUVIJAG</div><div class="bj-brand-ai">AI BUSINESS INTELLIGENCE</div></div>
+      </a>
+      <div class="bj-nav-links">
+        <a href="#home">Home</a>
+        <a href="#analyze">Analyze</a>
+        <a href="#inventory">Inventory</a>
+        <a href="#intelligence">AI Insights</a>
+        <a href="#reports">Reports</a>
+        <a href="#demo">Demo</a>
+      </div>
     </div>
-    <div style="display:flex;align-items:center;gap:12px;">
-        <div class="ds-theme-menu">
-            <div class="ds-theme-trigger">Theme <span>⌄</span></div>
-            <div class="ds-theme-dropdown">
-                {theme_menu_html}
-            </div>
-        </div>
-        <div class="ds-status"><span class="ds-dot"></span> AI SYSTEM ONLINE</div>
+    <div class="bj-nav-actions">
+      <div class="bj-theme-menu">
+        <div class="bj-theme-btn">Theme <span>⌄</span></div>
+        <div class="bj-theme-dropdown">{theme_menu_html}</div>
+      </div>
+      <div class="bj-online"><span class="bj-online-dot"></span> AI ONLINE</div>
     </div>
-</div>
+  </div>
 
-<div class="ds-hero">
-    <div class="ds-kicker">AI DATA COMMAND CENTER</div>
-    <div class="ds-hero-title">Turn raw data into<br>business intelligence.</div>
-    <div class="ds-hero-text">
-        Upload CSV, Excel, PDF, image, or ZIP files. BUVIJAG AI profiles your data,
-        discovers patterns, generates business insights, and creates reports.
+  <div id="home" class="bj-anchor bj-hero">
+    <div class="bj-orbit"></div>
+    <div class="bj-eyebrow"><span></span> AI AGENTS IN ACTION</div>
+    <h1>Turn business data into <span class="bj-gradient-word">decisions.</span></h1>
+    <div class="bj-hero-copy">BUVIJAG reads your CSV, Excel, PDF and business data, discovers patterns, detects risks, explains what matters, and turns the findings into practical business intelligence.</div>
+    <div class="bj-cta-row">
+      <a class="bj-cta" href="#analyze">Start analyzing&nbsp; →</a>
+      <a class="bj-cta secondary" href="#intelligence">Explore AI intelligence</a>
     </div>
-</div>
+    <div class="bj-proof">One workspace • AI reasoning • visual insights • inventory intelligence • executive reports</div>
+  </div>
 
-<div class="ds-section">DATA INPUT</div>
+  <div class="bj-section-label">BUVIJAG WORKFLOW</div>
+  <div class="bj-section-title">One AI workspace for your business data.</div>
+  <div class="bj-section-copy">From raw files to useful actions, without forcing the user to write code.</div>
 </div>
 """, unsafe_allow_html=True)
+
+# Feature cards outside the shell so Streamlit columns remain fully functional.
+f1, f2, f3, f4 = st.columns(4)
+for col, icon, title, copy in [
+    (f1, "🧠", "AI Reasoning", "BUVIJAG understands structure, KPIs, patterns and business context."),
+    (f2, "📊", "Smart Visuals", "Charts are selected from the shape and meaning of your data."),
+    (f3, "🚨", "Risk Detection", "Surface anomalies, data-quality issues and inventory warnings."),
+    (f4, "📄", "Executive Reports", "Turn the analysis into a shareable business-ready PDF."),
+]:
+    with col:
+        st.markdown(f'<div class="bj-feature-card"><div class="bj-feature-icon">{icon}</div><div class="bj-feature-title">{title}</div><div class="bj-feature-copy">{copy}</div></div>', unsafe_allow_html=True)
+
+st.markdown('<div id="analyze" class="bj-anchor"></div>', unsafe_allow_html=True)
+st.markdown('<div class="bj-section-label">ANALYZE</div><div class="bj-section-title">Give BUVIJAG the data.</div><div class="bj-section-copy">Drop one or multiple business files into the workspace and let the agent take it from there.</div>', unsafe_allow_html=True)
+
 
 # ==========================================
 # MULTI-FORMAT FILE UPLOAD
@@ -1538,6 +1806,8 @@ def _gemini_text(contents, max_attempts=2):
                 if attempt < max_attempts - 1:
                     time.sleep(1.5 * (attempt + 1))
     return None, last_error
+
+st.markdown("""<div class="bj-workspace"><div class="bj-workspace-head"><div><div class="bj-workspace-title">Upload your business data</div><div class="bj-workspace-copy">CSV • Excel • PDF • Images • ZIP — BUVIJAG will profile the data automatically.</div></div><div class="bj-mini-status">READY TO ANALYZE</div></div></div>""", unsafe_allow_html=True)
 
 raw_uploaded_files = st.file_uploader(
     "📁 Upload CSV, Excel, PDF, images or ZIP files",
@@ -3024,6 +3294,7 @@ def _buvijag_enhanced_pdf(title, df, executive, actions, anomalies, evidence, he
 buvijag_data_items = _buvijag_dataframe_items()
 
 if buvijag_data_items:
+    st.markdown('<div id="intelligence" class="bj-anchor"></div>', unsafe_allow_html=True)
     st.markdown("---")
     st.markdown('<div class="ds-section">AGENT INTELLIGENCE CENTER</div>', unsafe_allow_html=True)
     st.subheader("🧠 BUVIJAG Autonomous Analysis")
@@ -3061,6 +3332,8 @@ if buvijag_data_items:
                 st.metric(name, f"{value:,.2f}")
             else:
                 st.metric(name, f"{value:,}")
+
+    st.markdown('<div id="inventory" class="bj-anchor"></div>', unsafe_allow_html=True)
 
     # 3. Smart Inventory Control
     inventory = _buvijag_inventory(agent_df)
@@ -3221,6 +3494,8 @@ Do not invent facts or claim causality that the data cannot establish."""
     st.markdown("### 🛡️ Insight Reliability")
     st.write("BUVIJAG separates measured evidence from AI interpretation. High evidence means the statement is directly calculated from the uploaded data; AI recommendations remain recommendations, not facts.")
 
+    st.markdown('<div id="reports" class="bj-anchor"></div>', unsafe_allow_html=True)
+
     # 9. Enhanced report
     st.markdown("### 📄 Executive Intelligence Report")
     if st.button("📥 Build Enhanced Executive PDF", key="buvijag_enhanced_pdf", use_container_width=True):
@@ -3244,6 +3519,7 @@ Do not invent facts or claim causality that the data cannot establish."""
 # 🎬 DEMO MODE
 # ============================================================
 
+st.markdown('<div id="demo" class="bj-anchor"></div>', unsafe_allow_html=True)
 st.markdown("---")
 st.markdown('<div class="ds-section">HACKATHON DEMO MODE</div>', unsafe_allow_html=True)
 st.subheader("🎬 BUVIJAG AI Demo Mode")
