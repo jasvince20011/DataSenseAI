@@ -425,6 +425,7 @@ if not st.session_state.entered_buvijag:
     """, unsafe_allow_html=True)
 
     st.markdown("""
+    <style>
     /* ===== BUVIJAG WELCOME THEME SYSTEM ===== */
     .welcome-theme-switch{
         position:absolute;right:22px;top:20px;z-index:20;
@@ -1716,10 +1717,80 @@ st.markdown("""
 .stApp:has(.ds-theme-dark) .bj-workspace-title,
 .stApp:has(.ds-theme-dark) .bj-feature-title { color:#f3f5f7 !important; }
 
-/* Futuristic stays closest to the premium dark purple reference */
-.stApp:has(.ds-theme-futuristic) .bj-nav { background:rgba(10,6,31,.82) !important; border-color:rgba(143,111,255,.16) !important; }
+/* FUTURISTIC — same AI-model visual language as the BUVIJAG welcome screen */
+.stApp:has(.ds-theme-futuristic) {
+    background:
+        radial-gradient(circle at 50% 8%, rgba(110,76,255,.28), transparent 26%),
+        radial-gradient(circle at 8% 55%, rgba(0,220,255,.16), transparent 28%),
+        radial-gradient(circle at 92% 62%, rgba(175,70,255,.16), transparent 30%),
+        linear-gradient(135deg,#05030d 0%,#0b0820 45%,#080511 100%) !important;
+    background-attachment:fixed !important;
+    color:#f4f5ff !important;
+}
+.stApp:has(.ds-theme-futuristic) .main,
+.stApp:has(.ds-theme-futuristic) [data-testid="stAppViewContainer"] {
+    background:transparent !important;
+}
+/* Animated AI grid behind the workspace, matching the welcome page */
+.stApp:has(.ds-theme-futuristic)::before {
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    opacity:.16;
+    background-image:
+        linear-gradient(rgba(125,93,255,.14) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,220,255,.10) 1px,transparent 1px);
+    background-size:58px 58px;
+    mask-image:linear-gradient(to bottom,transparent 0%,black 18%,black 82%,transparent 100%);
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 18%,black 82%,transparent 100%);
+    animation:buvijagFuturisticGrid 18s linear infinite;
+}
+@keyframes buvijagFuturisticGrid {
+    from { transform:translate3d(0,0,0); }
+    to { transform:translate3d(0,58px,0); }
+}
+.stApp:has(.ds-theme-futuristic) .bj-nav,
+.stApp:has(.ds-theme-futuristic) .bj-hero,
+.stApp:has(.ds-theme-futuristic) .bj-workspace,
+.stApp:has(.ds-theme-futuristic) .bj-feature-card,
+.stApp:has(.ds-theme-futuristic) .ds-topbar,
+.stApp:has(.ds-theme-futuristic) .ds-hero,
+.stApp:has(.ds-theme-futuristic) .ds-brain {
+    background:linear-gradient(145deg,rgba(18,13,48,.88),rgba(8,7,22,.82)) !important;
+    border-color:rgba(125,105,255,.20) !important;
+    box-shadow:0 24px 70px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.045) !important;
+    backdrop-filter:blur(18px) !important;
+    -webkit-backdrop-filter:blur(18px) !important;
+}
+.stApp:has(.ds-theme-futuristic) .bj-nav { border-color:rgba(143,111,255,.20) !important; }
 .stApp:has(.ds-theme-futuristic) .bj-cta { background:linear-gradient(135deg,#6d4cff,#a855f7) !important; }
-.stApp:has(.ds-theme-futuristic) .bj-feature-card:hover { border-color:rgba(94,231,255,.28) !important; }
+.stApp:has(.ds-theme-futuristic) .bj-feature-card:hover { border-color:rgba(94,231,255,.34) !important; box-shadow:0 18px 45px rgba(80,50,200,.16) !important; }
+.stApp:has(.ds-theme-futuristic) .bj-theme-btn,
+.stApp:has(.ds-theme-futuristic) .bj-theme-dropdown {
+    background:rgba(10,7,30,.90) !important;
+    color:#e8e5ff !important;
+    border-color:rgba(143,111,255,.22) !important;
+}
+.stApp:has(.ds-theme-futuristic) .bj-theme-dropdown a { color:#dcd8f5 !important; }
+.stApp:has(.ds-theme-futuristic) .bj-theme-dropdown a:hover,
+.stApp:has(.ds-theme-futuristic) .bj-theme-dropdown a.active {
+    background:rgba(109,76,255,.16) !important;
+    color:#ffffff !important;
+}
+.stApp:has(.ds-theme-futuristic) .stButton > button,
+.stApp:has(.ds-theme-futuristic) .stDownloadButton > button {
+    background:linear-gradient(135deg,rgba(109,76,255,.20),rgba(168,85,247,.16),rgba(0,220,255,.08)) !important;
+    border-color:rgba(143,111,255,.34) !important;
+    color:#f3f0ff !important;
+}
+.stApp:has(.ds-theme-futuristic) .stButton > button:hover,
+.stApp:has(.ds-theme-futuristic) .stDownloadButton > button:hover {
+    border-color:#6eeaff !important;
+    box-shadow:0 0 24px rgba(110,76,255,.20),0 0 12px rgba(0,220,255,.10) !important;
+}
+.stApp:has(.ds-theme-futuristic) a { color:#6eeaff !important; }
 </style>
 """, unsafe_allow_html=True)
 
