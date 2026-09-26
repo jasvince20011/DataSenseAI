@@ -1,0 +1,74 @@
+BUVIJAG AI — ALL-FEATURES HACKATHON DEMO DATASET
+
+This is a synthetic 300-row retail dataset designed to exercise the whole BUVIJAG
+workflow, not only Smart Inventory Control.
+
+CORE BUSINESS ANALYSIS
+• Revenue, cost and profit
+• Orders and quantity
+• Average order value
+• Monthly/date trends
+• Product performance
+• Category performance
+• Customer-state performance
+• Repeat-customer analysis
+• Payment-method analysis
+• Review analysis
+• Delivery performance
+• Supplier analysis
+
+DATA HEALTH / QUALITY
+• Missing values across important columns
+• Duplicate Order_ID values
+• Exact duplicate row
+• Inconsistent text/category values
+• Zero price
+• Negative revenue
+• Negative quantity
+• Negative inventory
+• Alternate date format
+
+AI / INSIGHT FEATURES
+• Automatic KPI detection
+• Data Health Score
+• Automatic anomaly detection
+• Automatic/recommended visualization selection
+• Evidence-backed insights
+• Executive Summary
+• “What Should I Do Next?” action plan
+• What-If Business Simulator
+• Executive PDF Report
+
+INVENTORY INTELLIGENCE
+• Critical/Reorder items
+• Low-stock items
+• Stock-OK items
+• Reorder level
+• Current stock
+• Initial stock
+• Quantity sold
+• Daily sales velocity
+• Supplier
+• Inventory data-quality exceptions
+
+RECOMMENDED DEMO ORDER
+1. Upload CSV.
+2. Show Agent Activity / AI workflow.
+3. Show Data Health: missing values, duplicates, suspicious values.
+4. Show automatic KPIs.
+5. Show recommended visualizations.
+6. Show revenue/profit/monthly trend.
+7. Show category/product/state/payment analysis.
+8. Open AI Insights + evidence.
+9. Show anomaly detection.
+10. Open Smart Inventory Control and show Critical, Low Stock and Stock OK.
+11. Open full inventory status.
+12. Run What-If Simulator.
+13. Show “What Should I Do Next?”
+14. Generate Executive PDF.
+15. Open Recent and reload the same file.
+
+IMPORTANT
+This dataset is intentionally imperfect for demonstration. Explain that BUVIJAG
+can identify data-quality issues before business decisions are made. It is not
+real customer data.
