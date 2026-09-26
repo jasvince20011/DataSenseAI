@@ -1,0 +1,38 @@
+BUVIJAG INVENTORY DEMO — IMPORTANT
+
+This dataset is specifically built so Smart Inventory Control can show non-zero
+Reorder/Critical and Low Stock values.
+
+INVENTORY BANDS
+Rows 1–70   = Critical/Reorder
+Rows 71–140 = Low Stock
+Rows 141–250 = Stock OK
+
+The dataset deliberately makes BOTH inventory calculations agree:
+
+Current_Stock = Initial_Stock - Quantity_Sold
+
+and
+
+Current_Stock is compared against Reorder_Level.
+
+Therefore, if the BUVIJAG inventory logic derives current stock from
+Initial_Stock - Quantity_Sold, it still receives low/reorder cases.
+
+It also contains:
+• Missing values for Data Health
+• Duplicate Order_ID
+• Exact duplicate row
+• Negative revenue
+• Negative quantity
+• Zero price
+• Customer repeats
+• Delivery/review/payment/product fields
+
+EXPECTED PRESENTATION:
+Upload → Data Health → Smart Inventory Control.
+
+Inventory should contain visible Critical/Reorder and Low Stock records,
+followed by Stock OK records.
+
+Synthetic hackathon demo data only.

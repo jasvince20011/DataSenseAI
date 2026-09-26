@@ -1,0 +1,103 @@
+BUVIJAG AI — FULL-FEATURE PRESENTATION DATASET
+
+Purpose:
+This is a synthetic retail dataset intentionally containing both normal business data
+and controlled data-quality problems so the BUVIJAG presentation can demonstrate
+data health, missing values, duplicate keys, anomalies, inventory intelligence,
+AI insights, charts, action plans, simulations and reporting.
+
+SIZE
+250 rows × 20 columns
+
+INTENTIONAL DATA-QUALITY SCENARIOS
+1. Missing values across Customer_State, Payment_Method, Supplier, Review_Score,
+   Delivery_Days, Product, Current_Stock, Reorder_Level, Customer_ID, Category,
+   Unit_Price, Revenue, Quantity and Order_Date.
+2. Duplicate Order_ID values to demonstrate duplicate-key detection.
+3. One exact duplicate row to demonstrate duplicate-row detection.
+4. Inconsistent text values such as "upi", "Tamilnadu", "late", and "electronics ".
+5. Suspicious numeric values including zero price, negative revenue and negative quantity.
+6. Inventory problems including low stock, zero stock and negative stock.
+7. Sales/revenue outliers.
+8. Delivery-delay outliers and lower review scores.
+9. Repeated Customer_ID values to demonstrate repeat-customer analysis.
+
+FEATURES TO DEMONSTRATE
+
+A. DATA QUALITY / HEALTH
+- Overall Data Health Score
+- Missing-value detection
+- Duplicate-row detection
+- Duplicate-key detection
+- Column-level quality checks
+- Suspicious/inconsistent values
+
+B. AI DATA UNDERSTANDING
+- Automatic column/type understanding
+- Agent Activity / transparent workflow
+- Automatic KPI detection
+
+C. BUSINESS ANALYSIS
+- Total revenue
+- Orders
+- Profit
+- Average order value
+- Quantity sold
+- Category performance
+- Product performance
+- Customer-state performance
+- Payment-method analysis
+- Review analysis
+- Delivery performance
+- Monthly trends
+
+D. AI INSIGHTS
+- Evidence-backed insights
+- Automatic anomaly detection
+- Plain-English explanations
+- Executive Summary
+- "What Should I Do Next?"
+
+E. INVENTORY INTELLIGENCE
+- Current stock
+- Reorder level
+- Low-stock alerts
+- Out-of-stock alerts
+- Negative-stock data-quality issue
+- Supplier visibility
+- Reorder-oriented business actions
+
+F. DECISION TOOLS
+- What-If Business Simulator
+- Recommended visualizations
+- Automatic chart selection
+
+G. REPORTING
+- Executive PDF Report
+- Charts + KPIs + insights + recommendations
+
+H. HISTORY
+- Upload the dataset
+- Open Recent
+- Select the previous file
+- Load & Analyze without uploading again during the active session
+
+RECOMMENDED HACKATHON DEMO SCRIPT
+
+1. "I start with a raw business dataset rather than a perfectly cleaned dataset."
+2. Upload this CSV.
+3. Open Data Health and point out missing values and duplicates.
+4. Show that BUVIJAG identifies data-quality issues before business interpretation.
+5. Move to KPIs and business trends.
+6. Show automatic charts and AI-generated insights.
+7. Open anomaly detection and explain the unusual transactions.
+8. Open Inventory Intelligence and show low-stock, zero-stock and negative-stock cases.
+9. Use What-If Simulator to test a business scenario.
+10. Show "What Should I Do Next?" for action-oriented recommendations.
+11. Generate the Executive PDF Report.
+12. Open Recent and reload the dataset.
+
+IMPORTANT
+This is synthetic demonstration data. It is intentionally imperfect for a hackathon demo.
+The data-quality issues are controlled and should be explained as demonstration scenarios,
+not as real customer/business records.

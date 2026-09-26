@@ -1,0 +1,37 @@
+BUVIJAG FULL-FEATURE INVENTORY DEMO DATASET
+
+250 rows × 21 columns.
+
+IMPORTANT INVENTORY SCENARIOS
+• Rows 1–25: Critical/Reorder — Current_Stock is below Reorder_Level.
+• Rows 26–60: Low Stock — Current_Stock is below Reorder_Level but above the critical range.
+• Rows 61–65: Out of Stock — Current_Stock = 0.
+• Rows 66–68: Negative stock — intentional data-quality issue.
+• Remaining rows: Stock OK — Current_Stock is above Reorder_Level.
+• Daily_Sales is included so inventory analysis can demonstrate sales velocity/days of stock where supported.
+
+DATA HEALTH SCENARIOS
+• Missing values in important fields.
+• Duplicate Order_ID values.
+• One exact duplicate row.
+• Inconsistent text values.
+• Zero price.
+• Negative revenue.
+• Negative quantity.
+• Inconsistent date format.
+
+PRESENTATION ORDER
+1. Upload this CSV.
+2. Open Data Health and show missing values/duplicates/suspicious values.
+3. Open KPIs and business analysis.
+4. Open Smart Inventory Control.
+5. Point out the Reorder/Critical count, Low Stock count and Stock OK count.
+6. Open Full Inventory Status to show individual products.
+7. Show Recommended Visualizations.
+8. Show AI Insights, anomalies and evidence.
+9. Run What-If Simulator.
+10. Show What Should I Do Next?
+11. Generate the Executive PDF.
+12. Open Recent and reload the file.
+
+The dataset is synthetic and intentionally imperfect for a hackathon demonstration.
