@@ -1,0 +1,301 @@
+Order_ID,Order_Date,Customer_ID,Customer_State,Product,Category,Quantity,Unit_Price,Revenue,Cost,Profit,Payment_Method,Review_Score,Delivery_Days,Delivery_Status,Initial_Stock,Quantity_Sold,Current_Stock,Reorder_Level,Daily_Sales,Supplier,Demo_Inventory_Status,Inventory_Calculated_Check
+BVJ-0001,2026-01-02,CUST-057,Delhi,Wireless Earbuds Pro,Electronics,2.0,2499.0,4998.0,3000,1998.0,Net Banking,4.0,3.0,On Time,22,17,5.0,20.0,1.9,SoundMax,Critical,5.0
+BVJ-0002,2026-02-03,CUST-008,Tamil Nadu,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,UPI,4.0,3.0,On Time,36,30,6.0,15.0,2.7,TimeTech,Critical,6.0
+BVJ-0003,2026-03-01,CUST-018,Maharashtra,Bluetooth Speaker,Electronics,3.0,1999.0,5997.0,3300,2697.0,UPI,5.0,6.0,Late,28,14,14.0,18.0,1.1,SoundMax,Low,14.0
+BVJ-0004,2026-03-10,CUST-080,Telangana,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,UPI,4.0,4.0,On Time,38,24,14.0,25.0,2.7,WorkGear,Low,14.0
+BVJ-0005,2026-03-25,CUST-056,Telangana,USB-C Hub,Accessories,2.0,1799.0,3598.0,1800,1798.0,Credit Card,4.0,1.0,On Time,81,29,52.0,22.0,1.3,ConnectPro,OK,52.0
+BVJ-0006,2026-04-22,CUST-013,Telangana,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,UPI,4.0,1.0,On Time,72,34,38.0,10.0,3.1,ComfortHub,OK,38.0
+BVJ-0007,2026-05-01,CUST-067,Tamil Nadu,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,UPI,5.0,2.0,On Time,55,5,50.0,12.0,0.5,BrightHome,OK,50.0
+BVJ-0008,2026-06-09,CUST-117,,Backpack,Bags,4.0,2499.0,9996.0,5200,4796.0,Credit Card,4.0,2.0,On Time,52,12,40.0,18.0,0.6,CarryWell,OK,40.0
+BVJ-0009,2026-06-26,CUST-034,Delhi,Travel Trolley,Bags,2.0,5499.0,10998.0,6400,4598.0,Credit Card,5.0,2.0,On Time,60,22,38.0,8.0,0.8,CarryWell,OK,38.0
+BVJ-0010,2026-07-03,CUST-036,Karnataka,Coffee Maker,Home Appliances,2.0,4999.0,9998.0,6000,3998.0,Credit Card,4.0,3.0,On Time,75,33,42.0,12.0,3.7,HomeBrew,OK,42.0
+BVJ-0011,2026-07-20,CUST-033,Kerala,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,UPI,3.0,1.0,On Time,15,6,9.0,20.0,0.5,SoundMax,Critical,9.0
+BVJ-0012,2026-08-19,CUST-021,Maharashtra,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,Debit Card,3.0,3.0,On Time,35,32,3.0,15.0,1.9,TimeTech,Critical,3.0
+BVJ-0013,2026-01-10,CUST-104,Tamil Nadu,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,Net Banking,4.0,2.0,On Time,47,32,15.0,18.0,1.4,SoundMax,Low,15.0
+BVJ-0014,2026-02-08,CUST-107,Tamil Nadu,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,UPI,5.0,1.0,On Time,42,28,14.0,25.0,1.8,WorkGear,Low,14.0
+BVJ-0015,2026-02-27,CUST-117,Kerala,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,Credit Card,4.0,4.0,On Time,89,23,66.0,22.0,2.9,ConnectPro,OK,66.0
+BVJ-0016,2026-03-15,CUST-105,Kerala,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,Cash on Delivery,5.0,3.0,On Time,73,22,51.0,10.0,1.1,ComfortHub,OK,51.0
+BVJ-0017,2026-03-28,CUST-039,Kerala,LED Desk Lamp,Furniture,4.0,2299.0,9196.0,4800,4396.0,Debit Card,4.0,2.0,On Time,51,9,42.0,12.0,0.5,BrightHome,OK,42.0
+BVJ-0018,2026-04-24,CUST-076,Maharashtra,Backpack,Bags,2.0,2499.0,4998.0,2600,2398.0,Cash on Delivery,4.0,2.0,On Time,76,30,46.0,18.0,1.0,CarryWell,OK,46.0
+BVJ-0019,2026-05-17,CUST-046,Karnataka,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,,4.0,3.0,On Time,44,20,24.0,8.0,1.4,CarryWell,OK,24.0
+BVJ-0020,2026-06-05,CUST-104,Tamil Nadu,Coffee Maker,Home Appliances,2.0,4999.0,9998.0,6000,3998.0,UPI,4.0,5.0,On Time,55,14,41.0,12.0,1.4,HomeBrew,OK,41.0
+BVJ-0021,2026-06-29,CUST-095,Maharashtra,Wireless Earbuds Pro,Electronics,2.0,2499.0,4998.0,3000,1998.0,Debit Card,3.0,3.0,On Time,27,22,5.0,20.0,1.5,SoundMax,Critical,5.0
+BVJ-0022,2026-07-15,CUST-020,Kerala,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,Debit Card,4.0,3.0,On Time,29,23,6.0,15.0,0.9,TimeTech,Critical,6.0
+BVJ-0023,2026-07-29,CUST-094,Telangana,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,Net Banking,4.0,2.0,On Time,27,11,16.0,18.0,0.7,SoundMax,Low,16.0
+BVJ-0024,2026-08-13,CUST-086,Kerala,Laptop Stand,Accessories,3.0,1299.0,3897.0,1950,1947.0,UPI,4.0,2.0,On Time,32,15,17.0,25.0,0.8,WorkGear,Low,17.0
+BVJ-0025,2026-01-18,CUST-110,Tamil Nadu,USB-C Hub,Accessories,3.0,1799.0,5397.0,2700,2697.0,Net Banking,4.0,2.0,On Time,49,19,30.0,22.0,2.7,ConnectPro,OK,30.0
+BVJ-0026,2026-02-09,CUST-053,Tamil Nadu,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,UPI,5.0,2.0,On Time,49,18,31.0,10.0,0.9,ComfortHub,OK,31.0
+BVJ-0027,2026-02-24,CUST-044,Maharashtra,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,Credit Card,3.0,4.0,On Time,87,34,53.0,12.0,1.2,BrightHome,OK,53.0
+BVJ-0028,2026-03-20,CUST-065,Telangana,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,UPI,4.0,2.0,On Time,62,19,43.0,18.0,0.9,CarryWell,OK,43.0
+BVJ-0029,2026-04-10,CUST-020,Tamil Nadu,Travel Trolley,Bags,2.0,5499.0,10998.0,6400,4598.0,Debit Card,4.0,2.0,On Time,76,31,45.0,8.0,3.9,CarryWell,OK,45.0
+BVJ-0030,2026-04-20,CUST-064,Tamil Nadu,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,Credit Card,5.0,3.0,On Time,78,28,50.0,12.0,2.3,,OK,50.0
+BVJ-0031,2026-05-06,CUST-098,Maharashtra,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,UPI,5.0,1.0,On Time,8,5,3.0,20.0,0.5,SoundMax,Critical,3.0
+BVJ-0032,2026-05-23,CUST-018,Maharashtra,Smart Watch X2,Electronics,2.0,3999.0,7998.0,5000,2998.0,UPI,3.0,1.0,On Time,15,15,0.0,15.0,0.8,TimeTech,Critical,0.0
+BVJ-0033,2026-06-22,CUST-088,Tamil Nadu,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,UPI,5.0,5.0,On Time,39,25,14.0,18.0,1.2,SoundMax,Low,14.0
+BVJ-0034,2026-07-08,CUST-114,Tamil Nadu,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,Debit Card,5.0,3.0,On Time,45,23,22.0,25.0,1.4,WorkGear,Low,22.0
+BVJ-0035,2026-08-03,CUST-005,Maharashtra,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,Debit Card,4.0,6.0,Late,83,17,66.0,22.0,0.8,ConnectPro,OK,66.0
+BVJ-0036,2026-08-15,CUST-041,Kerala,Office Chair,Furniture,3.0,8499.0,25497.0,15600,9897.0,Net Banking,5.0,4.0,On Time,71,24,47.0,10.0,1.8,ComfortHub,OK,47.0
+BVJ-0037,2026-01-04,CUST-012,Karnataka,LED Desk Lamp,Furniture,9.0,2299.0,20691.0,10800,9891.0,Cash on Delivery,5.0,6.0,Late,43,14,29.0,12.0,1.4,BrightHome,OK,29.0
+BVJ-0038,2026-01-27,CUST-027,Tamil Nadu,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,UPI,5.0,3.0,On Time,85,25,60.0,18.0,0.9,CarryWell,OK,60.0
+BVJ-0039,2026-02-10,CUST-061,Kerala,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,Credit Card,4.0,3.0,On Time,50,22,28.0,8.0,1.8,CarryWell,OK,28.0
+BVJ-0040,2026-03-06,CUST-104,Karnataka,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,Credit Card,4.0,2.0,On Time,52,12,40.0,12.0,1.7,HomeBrew,OK,40.0
+BVJ-0041,2026-04-02,CUST-092,Delhi,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,UPI,5.0,2.0,On Time,28,18,10.0,20.0,0.8,SoundMax,Critical,10.0
+BVJ-0042,2026-04-26,CUST-024,Tamil Nadu,Smart Watch X2,Electronics,3.0,3999.0,11997.0,7500,4497.0,UPI,,3.0,On Time,38,32,6.0,15.0,1.3,TimeTech,Critical,6.0
+BVJ-0043,2026-05-14,CUST-110,Andhra Pradesh,Bluetooth Speaker,Electronics,3.0,1999.0,5997.0,3300,2697.0,UPI,3.0,3.0,On Time,40,25,15.0,18.0,0.9,SoundMax,Low,15.0
+BVJ-0044,2026-05-29,CUST-023,Tamil Nadu,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,UPI,5.0,2.0,On Time,30,10,20.0,25.0,0.5,WorkGear,Low,20.0
+BVJ-0045,2026-06-17,CUST-034,Telangana,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,Debit Card,1.0,3.0,On Time,87,25,62.0,22.0,1.1,ConnectPro,OK,62.0
+BVJ-0046,2026-07-14,CUST-004,Delhi,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,Debit Card,4.0,5.0,On Time,49,8,41.0,10.0,0.5,ComfortHub,OK,41.0
+BVJ-0047,2026-07-29,CUST-037,Karnataka,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,UPI,4.0,1.0,On Time,61,16,45.0,12.0,2.3,BrightHome,OK,45.0
+BVJ-0048,2026-08-11,CUST-071,Andhra Pradesh,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,UPI,4.0,2.0,On Time,75,32,43.0,18.0,4.0,CarryWell,OK,43.0
+BVJ-0049,2026-01-02,CUST-092,Maharashtra,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,Credit Card,4.0,5.0,On Time,36,12,24.0,8.0,1.3,CarryWell,OK,24.0
+BVJ-0050,2026-01-27,CUST-100,Telangana,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,UPI,4.0,6.0,Late,36,10,26.0,12.0,0.5,HomeBrew,OK,26.0
+BVJ-0051,2026-03-01,CUST-085,Maharashtra,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,Net Banking,5.0,4.0,On Time,19,15,4.0,20.0,1.5,SoundMax,Critical,4.0
+BVJ-0052,2026-03-11,CUST-064,Delhi,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,UPI,5.0,1.0,On Time,27,27,0.0,15.0,1.0,TimeTech,Critical,0.0
+BVJ-0053,2026-04-07,CUST-060,Kerala,Bluetooth Speaker,Electronics,4.0,1999.0,7996.0,4400,3596.0,Credit Card,3.0,3.0,On Time,37,23,14.0,18.0,0.8,SoundMax,Low,14.0
+BVJ-0054,2026-04-25,CUST-036,Telangana,Laptop Stand,Accessories,4.0,1299.0,5196.0,2600,2596.0,Debit Card,4.0,,On Time,21,7,14.0,25.0,0.9,WorkGear,Low,14.0
+BVJ-0055,2026-05-20,CUST-074,Delhi,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,Net Banking,3.0,4.0,On Time,52,6,46.0,22.0,0.5,ConnectPro,OK,46.0
+BVJ-0056,2026-06-08,CUST-062,Karnataka,Office Chair,Furniture,2.0,8499.0,16998.0,10400,6598.0,Debit Card,4.0,6.0,Late,46,16,30.0,10.0,0.6,ComfortHub,OK,30.0
+BVJ-0057,2026-06-28,CUST-058,Karnataka,LED Desk Lamp,Furniture,2.0,6897.0,13794.0,2400,11394.0,Cash on Delivery,3.0,5.0,On Time,53,9,44.0,12.0,0.5,BrightHome,OK,44.0
+BVJ-0058,2026-07-16,CUST-036,Tamil Nadu,Backpack,Bags,4.0,2499.0,9996.0,5200,4796.0,UPI,4.0,2.0,On Time,67,28,39.0,18.0,1.4,CarryWell,OK,39.0
+BVJ-0059,2026-08-07,CUST-081,Maharashtra,Travel Trolley,Bags,2.0,5499.0,10998.0,6400,4598.0,UPI,4.0,6.0,Late,58,24,34.0,8.0,2.0,CarryWell,OK,34.0
+BVJ-0060,2026-08-27,CUST-118,Telangana,Coffee Maker,Home Appliances,2.0,4999.0,9998.0,6000,3998.0,UPI,5.0,6.0,Late,86,33,53.0,12.0,1.6,HomeBrew,OK,53.0
+BVJ-0061,2026-01-12,CUST-045,Tamil Nadu,Wireless Earbuds Pro,Electronics,2.0,2499.0,4998.0,3000,1998.0,Net Banking,4.0,5.0,On Time,12,7,5.0,20.0,0.5,SoundMax,Critical,5.0
+BVJ-0062,2026-01-29,CUST-092,Maharashtra,Smart Watch X2,Electronics,3.0,3999.0,11997.0,7500,4497.0,UPI,3.0,2.0,On Time,34,27,7.0,15.0,2.2,TimeTech,Critical,7.0
+BVJ-0063,2026-02-26,CUST-049,Kerala,Bluetooth Speaker,Electronics,2.0,1999.0,3998.0,2200,1798.0,Credit Card,5.0,1.0,On Time,30,13,17.0,18.0,0.5,SoundMax,Low,17.0
+BVJ-0064,2026-03-10,CUST-071,Karnataka,Laptop Stand,Accessories,3.0,1299.0,3897.0,1950,1947.0,UPI,5.0,1.0,On Time,42,25,17.0,25.0,2.8,WorkGear,Low,17.0
+BVJ-0065,2026-04-06,CUST-027,Andhra Pradesh,,Accessories,3.0,1799.0,5397.0,2700,2697.0,UPI,5.0,4.0,On Time,65,26,39.0,22.0,3.2,ConnectPro,OK,39.0
+BVJ-0066,2026-04-20,CUST-071,Delhi,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,UPI,2.0,12.0,Late,69,32,37.0,10.0,2.9,ComfortHub,OK,37.0
+BVJ-0067,2026-05-16,CUST-010,Delhi,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,Net Banking,4.0,3.0,On Time,30,8,22.0,12.0,0.5,BrightHome,OK,22.0
+BVJ-0068,2026-05-29,CUST-028,Maharashtra,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,Credit Card,2.0,5.0,On Time,84,26,58.0,18.0,1.6,CarryWell,OK,58.0
+BVJ-0069,2026-06-20,CUST-037,Maharashtra,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,Credit Card,5.0,1.0,On Time,51,21,30.0,8.0,0.9,CarryWell,OK,30.0
+BVJ-0070,2026-07-01,CUST-068,Telangana,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,Debit Card,5.0,2.0,On Time,70,32,38.0,12.0,1.7,HomeBrew,OK,38.0
+BVJ-0071,2026-07-24,CUST-030,Delhi,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,UPI,4.0,2.0,On Time,13,11,2.0,20.0,0.8,SoundMax,Critical,2.0
+BVJ-0072,2026-08-18,CUST-078,Tamil Nadu,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,UPI,5.0,2.0,On Time,12,9,3.0,15.0,1.1,TimeTech,Critical,3.0
+BVJ-0073,2026-01-20,CUST-054,Maharashtra,Bluetooth Speaker,Electronics,1.0,0.0,1999.0,1100,899.0,Net Banking,2.0,5.0,On Time,20,7,13.0,18.0,0.6,SoundMax,Low,13.0
+BVJ-0074,2026-01-25,CUST-025,Andhra Pradesh,Laptop Stand,Accessories,1.0,1299.0,-5000.0,650,649.0,Debit Card,4.0,5.0,On Time,33,18,15.0,25.0,2.0,WorkGear,Low,15.0
+BVJ-0075,2026-02-27,CUST-001,Maharashtra,USB-C Hub,Accessories,-2.0,1799.0,7196.0,3600,3596.0,UPI,2.0,5.0,On Time,84,27,57.0,22.0,1.9,ConnectPro,OK,57.0
+BVJ-0076,2026-03-14,CUST-038,Karnataka,Office Chair,Furniture,4.0,8499.0,33996.0,20800,13196.0,Credit Card,5.0,5.0,On Time,47,15,32.0,10.0,1.2,ComfortHub,OK,32.0
+BVJ-0077,2026-03-25,CUST-063,Delhi,LED Desk Lamp,Furniture,4.0,2299.0,9196.0,4800,4396.0,Cash on Delivery,2.0,3.0,On Time,53,5,48.0,12.0,0.6,BrightHome,OK,48.0
+BVJ-0078,2026-04-12,CUST-096,Telangana,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,UPI,4.0,4.0,On Time,71,30,41.0,18.0,1.1,CarryWell,OK,41.0
+BVJ-0079,2026-05-18,CUST-087,Telangana,Travel Trolley,Bags,2.0,5499.0,10998.0,6400,4598.0,UPI,3.0,4.0,On Time,53,24,29.0,8.0,3.4,CarryWell,OK,29.0
+BVJ-0080,2026-06-02,CUST-009,Andhra Pradesh,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,Credit Card,1.0,3.0,On Time,69,23,,12.0,0.9,HomeBrew,OK,46.0
+BVJ-0081,2026-06-25,CUST-029,Kerala,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,Credit Card,5.0,6.0,Late,30,26,4.0,20.0,2.2,SoundMax,Critical,4.0
+BVJ-0082,2026-07-03,CUST-014,Karnataka,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,upi,3.0,6.0,Late,26,23,3.0,15.0,1.8,TimeTech,Critical,3.0
+BVJ-0083,2026-07-25,CUST-043,Tamilnadu,Bluetooth Speaker,Electronics,3.0,1999.0,5997.0,3300,2697.0,Net Banking,5.0,6.0,Late,33,23,10.0,18.0,0.9,SoundMax,Low,10.0
+BVJ-0084,2026-08-19,CUST-057,Kerala,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,UPI,4.0,2.0,late,35,18,17.0,25.0,0.7,WorkGear,Low,17.0
+BVJ-0085,2026-01-06,CUST-021,Andhra Pradesh,USB-C Hub,electronics ,1.0,1799.0,1799.0,900,899.0,Cash on Delivery,3.0,2.0,On Time,62,16,46.0,22.0,0.9,ConnectPro,OK,46.0
+BVJ-0086,2026-01-29,CUST-079,Maharashtra,Office Chair,Furniture,4.0,8499.0,33996.0,20800,13196.0,Credit Card,4.0,3.0,On Time,50,15,35.0,10.0,0.6,ComfortHub,OK,35.0
+BVJ-0087,2026-02-22,CUST-111,Telangana,LED Desk Lamp,Furniture,3.0,2299.0,6897.0,3600,3297.0,Credit Card,4.0,3.0,On Time,67,34,33.0,12.0,3.1,BrightHome,OK,33.0
+BVJ-0088,2026-03-13,CUST-025,Tamil Nadu,Backpack,Bags,12.0,2499.0,29988.0,15600,14388.0,Debit Card,5.0,2.0,On Time,50,21,29.0,18.0,0.9,CarryWell,OK,29.0
+BVJ-0089,2026-04-09,CUST-018,Tamil Nadu,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,Credit Card,5.0,2.0,On Time,31,6,25.0,8.0,0.9,CarryWell,OK,25.0
+BVJ-0090,2026-04-19,CUST-073,Andhra Pradesh,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,UPI,5.0,2.0,On Time,74,27,47.0,12.0,2.7,HomeBrew,OK,47.0
+BVJ-0091,2026-05-10,CUST-048,Delhi,Wireless Earbuds Pro,Electronics,4.0,2499.0,9996.0,6000,3996.0,Cash on Delivery,4.0,2.0,On Time,22,17,5.0,20.0,1.1,SoundMax,Critical,5.0
+BVJ-0092,2026-06-03,CUST-109,Tamil Nadu,Smart Watch X2,Electronics,4.0,3999.0,15996.0,10000,5996.0,Net Banking,2.0,1.0,On Time,36,31,5.0,,1.1,TimeTech,Critical,5.0
+BVJ-0093,2026-06-27,CUST-040,Delhi,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,Credit Card,4.0,3.0,On Time,47,33,14.0,18.0,3.3,SoundMax,Low,14.0
+BVJ-0094,2026-07-08,CUST-008,Telangana,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,Debit Card,4.0,5.0,On Time,28,12,16.0,25.0,0.7,WorkGear,Low,16.0
+BVJ-0095,2026-07-27,CUST-007,Maharashtra,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,UPI,5.0,3.0,On Time,79,24,55.0,22.0,1.1,ConnectPro,OK,55.0
+BVJ-0096,2026-08-19,CUST-004,Telangana,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,UPI,5.0,4.0,On Time,56,25,31.0,10.0,1.0,ComfortHub,OK,31.0
+BVJ-0097,2026-01-10,CUST-040,Tamil Nadu,LED Desk Lamp,Furniture,2.0,2299.0,4598.0,2400,2198.0,Cash on Delivery,5.0,1.0,On Time,27,5,22.0,12.0,0.6,BrightHome,OK,22.0
+BVJ-0098,2026-01-31,CUST-069,Maharashtra,Backpack,Bags,2.0,2499.0,4998.0,2600,2398.0,Credit Card,5.0,3.0,On Time,45,8,37.0,18.0,0.5,CarryWell,OK,37.0
+BVJ-0099,2026-02-28,CUST-091,Telangana,Travel Trolley,Bags,2.0,5499.0,10998.0,6400,4598.0,Debit Card,4.0,3.0,On Time,54,10,44.0,8.0,0.5,CarryWell,OK,44.0
+BVJ-0100,2026-03-05,CUST-108,Delhi,Coffee Maker,Home Appliances,2.0,4999.0,9998.0,6000,3998.0,Credit Card,4.0,5.0,On Time,73,30,43.0,12.0,3.0,HomeBrew,OK,43.0
+BVJ-0101,2026-04-03,CUST-100,Tamil Nadu,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,UPI,5.0,1.0,On Time,13,7,6.0,20.0,0.5,SoundMax,Critical,6.0
+BVJ-0102,2026-04-22,CUST-072,Andhra Pradesh,Smart Watch X2,Electronics,4.0,3999.0,15996.0,10000,5996.0,UPI,5.0,5.0,On Time,34,34,0.0,15.0,1.9,TimeTech,Critical,0.0
+BVJ-0103,2026-05-17,CUST-090,Delhi,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,Debit Card,5.0,3.0,On Time,32,15,17.0,18.0,0.8,SoundMax,Low,17.0
+BVJ-0104,2026-06-08,CUST-080,Maharashtra,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,Net Banking,4.0,5.0,On Time,36,23,13.0,25.0,1.9,WorkGear,Low,13.0
+BVJ-0105,2026-06-28,CUST-009,Delhi,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,Credit Card,5.0,5.0,On Time,71,14,57.0,22.0,0.5,ConnectPro,OK,57.0
+BVJ-0106,2026-07-10,CUST-056,Delhi,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,Credit Card,5.0,3.0,On Time,64,20,44.0,10.0,0.7,ComfortHub,OK,44.0
+BVJ-0107,2026-07-23,CUST-054,Karnataka,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,Debit Card,4.0,6.0,Late,58,7,51.0,12.0,0.5,BrightHome,OK,51.0
+BVJ-0108,2026-08-17,,Maharashtra,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,Debit Card,3.0,2.0,On Time,61,29,32.0,18.0,1.3,CarryWell,OK,32.0
+BVJ-0109,2026-01-17,CUST-035,Kerala,Travel Trolley,Bags,2.0,5499.0,10998.0,6400,4598.0,UPI,4.0,4.0,On Time,37,11,26.0,8.0,1.4,CarryWell,OK,26.0
+BVJ-0110,2026-01-23,CUST-048,Karnataka,Coffee Maker,Home Appliances,2.0,4999.0,9998.0,6000,3998.0,Credit Card,3.0,2.0,On Time,42,19,23.0,12.0,0.9,HomeBrew,OK,23.0
+BVJ-0111,2026-02-10,CUST-119,Telangana,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,Credit Card,5.0,3.0,On Time,37,29,8.0,20.0,1.8,SoundMax,Critical,8.0
+BVJ-0112,2026-03-17,CUST-024,Delhi,Smart Watch X2,Electronics,2.0,3999.0,7998.0,5000,2998.0,UPI,5.0,1.0,On Time,9,9,0.0,15.0,0.5,TimeTech,Critical,0.0
+BVJ-0113,2026-03-30,CUST-046,Kerala,Bluetooth Speaker,Electronics,2.0,1999.0,3998.0,2200,1798.0,UPI,3.0,3.0,On Time,25,9,16.0,18.0,0.8,SoundMax,Low,16.0
+BVJ-0114,2026-04-19,CUST-102,Andhra Pradesh,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,Cash on Delivery,4.0,1.0,On Time,36,22,14.0,25.0,0.8,WorkGear,Low,14.0
+BVJ-0115,2026-05-14,CUST-017,Delhi,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,Credit Card,5.0,5.0,On Time,92,31,61.0,22.0,2.2,ConnectPro,OK,61.0
+BVJ-0116,2026-05-25,CUST-119,Delhi,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,UPI,4.0,5.0,On Time,41,17,24.0,10.0,1.0,ComfortHub,OK,24.0
+BVJ-0117,2026-06-13,CUST-004,Tamil Nadu,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,Credit Card,5.0,6.0,Late,44,9,35.0,12.0,0.6,BrightHome,OK,35.0
+BVJ-0118,2026-07-15,CUST-017,Maharashtra,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,Credit Card,2.0,2.0,On Time,35,8,27.0,18.0,0.5,CarryWell,OK,27.0
+BVJ-0119,2026-07-23,CUST-064,Delhi,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,Debit Card,4.0,2.0,On Time,72,30,42.0,8.0,3.0,CarryWell,OK,42.0
+BVJ-0120,2026-08-16,CUST-001,Maharashtra,Coffee Maker,Home Appliances,2.0,4999.0,9998.0,6000,3998.0,Credit Card,2.0,1.0,On Time,54,28,26.0,12.0,1.9,HomeBrew,OK,26.0
+BVJ-0121,2026-01-20,CUST-001,Kerala,Wireless Earbuds Pro,Electronics,2.0,2499.0,4998.0,3000,1998.0,Credit Card,2.0,13.0,Late,28,26,2.0,20.0,1.1,SoundMax,Critical,2.0
+BVJ-0122,2026-01-21,CUST-117,Delhi,Smart Watch X2,Electronics,4.0,3999.0,15996.0,10000,5996.0,Cash on Delivery,4.0,3.0,On Time,19,15,4.0,15.0,1.1,TimeTech,Critical,4.0
+BVJ-0123,2026-02-27,CUST-098,Maharashtra,Bluetooth Speaker,Electronics,2.0,1999.0,3998.0,2200,1798.0,Net Banking,4.0,3.0,On Time,26,11,15.0,18.0,0.6,SoundMax,Low,15.0
+BVJ-0124,2026-03-10,CUST-094,Andhra Pradesh,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,UPI,5.0,1.0,On Time,52,33,19.0,25.0,1.1,WorkGear,Low,19.0
+BVJ-0125,2026-04-03,CUST-065,Delhi,USB-C Hub,Accessories,2.0,1799.0,3598.0,1800,1798.0,Credit Card,5.0,3.0,On Time,75,13,62.0,22.0,1.3,ConnectPro,OK,62.0
+BVJ-0126,2026-04-11,CUST-049,Telangana,Office Chair,Furniture,2.0,8499.0,16998.0,10400,6598.0,UPI,4.0,3.0,On Time,58,28,30.0,10.0,1.8,ComfortHub,OK,30.0
+BVJ-0127,2026-05-17,CUST-024,Andhra Pradesh,LED Desk Lamp,,2.0,2299.0,4598.0,2400,2198.0,Cash on Delivery,1.0,3.0,On Time,33,5,28.0,12.0,0.5,BrightHome,OK,28.0
+BVJ-0128,2026-05-21,CUST-089,Telangana,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,UPI,5.0,4.0,On Time,74,26,48.0,18.0,1.2,CarryWell,OK,48.0
+BVJ-0129,2026-06-19,CUST-044,Maharashtra,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,UPI,4.0,3.0,On Time,39,21,18.0,8.0,2.3,CarryWell,OK,18.0
+BVJ-0130,2026-07-02,CUST-026,Maharashtra,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,Credit Card,5.0,4.0,On Time,56,13,43.0,12.0,0.5,HomeBrew,OK,43.0
+BVJ-0131,2026-08-05,CUST-091,Delhi,Wireless Earbuds Pro,Electronics,4.0,2499.0,9996.0,6000,3996.0,UPI,3.0,5.0,On Time,20,16,4.0,20.0,0.6,SoundMax,Critical,4.0
+BVJ-0132,2026-08-28,CUST-057,Karnataka,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,UPI,5.0,3.0,On Time,23,19,4.0,15.0,1.6,TimeTech,Critical,4.0
+BVJ-0133,2026-01-04,CUST-085,Delhi,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,Cash on Delivery,2.0,2.0,On Time,21,11,10.0,18.0,1.4,SoundMax,Low,10.0
+BVJ-0134,2026-01-21,CUST-106,Maharashtra,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,UPI,2.0,5.0,On Time,57,34,23.0,25.0,1.2,WorkGear,Low,23.0
+BVJ-0135,2026-02-20,CUST-071,Karnataka,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,UPI,2.0,2.0,On Time,51,15,36.0,22.0,0.5,ConnectPro,OK,36.0
+BVJ-0136,2026-03-03,CUST-007,Telangana,Office Chair,Furniture,2.0,8499.0,16998.0,10400,6598.0,UPI,4.0,3.0,On Time,46,17,29.0,10.0,0.7,ComfortHub,OK,29.0
+BVJ-0137,2026-03-23,CUST-117,Maharashtra,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,Net Banking,4.0,3.0,On Time,29,8,21.0,12.0,0.5,BrightHome,OK,21.0
+BVJ-0138,2026-04-24,CUST-098,Karnataka,Backpack,Bags,2.0,2499.0,4998.0,2600,2398.0,Debit Card,4.0,1.0,On Time,78,28,50.0,18.0,1.0,CarryWell,OK,50.0
+BVJ-0139,2026-05-15,CUST-063,Karnataka,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,UPI,3.0,5.0,On Time,70,19,51.0,8.0,0.8,CarryWell,OK,51.0
+BVJ-0140,2026-05-26,CUST-092,Karnataka,Coffee Maker,Home Appliances,1.0,,4999.0,3000,1999.0,Debit Card,3.0,1.0,On Time,72,33,39.0,12.0,2.5,HomeBrew,OK,39.0
+BVJ-0141,2026-06-15,CUST-012,Telangana,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,Debit Card,5.0,4.0,On Time,40,33,7.0,20.0,1.2,SoundMax,Critical,7.0
+BVJ-0142,2026-07-02,CUST-019,Telangana,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,Credit Card,4.0,1.0,On Time,21,17,4.0,15.0,1.2,TimeTech,Critical,4.0
+BVJ-0143,2026-08-02,CUST-087,Delhi,Bluetooth Speaker,Electronics,3.0,1999.0,5997.0,3300,2697.0,Net Banking,5.0,5.0,On Time,28,14,14.0,18.0,1.4,SoundMax,Low,14.0
+BVJ-0144,2026-08-22,CUST-039,Andhra Pradesh,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,Net Banking,5.0,6.0,Late,38,16,22.0,25.0,0.7,WorkGear,Low,22.0
+BVJ-0145,2026-01-05,CUST-110,Maharashtra,USB-C Hub,Accessories,4.0,1799.0,7196.0,3600,3596.0,Credit Card,4.0,2.0,On Time,64,23,41.0,22.0,1.1,ConnectPro,OK,41.0
+BVJ-0146,2026-02-04,CUST-107,Kerala,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,Credit Card,5.0,3.0,On Time,66,32,34.0,10.0,1.1,ComfortHub,OK,34.0
+BVJ-0147,2026-02-20,CUST-011,Tamil Nadu,LED Desk Lamp,Furniture,4.0,2299.0,9196.0,4800,4396.0,Net Banking,2.0,5.0,On Time,74,30,44.0,12.0,1.8,BrightHome,OK,44.0
+BVJ-0148,2026-03-10,CUST-108,Andhra Pradesh,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,Credit Card,2.0,6.0,Late,78,29,49.0,18.0,1.4,CarryWell,OK,49.0
+BVJ-0149,2026-04-07,CUST-006,Karnataka,Travel Trolley,Bags,9.0,5499.0,49491.0,28800,20691.0,Credit Card,4.0,2.0,On Time,58,27,31.0,8.0,0.9,CarryWell,OK,31.0
+BVJ-0150,2026-04-12,CUST-041,Karnataka,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,UPI,5.0,2.0,On Time,44,21,23.0,12.0,0.8,HomeBrew,OK,23.0
+BVJ-0151,2026-05-01,CUST-088,Maharashtra,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,Debit Card,2.0,3.0,On Time,17,11,6.0,20.0,0.5,SoundMax,Critical,6.0
+BVJ-0152,2026-06-05,CUST-061,Karnataka,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,UPI,5.0,4.0,On Time,9,9,0.0,15.0,0.5,TimeTech,Critical,0.0
+BVJ-0153,2026-06-25,CUST-049,Andhra Pradesh,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,Net Banking,2.0,2.0,On Time,34,18,16.0,18.0,0.8,SoundMax,Low,16.0
+BVJ-0154,2026-07-11,CUST-047,Maharashtra,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,Debit Card,5.0,6.0,Late,30,9,21.0,25.0,0.5,WorkGear,Low,21.0
+BVJ-0155,2026-07-24,CUST-040,Kerala,USB-C Hub,Accessories,3.0,1799.0,5397.0,2700,2697.0,Debit Card,5.0,1.0,On Time,60,16,44.0,22.0,0.6,ConnectPro,OK,44.0
+BVJ-0156,2026-08-28,CUST-083,Andhra Pradesh,Office Chair,Furniture,1.0,8499.0,,5200,3299.0,Net Banking,2.0,2.0,On Time,57,13,44.0,10.0,1.1,ComfortHub,OK,44.0
+BVJ-0157,2026-01-20,CUST-068,Delhi,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,UPI,5.0,2.0,On Time,41,18,23.0,12.0,0.9,BrightHome,OK,23.0
+BVJ-0158,2026-01-25,CUST-100,Andhra Pradesh,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,Cash on Delivery,5.0,1.0,On Time,77,20,57.0,18.0,1.2,CarryWell,OK,57.0
+BVJ-0159,2026-02-25,CUST-117,Tamil Nadu,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,Credit Card,5.0,4.0,On Time,56,16,40.0,8.0,1.1,CarryWell,OK,40.0
+BVJ-0160,2026-03-02,CUST-003,Maharashtra,Coffee Maker,Home Appliances,2.0,4999.0,9998.0,6000,3998.0,UPI,4.0,6.0,Late,41,11,30.0,12.0,1.1,HomeBrew,OK,30.0
+BVJ-0161,2026-03-31,CUST-089,Tamil Nadu,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,Debit Card,5.0,2.0,On Time,17,14,3.0,20.0,0.5,SoundMax,Critical,3.0
+BVJ-0162,2026-04-19,CUST-092,Delhi,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,UPI,4.0,2.0,On Time,21,19,2.0,15.0,2.1,TimeTech,Critical,2.0
+BVJ-0163,2026-05-17,CUST-050,Tamil Nadu,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,UPI,4.0,2.0,On Time,42,28,14.0,18.0,2.0,SoundMax,Low,14.0
+BVJ-0164,2026-06-09,CUST-070,Kerala,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,UPI,4.0,2.0,On Time,43,25,18.0,25.0,0.9,WorkGear,Low,18.0
+BVJ-0165,2026-06-22,CUST-116,Maharashtra,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,Debit Card,5.0,1.0,On Time,41,6,35.0,22.0,0.5,ConnectPro,OK,35.0
+BVJ-0166,2026-07-01,CUST-077,Kerala,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,Debit Card,5.0,1.0,On Time,64,31,33.0,10.0,1.0,ComfortHub,OK,33.0
+BVJ-0167,2026-08-03,CUST-056,Tamil Nadu,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,UPI,1.0,3.0,On Time,67,18,49.0,12.0,0.8,BrightHome,OK,49.0
+BVJ-0168,2026-08-22,CUST-041,Telangana,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,Debit Card,5.0,5.0,On Time,63,15,48.0,18.0,0.8,CarryWell,OK,48.0
+BVJ-0169,2026-01-04,CUST-035,Karnataka,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,UPI,4.0,4.0,On Time,63,25,38.0,8.0,1.0,CarryWell,OK,38.0
+BVJ-0170,2026-02-02,CUST-021,Andhra Pradesh,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,Cash on Delivery,4.0,6.0,Late,57,29,28.0,12.0,1.0,HomeBrew,OK,28.0
+BVJ-0171,2026-02-21,CUST-032,Maharashtra,Wireless Earbuds Pro,Electronics,1.0,7497.0,7497.0,1500,5997.0,UPI,4.0,4.0,On Time,28,18,10.0,20.0,0.7,SoundMax,Critical,10.0
+BVJ-0172,2026-03-15,CUST-083,Andhra Pradesh,Smart Watch X2,Electronics,4.0,3999.0,15996.0,10000,5996.0,UPI,5.0,1.0,On Time,24,24,0.0,15.0,1.7,TimeTech,Critical,0.0
+BVJ-0173,2026-04-09,CUST-012,Karnataka,Bluetooth Speaker,Electronics,2.0,1999.0,3998.0,2200,1798.0,UPI,4.0,1.0,On Time,31,21,10.0,18.0,0.8,SoundMax,Low,10.0
+BVJ-0174,2026-04-25,CUST-014,Telangana,Laptop Stand,Accessories,,1299.0,2598.0,1300,1298.0,UPI,4.0,4.0,On Time,53,29,24.0,25.0,1.5,WorkGear,Low,24.0
+BVJ-0175,2026-05-16,CUST-086,Delhi,USB-C Hub,Accessories,4.0,1799.0,7196.0,3600,3596.0,Credit Card,5.0,1.0,On Time,69,25,44.0,22.0,1.6,ConnectPro,OK,44.0
+BVJ-0176,2026-05-22,CUST-054,Andhra Pradesh,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,Credit Card,3.0,1.0,On Time,48,26,22.0,10.0,1.2,ComfortHub,OK,22.0
+BVJ-0177,2026-06-10,CUST-068,Telangana,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,UPI,5.0,1.0,On Time,64,16,48.0,12.0,1.1,BrightHome,OK,48.0
+BVJ-0178,2026-07-03,CUST-092,Kerala,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,UPI,5.0,3.0,On Time,58,10,48.0,18.0,0.6,CarryWell,OK,48.0
+BVJ-0179,2026-07-31,CUST-097,Kerala,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,Credit Card,2.0,4.0,On Time,32,7,25.0,8.0,0.8,CarryWell,OK,25.0
+BVJ-0180,2026-08-28,CUST-090,Telangana,Coffee Maker,Home Appliances,2.0,4999.0,9998.0,6000,3998.0,Debit Card,4.0,6.0,Late,78,32,46.0,12.0,1.5,HomeBrew,OK,46.0
+BVJ-0181,2026-01-16,CUST-114,Telangana,Wireless Earbuds Pro,Electronics,2.0,2499.0,4998.0,3000,1998.0,UPI,4.0,2.0,On Time,19,17,2.0,20.0,0.8,SoundMax,Critical,2.0
+BVJ-0182,2026-01-22,CUST-036,Tamil Nadu,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,UPI,5.0,3.0,On Time,34,29,5.0,15.0,1.8,TimeTech,Critical,5.0
+BVJ-0183,2026-02-16,CUST-087,Maharashtra,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,Debit Card,5.0,5.0,On Time,24,11,13.0,18.0,1.1,SoundMax,Low,13.0
+BVJ-0184,2026-03-02,CUST-007,Telangana,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,Debit Card,4.0,3.0,On Time,27,9,18.0,25.0,0.5,WorkGear,Low,18.0
+BVJ-0185,2026-04-05,CUST-039,Telangana,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,UPI,3.0,2.0,On Time,64,18,46.0,22.0,0.6,ConnectPro,OK,46.0
+BVJ-0186,2026-04-23,CUST-001,Kerala,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,Debit Card,1.0,1.0,On Time,25,7,18.0,10.0,0.5,ComfortHub,OK,18.0
+BVJ-0187,2026-05-17,CUST-067,Karnataka,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,UPI,4.0,6.0,Late,84,34,-3.0,12.0,1.4,BrightHome,OK,50.0
+BVJ-0188,2026-06-08,CUST-058,Telangana,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,Debit Card,2.0,5.0,On Time,43,10,-1.0,18.0,1.4,CarryWell,OK,33.0
+BVJ-0189,2026-06-29,CUST-029,Telangana,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,Cash on Delivery,5.0,3.0,On Time,60,9,51.0,8.0,0.5,CarryWell,OK,51.0
+BVJ-0190,2026-06-30,CUST-001,Maharashtra,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,Debit Card,5.0,1.0,On Time,66,34,32.0,12.0,1.9,HomeBrew,OK,32.0
+BVJ-0191,,CUST-012,Telangana,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,UPI,3.0,3.0,On Time,39,33,6.0,20.0,4.1,SoundMax,Critical,6.0
+BVJ-0192,03/08/2026,CUST-108,Kerala,Smart Watch X2,Electronics,2.0,3999.0,7998.0,5000,2998.0,Credit Card,4.0,3.0,On Time,33,30,3.0,15.0,1.2,TimeTech,Critical,3.0
+BVJ-0193,2026-01-17,CUST-036,Tamil Nadu,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,UPI,5.0,2.0,On Time,26,12,14.0,18.0,0.6,SoundMax,Low,14.0
+BVJ-0194,2026-01-26,CUST-052,Maharashtra,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,UPI,4.0,5.0,On Time,42,19,23.0,25.0,1.6,WorkGear,Low,23.0
+BVJ-0195,2026-02-21,CUST-008,Karnataka,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,Credit Card,5.0,3.0,On Time,77,22,55.0,22.0,1.4,ConnectPro,OK,55.0
+BVJ-0196,2026-03-12,CUST-090,Tamil Nadu,Office Chair,Furniture,4.0,8499.0,33996.0,20800,13196.0,Credit Card,5.0,4.0,On Time,41,22,19.0,10.0,1.2,ComfortHub,OK,19.0
+BVJ-0197,2026-03-24,CUST-069,Maharashtra,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,UPI,1.0,4.0,On Time,65,14,51.0,12.0,1.4,BrightHome,OK,51.0
+BVJ-0198,2026-04-12,CUST-094,Tamil Nadu,Backpack,Bags,2.0,2499.0,4998.0,2600,2398.0,Cash on Delivery,2.0,9.0,Late,69,10,59.0,18.0,1.4,CarryWell,OK,59.0
+BVJ-0199,2026-05-17,CUST-082,Telangana,Travel Trolley,Bags,2.0,5499.0,10998.0,6400,4598.0,Credit Card,4.0,3.0,On Time,60,22,38.0,8.0,1.0,CarryWell,OK,38.0
+BVJ-0200,2026-05-24,CUST-067,Tamil Nadu,Coffee Maker,Home Appliances,4.0,4999.0,19996.0,12000,7996.0,Credit Card,1.0,2.0,On Time,46,7,39.0,12.0,0.5,HomeBrew,OK,39.0
+BVJ-0201,2026-06-23,CUST-030,Andhra Pradesh,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,Net Banking,1.0,3.0,On Time,12,11,1.0,20.0,0.5,SoundMax,Critical,1.0
+BVJ-0202,2026-07-02,CUST-069,Andhra Pradesh,Smart Watch X2,Electronics,2.0,3999.0,7998.0,5000,2998.0,Net Banking,4.0,3.0,On Time,30,26,4.0,15.0,1.3,TimeTech,Critical,4.0
+BVJ-0203,2026-07-30,CUST-118,Andhra Pradesh,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,Cash on Delivery,5.0,2.0,On Time,36,26,10.0,18.0,3.2,SoundMax,Low,10.0
+BVJ-0204,2026-08-27,CUST-010,Kerala,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,UPI,2.0,6.0,Late,43,22,21.0,25.0,0.8,WorkGear,Low,21.0
+BVJ-0205,2026-01-07,CUST-040,Andhra Pradesh,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,UPI,3.0,1.0,On Time,54,20,34.0,22.0,0.7,ConnectPro,OK,34.0
+BVJ-0206,2026-01-31,CUST-056,Tamil Nadu,Office Chair,Furniture,3.0,8499.0,25497.0,15600,9897.0,UPI,4.0,3.0,On Time,57,5,52.0,10.0,0.5,ComfortHub,OK,52.0
+BVJ-0207,2026-02-14,CUST-039,Maharashtra,LED Desk Lamp,Furniture,2.0,2299.0,4598.0,2400,2198.0,Cash on Delivery,2.0,6.0,Late,74,18,56.0,12.0,1.0,BrightHome,OK,56.0
+BVJ-0208,2026-03-11,CUST-064,Delhi,Backpack,Bags,2.0,2499.0,4998.0,2600,2398.0,UPI,3.0,6.0,Late,62,7,55.0,18.0,0.5,CarryWell,OK,55.0
+BVJ-0209,2026-03-25,CUST-110,Tamil Nadu,Travel Trolley,Bags,2.0,5499.0,10998.0,6400,4598.0,UPI,5.0,4.0,On Time,26,9,17.0,8.0,1.3,CarryWell,OK,17.0
+BVJ-0210,2026-04-15,CUST-114,Delhi,Coffee Maker,Home Appliances,3.0,4999.0,14997.0,9000,5997.0,Credit Card,5.0,3.0,On Time,61,12,49.0,12.0,0.9,HomeBrew,OK,49.0
+BVJ-0211,2026-05-13,CUST-005,Delhi,Wireless Earbuds Pro,Electronics,2.0,2499.0,4998.0,3000,1998.0,Cash on Delivery,4.0,2.0,On Time,31,25,6.0,20.0,1.7,SoundMax,Critical,6.0
+BVJ-0212,2026-06-01,CUST-046,Karnataka,Smart Watch X2,Electronics,2.0,3999.0,7998.0,5000,2998.0,UPI,5.0,6.0,Late,16,15,1.0,15.0,0.8,TimeTech,Critical,1.0
+BVJ-0213,2026-06-16,CUST-098,Kerala,Bluetooth Speaker,Electronics,9.0,1999.0,17991.0,9900,8091.0,Cash on Delivery,3.0,2.0,On Time,23,7,16.0,18.0,0.5,SoundMax,Low,16.0
+BVJ-0214,2026-07-18,CUST-102,Delhi,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,UPI,2.0,2.0,On Time,50,30,20.0,25.0,2.7,WorkGear,Low,20.0
+BVJ-0215,2026-07-27,CUST-069,Delhi,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,UPI,5.0,2.0,On Time,62,6,56.0,22.0,0.5,ConnectPro,OK,56.0
+BVJ-0216,2026-08-13,CUST-079,Maharashtra,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,Credit Card,3.0,3.0,On Time,59,28,31.0,10.0,2.5,ComfortHub,OK,31.0
+BVJ-0217,2026-01-12,CUST-042,Maharashtra,LED Desk Lamp,Furniture,2.0,2299.0,4598.0,2400,2198.0,Debit Card,5.0,2.0,On Time,41,13,28.0,12.0,0.7,BrightHome,OK,28.0
+BVJ-0218,2026-02-02,CUST-037,Maharashtra,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,Debit Card,2.0,2.0,On Time,60,19,41.0,18.0,2.1,CarryWell,OK,41.0
+BVJ-0219,2026-02-18,CUST-023,Delhi,Travel Trolley,Bags,3.0,5499.0,16497.0,9600,6897.0,UPI,3.0,4.0,On Time,46,26,20.0,8.0,0.9,,OK,20.0
+BVJ-0220,2026-03-04,CUST-084,Maharashtra,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,Credit Card,5.0,3.0,On Time,68,16,52.0,12.0,1.1,HomeBrew,OK,52.0
+BVJ-0221,2026-03-22,CUST-084,Kerala,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,Credit Card,4.0,3.0,On Time,11,8,3.0,20.0,0.8,SoundMax,Critical,3.0
+BVJ-0222,2026-04-19,CUST-047,Karnataka,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,Debit Card,3.0,3.0,On Time,15,11,4.0,15.0,1.4,TimeTech,Critical,4.0
+BVJ-0223,2026-05-14,CUST-009,Tamil Nadu,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,UPI,4.0,2.0,On Time,34,22,12.0,18.0,1.6,SoundMax,Low,12.0
+BVJ-0224,2026-05-24,CUST-093,Maharashtra,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,Net Banking,4.0,3.0,On Time,38,16,22.0,25.0,0.6,WorkGear,Low,22.0
+BVJ-0225,2026-06-17,CUST-021,Telangana,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,UPI,5.0,5.0,On Time,85,22,63.0,22.0,1.2,ConnectPro,OK,63.0
+BVJ-0226,2026-07-02,CUST-018,Tamil Nadu,Office Chair,Furniture,2.0,8499.0,16998.0,10400,6598.0,Credit Card,4.0,4.0,On Time,76,27,49.0,10.0,1.8,ComfortHub,OK,49.0
+BVJ-0227,2026-07-30,CUST-026,Tamil Nadu,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,Net Banking,3.0,2.0,On Time,56,18,38.0,12.0,0.8,BrightHome,OK,38.0
+BVJ-0228,2026-08-15,CUST-117,Maharashtra,Backpack,Bags,4.0,2499.0,9996.0,5200,4796.0,UPI,4.0,6.0,Late,84,23,61.0,18.0,1.0,CarryWell,OK,61.0
+BVJ-0229,2026-01-02,CUST-008,Kerala,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,UPI,5.0,1.0,On Time,36,14,22.0,8.0,0.6,CarryWell,OK,22.0
+BVJ-0230,2026-02-01,CUST-111,Kerala,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,Cash on Delivery,5.0,3.0,On Time,44,5,39.0,12.0,0.5,HomeBrew,OK,39.0
+BVJ-0231,2026-02-21,CUST-102,Kerala,Wireless Earbuds Pro,Electronics,2.0,2499.0,4998.0,3000,1998.0,Credit Card,3.0,1.0,On Time,22,22,0.0,20.0,2.0,SoundMax,Critical,0.0
+BVJ-0232,2026-03-08,CUST-089,Karnataka,Smart Watch X2,Electronics,2.0,3999.0,7998.0,5000,2998.0,Cash on Delivery,5.0,5.0,On Time,13,6,7.0,15.0,0.5,TimeTech,Critical,7.0
+BVJ-0233,2026-03-30,CUST-098,,Bluetooth Speaker,Electronics,4.0,1999.0,7996.0,4400,3596.0,Debit Card,5.0,2.0,On Time,41,28,13.0,18.0,3.5,SoundMax,Low,13.0
+BVJ-0234,2026-04-21,CUST-109,Telangana,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,Debit Card,5.0,4.0,On Time,32,15,17.0,25.0,1.7,WorkGear,Low,17.0
+BVJ-0235,2026-05-19,CUST-029,Kerala,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,Cash on Delivery,5.0,4.0,On Time,54,6,48.0,22.0,0.7,ConnectPro,OK,48.0
+BVJ-0236,2026-05-21,CUST-067,Delhi,Office Chair,Furniture,2.0,8499.0,16998.0,10400,6598.0,UPI,2.0,2.0,On Time,40,11,29.0,10.0,0.6,ComfortHub,OK,29.0
+BVJ-0237,2026-06-24,CUST-028,Andhra Pradesh,LED Desk Lamp,Furniture,3.0,2299.0,6897.0,3600,3297.0,UPI,5.0,4.0,On Time,60,32,28.0,12.0,4.0,BrightHome,OK,28.0
+BVJ-0238,2026-07-08,CUST-080,Kerala,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,Net Banking,1.0,2.0,On Time,64,22,42.0,18.0,2.0,CarryWell,OK,42.0
+BVJ-0239,2026-07-23,CUST-005,Kerala,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,Cash on Delivery,5.0,3.0,On Time,38,16,22.0,8.0,0.7,CarryWell,OK,22.0
+BVJ-0240,2026-08-09,CUST-040,Andhra Pradesh,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,Credit Card,1.0,2.0,On Time,45,25,20.0,12.0,1.1,HomeBrew,OK,20.0
+BVJ-0241,2026-01-18,CUST-104,Andhra Pradesh,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,UPI,2.0,11.0,Late,29,23,6.0,20.0,0.8,SoundMax,Critical,6.0
+BVJ-0242,2026-01-22,CUST-044,Delhi,Smart Watch X2,Electronics,2.0,3999.0,7998.0,5000,2998.0,Net Banking,4.0,1.0,On Time,26,20,6.0,15.0,1.2,TimeTech,Critical,6.0
+BVJ-0243,2026-02-27,CUST-051,Maharashtra,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,Debit Card,5.0,1.0,On Time,34,18,16.0,18.0,1.5,SoundMax,Low,16.0
+BVJ-0244,2026-03-11,CUST-048,Maharashtra,Laptop Stand,Accessories,1.0,3897.0,3897.0,650,3247.0,UPI,4.0,5.0,On Time,47,25,22.0,25.0,1.9,WorkGear,Low,22.0
+BVJ-0245,2026-03-29,CUST-023,Karnataka,USB-C Hub,Accessories,4.0,1799.0,7196.0,3600,3596.0,UPI,4.0,4.0,On Time,72,27,45.0,22.0,1.0,ConnectPro,OK,45.0
+BVJ-0246,2026-04-12,CUST-035,Tamil Nadu,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,UPI,4.0,1.0,On Time,65,33,32.0,10.0,2.5,ComfortHub,OK,32.0
+BVJ-0247,2026-05-02,CUST-021,Tamil Nadu,LED Desk Lamp,Furniture,2.0,2299.0,4598.0,2400,2198.0,UPI,5.0,2.0,On Time,41,16,25.0,12.0,0.7,BrightHome,OK,25.0
+BVJ-0248,2026-05-26,CUST-081,Maharashtra,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,Net Banking,5.0,4.0,On Time,88,30,58.0,18.0,2.3,CarryWell,OK,58.0
+BVJ-0249,2026-06-18,CUST-044,Telangana,Travel Trolley,Bags,4.0,5499.0,21996.0,12800,9196.0,Debit Card,1.0,6.0,Late,71,19,52.0,8.0,1.1,CarryWell,OK,52.0
+BVJ-0250,2026-07-12,CUST-095,Karnataka,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,UPI,5.0,3.0,On Time,33,7,26.0,12.0,0.5,HomeBrew,OK,26.0
+BVJ-0251,2026-08-07,CUST-019,Maharashtra,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,UPI,5.0,2.0,On Time,31,27,4.0,20.0,0.9,SoundMax,Critical,4.0
+BVJ-0252,2026-08-24,CUST-010,Kerala,Smart Watch X2,Electronics,4.0,3999.0,15996.0,10000,5996.0,Credit Card,5.0,2.0,On Time,37,30,7.0,15.0,2.0,TimeTech,Critical,7.0
+BVJ-0253,2026-01-11,CUST-057,Andhra Pradesh,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,Debit Card,4.0,3.0,On Time,36,21,15.0,18.0,1.1,SoundMax,Low,15.0
+BVJ-0254,2026-02-08,CUST-087,Karnataka,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,Cash on Delivery,5.0,2.0,On Time,45,26,19.0,25.0,1.1,WorkGear,Low,19.0
+BVJ-0255,2026-02-28,CUST-048,Andhra Pradesh,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,Credit Card,5.0,5.0,On Time,58,6,52.0,22.0,0.5,ConnectPro,OK,52.0
+BVJ-0256,2026-03-04,CUST-007,Maharashtra,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,Credit Card,5.0,2.0,On Time,37,8,29.0,10.0,0.5,ComfortHub,OK,29.0
+BVJ-0257,2026-04-09,CUST-023,Tamil Nadu,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,UPI,5.0,2.0,On Time,72,24,48.0,12.0,1.4,BrightHome,OK,48.0
+BVJ-0258,2026-04-15,CUST-084,Maharashtra,Backpack,Bags,4.0,2499.0,9996.0,5200,4796.0,Debit Card,5.0,6.0,Late,73,11,62.0,18.0,0.5,CarryWell,OK,62.0
+BVJ-0259,2026-05-05,CUST-003,Andhra Pradesh,Travel Trolley,Bags,3.0,5499.0,16497.0,9600,6897.0,Debit Card,4.0,5.0,On Time,30,5,25.0,8.0,0.5,CarryWell,OK,25.0
+BVJ-0260,2026-05-23,CUST-115,Kerala,Coffee Maker,Home Appliances,4.0,4999.0,19996.0,12000,7996.0,Credit Card,4.0,2.0,On Time,87,34,53.0,12.0,1.2,HomeBrew,OK,53.0
+BVJ-0261,2026-06-16,CUST-067,Kerala,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,Credit Card,5.0,6.0,Late,36,27,9.0,20.0,3.9,SoundMax,Critical,9.0
+BVJ-0262,2026-07-18,CUST-091,Karnataka,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,UPI,5.0,3.0,On Time,15,13,2.0,15.0,1.2,TimeTech,Critical,2.0
+BVJ-0263,2026-07-27,CUST-051,Karnataka,Bluetooth Speaker,Electronics,3.0,1999.0,5997.0,3300,2697.0,UPI,5.0,3.0,On Time,41,30,11.0,18.0,1.6,SoundMax,Low,11.0
+BVJ-0264,2026-08-12,CUST-002,Tamil Nadu,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,Credit Card,5.0,3.0,On Time,35,20,15.0,25.0,2.2,WorkGear,Low,15.0
+BVJ-0265,2026-01-20,CUST-006,Delhi,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,Cash on Delivery,,1.0,On Time,44,7,37.0,22.0,0.5,ConnectPro,OK,37.0
+BVJ-0266,2026-02-04,CUST-018,Karnataka,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,Cash on Delivery,4.0,5.0,On Time,54,19,35.0,10.0,0.9,ComfortHub,OK,35.0
+BVJ-0267,2026-02-12,CUST-024,Telangana,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,Cash on Delivery,5.0,5.0,On Time,85,30,55.0,12.0,1.7,BrightHome,OK,55.0
+BVJ-0268,2026-03-11,CUST-030,Telangana,Backpack,Bags,3.0,2499.0,7497.0,3900,3597.0,UPI,4.0,5.0,On Time,46,12,34.0,18.0,0.5,CarryWell,OK,34.0
+BVJ-0269,2026-03-31,CUST-051,Tamil Nadu,Travel Trolley,Bags,2.0,5499.0,10998.0,6400,4598.0,UPI,4.0,6.0,Late,61,13,48.0,8.0,0.6,CarryWell,OK,48.0
+BVJ-0270,2026-04-27,CUST-057,Maharashtra,Coffee Maker,Home Appliances,4.0,4999.0,19996.0,12000,7996.0,UPI,5.0,3.0,On Time,50,7,43.0,12.0,0.5,HomeBrew,OK,43.0
+BVJ-0271,2026-05-09,CUST-088,Andhra Pradesh,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,Credit Card,4.0,2.0,On Time,32,32,0.0,20.0,1.1,SoundMax,Critical,0.0
+BVJ-0272,2026-06-09,CUST-104,Delhi,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,Net Banking,4.0,2.0,On Time,20,19,1.0,15.0,1.2,TimeTech,Critical,1.0
+BVJ-0273,2026-06-22,CUST-034,Tamil Nadu,Bluetooth Speaker,Electronics,2.0,1999.0,3998.0,2200,1798.0,UPI,5.0,6.0,Late,41,28,13.0,18.0,1.3,SoundMax,Low,13.0
+BVJ-0274,2026-07-03,CUST-090,Andhra Pradesh,Laptop Stand,Accessories,3.0,1299.0,3897.0,1950,1947.0,UPI,5.0,3.0,On Time,36,14,22.0,25.0,0.9,WorkGear,Low,22.0
+BVJ-0275,2026-08-02,CUST-094,Telangana,USB-C Hub,Accessories,2.0,1799.0,3598.0,1800,1798.0,Credit Card,5.0,5.0,On Time,66,22,44.0,22.0,1.4,ConnectPro,OK,44.0
+BVJ-0276,2026-08-16,CUST-102,Telangana,Office Chair,Furniture,15.0,8499.0,127485.0,78000,49485.0,Debit Card,3.0,4.0,On Time,76,22,54.0,10.0,1.1,ComfortHub,OK,54.0
+BVJ-0277,2026-01-16,CUST-114,Andhra Pradesh,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,Credit Card,4.0,4.0,On Time,77,23,54.0,12.0,1.9,BrightHome,OK,54.0
+BVJ-0278,2026-01-21,CUST-068,Maharashtra,Backpack,Bags,2.0,2499.0,4998.0,2600,2398.0,Credit Card,5.0,4.0,On Time,83,31,52.0,18.0,1.1,CarryWell,OK,52.0
+BVJ-0279,2026-03-01,CUST-083,Delhi,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,Cash on Delivery,4.0,5.0,On Time,32,7,25.0,8.0,0.5,CarryWell,OK,25.0
+BVJ-0280,2026-03-05,CUST-010,Delhi,Coffee Maker,Home Appliances,1.0,4999.0,4999.0,3000,1999.0,Credit Card,5.0,6.0,Late,45,24,21.0,12.0,1.4,HomeBrew,OK,21.0
+BVJ-0281,2026-03-29,CUST-080,Delhi,Wireless Earbuds Pro,Electronics,4.0,2499.0,9996.0,6000,3996.0,UPI,5.0,6.0,Late,9,7,2.0,20.0,0.5,SoundMax,Critical,2.0
+BVJ-0282,2026-04-23,CUST-006,Tamil Nadu,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,,5.0,2.0,On Time,35,30,5.0,15.0,1.6,TimeTech,Critical,5.0
+BVJ-0283,2026-05-15,CUST-019,Telangana,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,Debit Card,3.0,1.0,On Time,23,6,17.0,18.0,0.5,SoundMax,Low,17.0
+BVJ-0284,2026-05-31,CUST-040,Telangana,Laptop Stand,Accessories,2.0,1299.0,2598.0,1300,1298.0,UPI,5.0,3.0,On Time,37,24,13.0,25.0,1.0,WorkGear,Low,13.0
+BVJ-0285,2026-06-27,CUST-003,Kerala,USB-C Hub,Accessories,1.0,1799.0,1799.0,900,899.0,UPI,5.0,4.0,On Time,49,19,30.0,22.0,1.2,ConnectPro,OK,30.0
+BVJ-0286,2026-07-06,CUST-051,Kerala,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,Cash on Delivery,4.0,2.0,On Time,49,30,19.0,10.0,1.9,ComfortHub,OK,19.0
+BVJ-0287,2026-08-03,CUST-101,Karnataka,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,Credit Card,5.0,3.0,On Time,50,19,31.0,12.0,1.3,BrightHome,OK,31.0
+BVJ-0288,2026-08-12,CUST-119,Tamil Nadu,Backpack,Bags,1.0,2499.0,2499.0,1300,1199.0,UPI,3.0,3.0,On Time,64,21,43.0,18.0,2.6,CarryWell,OK,43.0
+BVJ-0289,2026-01-05,CUST-074,Delhi,Travel Trolley,Bags,3.0,5499.0,16497.0,9600,6897.0,Net Banking,5.0,2.0,On Time,72,31,41.0,8.0,1.1,CarryWell,OK,41.0
+BVJ-0290,2026-02-04,CUST-028,Tamil Nadu,Coffee Maker,Home Appliances,2.0,4999.0,9998.0,6000,3998.0,Net Banking,5.0,2.0,On Time,61,29,32.0,12.0,1.8,HomeBrew,OK,32.0
+BVJ-0291,2026-02-12,CUST-011,Andhra Pradesh,Wireless Earbuds Pro,Electronics,1.0,2499.0,2499.0,1500,999.0,UPI,4.0,6.0,Late,24,20,4.0,20.0,1.0,SoundMax,Critical,4.0
+BVJ-0292,2026-03-10,CUST-065,Tamil Nadu,Smart Watch X2,Electronics,1.0,3999.0,3999.0,2500,1499.0,Credit Card,5.0,3.0,On Time,41,34,7.0,15.0,1.6,TimeTech,Critical,7.0
+BVJ-0293,2026-04-08,CUST-041,Karnataka,Bluetooth Speaker,Electronics,4.0,1999.0,7996.0,4400,3596.0,Credit Card,5.0,2.0,On Time,43,31,12.0,18.0,1.3,SoundMax,Low,12.0
+BVJ-0294,2026-04-30,CUST-040,Andhra Pradesh,Laptop Stand,Accessories,1.0,1299.0,1299.0,650,649.0,Credit Card,5.0,2.0,On Time,32,13,19.0,25.0,0.7,WorkGear,Low,19.0
+BVJ-0295,2026-05-03,CUST-044,Kerala,USB-C Hub,Accessories,4.0,1799.0,7196.0,3600,3596.0,UPI,3.0,4.0,On Time,74,25,49.0,22.0,1.0,ConnectPro,OK,49.0
+BVJ-0296,2026-06-02,CUST-076,Karnataka,Office Chair,Furniture,1.0,8499.0,8499.0,5200,3299.0,Debit Card,4.0,3.0,On Time,31,12,19.0,10.0,0.5,ComfortHub,OK,19.0
+BVJ-0297,2026-06-18,CUST-091,Andhra Pradesh,LED Desk Lamp,Furniture,1.0,2299.0,2299.0,1200,1099.0,UPI,3.0,1.0,On Time,49,19,30.0,12.0,1.0,BrightHome,OK,30.0
+BVJ-0298,2026-07-02,CUST-089,Andhra Pradesh,Backpack,Bags,2.0,2499.0,4998.0,2600,2398.0,Debit Card,5.0,1.0,On Time,60,30,30.0,18.0,1.0,CarryWell,OK,30.0
+BVJ-0015,2026-07-27,CUST-029,Andhra Pradesh,Travel Trolley,Bags,1.0,5499.0,5499.0,3200,2299.0,UPI,4.0,2.0,On Time,52,11,41.0,8.0,0.7,CarryWell,OK,41.0
+BVJ-0103,2026-05-17,CUST-090,Delhi,Bluetooth Speaker,Electronics,1.0,1999.0,1999.0,1100,899.0,Debit Card,5.0,3.0,On Time,32,15,17.0,18.0,0.8,SoundMax,Low,17.0
