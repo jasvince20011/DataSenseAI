@@ -30,3 +30,8 @@ FINAL THEME BUILD
 - Welcome screen adapts to the selected theme.
 - Theme selection is available from the Welcome screen and main app.
 - Dark is matte/no-glass; Professional uses mauve-to-teal; Daylight is bright/airy; Futuristic is robotic/cybernetic.
+
+
+Recent upload history
+----------------------
+BUVIJAG keeps up to 12 recent uploads in the current Streamlit browser session. Select Recent in the main navigation and use Load & Analyze to reopen a previous upload without uploading it again. Uploaded file bytes are kept in per-user Streamlit session state rather than a shared server folder.

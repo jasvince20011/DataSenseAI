@@ -9,6 +9,8 @@ from io import BytesIO
 import base64
 import zipfile
 import time
+import hashlib
+from datetime import datetime
 from pathlib import Path
 from pypdf import PdfReader
 from google.genai import types
@@ -1717,6 +1719,7 @@ st.markdown(f"""
         <a href="#inventory">Inventory</a>
         <a href="#intelligence">AI Insights</a>
         <a href="#reports">Reports</a>
+        <a href="#recent">Recent</a>
         <a href="#demo">Demo</a>
       </div>
     </div>
@@ -1760,6 +1763,78 @@ for col, icon, title, copy in [
 
 st.markdown('<div id="analyze" class="bj-anchor"></div>', unsafe_allow_html=True)
 st.markdown('<div class="bj-section-label">ANALYZE</div><div class="bj-section-title">Give BUVIJAG the data.</div><div class="bj-section-copy">Drop one or multiple business files into the workspace and let the agent take it from there.</div>', unsafe_allow_html=True)
+
+
+# ==========================================
+# RECENT UPLOAD HISTORY — SESSION SAFE
+# ==========================================
+# Recent files are intentionally kept in Streamlit session state rather than
+# a shared server folder. This prevents one public-app user from seeing
+# another user's uploaded business data. History lasts for the current
+# browser session and can be loaded back into the same analysis workspace.
+
+if "recent_history" not in st.session_state:
+    st.session_state["recent_history"] = []
+if "active_history_id" not in st.session_state:
+    st.session_state["active_history_id"] = None
+if "history_notice" not in st.session_state:
+    st.session_state["history_notice"] = None
+if "last_upload_signature" not in st.session_state:
+    st.session_state["last_upload_signature"] = None
+
+MAX_RECENT_ITEMS = 12
+MAX_HISTORY_FILE_BYTES = 40 * 1024 * 1024
+MAX_HISTORY_TOTAL_BYTES = 120 * 1024 * 1024
+
+def _history_signature(name, data):
+    digest = hashlib.sha256(data).hexdigest()[:20]
+    return f"{_safe_filename(name)}::{len(data)}::{digest}"
+
+def _remember_recent_uploads(raw_files):
+    history = st.session_state["recent_history"]
+    existing = {item["id"] for item in history}
+    total_bytes = sum(len(item["bytes"]) for item in history)
+    skipped = 0
+
+    for raw_file in raw_files or []:
+        try:
+            raw_file.seek(0)
+            data = raw_file.read()
+            raw_file.seek(0)
+            name = _safe_filename(getattr(raw_file, "name", "Uploaded file"))
+            if len(data) > MAX_HISTORY_FILE_BYTES:
+                skipped += 1
+                continue
+
+            item_id = _history_signature(name, data)
+            if item_id in existing:
+                continue
+            if total_bytes + len(data) > MAX_HISTORY_TOTAL_BYTES:
+                skipped += 1
+                continue
+
+            history.insert(0, {
+                "id": item_id,
+                "name": name,
+                "bytes": data,
+                "size": len(data),
+                "uploaded_at": datetime.now().strftime("%d %b %Y • %I:%M %p"),
+                "extension": Path(name).suffix.lower().replace(".", "").upper() or "FILE",
+            })
+            existing.add(item_id)
+            total_bytes += len(data)
+        except Exception:
+            skipped += 1
+
+    del history[MAX_RECENT_ITEMS:]
+    if skipped:
+        st.session_state["history_notice"] = (
+            f"{skipped} large file(s) were not added to Recent. "
+            f"Recent history keeps files up to {MAX_HISTORY_FILE_BYTES // (1024*1024)} MB each."
+        )
+
+def _history_item_by_id(item_id):
+    return next((item for item in st.session_state["recent_history"] if item["id"] == item_id), None)
 
 
 # ==========================================
@@ -1894,7 +1969,81 @@ raw_uploaded_files = st.file_uploader(
     help="ZIP files can contain CSV, Excel, PDF, PNG or JPG files."
 )
 
-analysis_items, uploaded_files = _process_uploaded_files(raw_uploaded_files)
+# A new upload always becomes the active workspace. If no new upload exists,
+# a file selected from Recent is loaded back into exactly the same pipeline.
+if raw_uploaded_files:
+    current_upload_ids = []
+    for _raw in raw_uploaded_files:
+        try:
+            _raw.seek(0)
+            _data = _raw.read()
+            _raw.seek(0)
+            current_upload_ids.append(_history_signature(getattr(_raw, "name", "Uploaded file"), _data))
+        except Exception:
+            current_upload_ids.append(str(getattr(_raw, "name", "Uploaded file")))
+    current_upload_signature = "||".join(sorted(current_upload_ids))
+    if current_upload_signature != st.session_state.get("last_upload_signature"):
+        st.session_state["active_history_id"] = None
+        st.session_state["last_upload_signature"] = current_upload_signature
+        _remember_recent_uploads(raw_uploaded_files)
+
+active_history_item = _history_item_by_id(st.session_state.get("active_history_id"))
+if active_history_item:
+    history_buffer = BytesIO(active_history_item["bytes"])
+    history_buffer.name = active_history_item["name"]
+    analysis_items, uploaded_files = _process_uploaded_files([history_buffer])
+else:
+    analysis_items, uploaded_files = _process_uploaded_files(raw_uploaded_files)
+
+# ==========================================
+# RECENT — REOPEN PREVIOUS UPLOADS
+# ==========================================
+
+st.markdown('<div id="recent" class="bj-anchor"></div>', unsafe_allow_html=True)
+st.markdown(
+    '<div class="bj-section-label">RECENT</div>'
+    '<div class="bj-section-title">Your recent data, ready to reopen.</div>'
+    '<div class="bj-section-copy">Select a previous upload to load it back into the BUVIJAG analysis workspace without uploading the file again.</div>',
+    unsafe_allow_html=True
+)
+
+if st.session_state.get("history_notice"):
+    st.info(st.session_state.pop("history_notice"))
+
+recent_history = st.session_state.get("recent_history", [])
+if recent_history:
+    recent_cols = st.columns(min(3, len(recent_history)))
+    for idx, item in enumerate(recent_history):
+        with recent_cols[idx % 3]:
+            size_mb = item["size"] / (1024 * 1024)
+            is_active = item["id"] == st.session_state.get("active_history_id")
+            active_label = "✓ LOADED" if is_active else item["extension"]
+            card_class = "bj-recent-card active" if is_active else "bj-recent-card"
+            st.markdown(
+                f'''<div class="{card_class}">
+                    <div class="bj-recent-top"><span>RECENT DATA</span><b>{active_label}</b></div>
+                    <div class="bj-recent-name">📁 {item["name"]}</div>
+                    <div class="bj-recent-meta">{item["uploaded_at"]} &nbsp;•&nbsp; {size_mb:.1f} MB</div>
+                </div>''',
+                unsafe_allow_html=True
+            )
+            if st.button(
+                "↻ Load & Analyze",
+                key=f"load_recent_{item['id']}",
+                use_container_width=True,
+                disabled=is_active
+            ):
+                st.session_state["active_history_id"] = item["id"]
+                st.session_state["show_dashboard"] = False
+                st.session_state["all_ai_reports"] = {}
+                st.rerun()
+else:
+    st.markdown(
+        '<div class="bj-recent-empty"><div class="bj-recent-empty-icon">◷</div>'
+        '<div class="bj-recent-empty-title">No recent uploads yet</div>'
+        '<div class="bj-recent-empty-copy">Upload a CSV, Excel, PDF, image or ZIP above. It will appear here for quick reopening during this session.</div></div>',
+        unsafe_allow_html=True
+    )
 
 # Native Streamlit ⋮ menu provides System / Light / Dark.
 
@@ -4162,3 +4311,46 @@ st.markdown(r"""
 }
 </style>
 """, unsafe_allow_html=True)
+
+
+st.markdown("""<style>
+
+/* RECENT HISTORY — premium AI workspace cards */
+.bj-recent-card {
+    min-height:132px; padding:18px; margin:4px 0 10px; border-radius:18px;
+    background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.10);
+    box-shadow:0 14px 36px rgba(0,0,0,.12); transition:.22s ease;
+}
+.bj-recent-card:hover, .bj-recent-card.active {
+    transform:translateY(-2px); border-color:rgba(143,111,255,.40);
+    box-shadow:0 16px 44px rgba(109,76,255,.14);
+}
+.bj-recent-card.active { background:linear-gradient(145deg,rgba(109,76,255,.14),rgba(0,220,255,.05)); }
+.bj-recent-top { display:flex; justify-content:space-between; gap:10px; font-size:10px; letter-spacing:1.6px; color:#9d93c2; font-weight:800; }
+.bj-recent-top b { color:#6eeaff; }
+.bj-recent-name { margin-top:12px; font-size:15px; font-weight:800; color:#f5f2ff; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.bj-recent-meta { margin-top:7px; font-size:11px; color:#8e89a3; }
+.bj-recent-empty { padding:30px; border-radius:20px; text-align:center; background:rgba(255,255,255,.035); border:1px dashed rgba(143,111,255,.24); }
+.bj-recent-empty-icon { font-size:28px; color:#a78bfa; }
+.bj-recent-empty-title { margin-top:8px; font-size:17px; font-weight:800; color:#f5f2ff; }
+.bj-recent-empty-copy { margin-top:6px; color:#8f8aa5; font-size:12px; }
+.stApp:has(.ds-theme-daylight) .bj-recent-card { background:#fff; border-color:#dce4ed; box-shadow:0 12px 30px rgba(46,70,100,.08); }
+.stApp:has(.ds-theme-daylight) .bj-recent-name, .stApp:has(.ds-theme-daylight) .bj-recent-empty-title { color:#26364d !important; }
+.stApp:has(.ds-theme-daylight) .bj-recent-meta, .stApp:has(.ds-theme-daylight) .bj-recent-empty-copy { color:#69788b !important; }
+.stApp:has(.ds-theme-daylight) .bj-recent-top { color:#687b92 !important; }
+.stApp:has(.ds-theme-dark) .bj-recent-card { background:#15181e; border-color:#2a2f38; box-shadow:none; }
+.stApp:has(.ds-theme-dark) .bj-recent-name, .stApp:has(.ds-theme-dark) .bj-recent-empty-title { color:#f4f6f9 !important; }
+.stApp:has(.ds-theme-dark) .bj-recent-meta, .stApp:has(.ds-theme-dark) .bj-recent-empty-copy { color:#9aa3b1 !important; }
+.stApp:has(.ds-theme-professional) .bj-recent-card { background:#fff; border-color:#d5dfe8; box-shadow:0 12px 30px rgba(48,65,83,.08); }
+.stApp:has(.ds-theme-professional) .bj-recent-name, .stApp:has(.ds-theme-professional) .bj-recent-empty-title { color:#243247 !important; }
+.stApp:has(.ds-theme-professional) .bj-recent-meta, .stApp:has(.ds-theme-professional) .bj-recent-empty-copy { color:#637084 !important; }
+.stApp:has(.ds-theme-futuristic) .bj-recent-card {
+    background:linear-gradient(145deg,rgba(20,10,52,.72),rgba(7,9,25,.86));
+    border-color:rgba(143,111,255,.20); box-shadow:0 0 28px rgba(109,76,255,.07);
+}
+.stApp:has(.ds-theme-futuristic) .bj-recent-card:hover, .stApp:has(.ds-theme-futuristic) .bj-recent-card.active {
+    border-color:rgba(110,234,255,.45); box-shadow:0 0 30px rgba(109,76,255,.16), inset 0 0 24px rgba(0,220,255,.025);
+}
+.stApp:has(.ds-theme-futuristic) .bj-recent-name, .stApp:has(.ds-theme-futuristic) .bj-recent-empty-title { color:#f8f5ff !important; }
+.stApp:has(.ds-theme-futuristic) .bj-recent-meta, .stApp:has(.ds-theme-futuristic) .bj-recent-empty-copy { color:#8f8aa5 !important; }
+</style>""", unsafe_allow_html=True)
